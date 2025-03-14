@@ -16,6 +16,10 @@ class Router // directs requests to the correct controllers.
 		];
 	}
 
+
+	// 1. Recoit une route de index.php et verifie sa validité (si method et path correspondent a une route existante)
+	// 2. Si c'est le cas, on fait "call_user_func" qui prend la route, appelle le controller correspondant.
+
 	/**
 	 * Handle the incoming request
 	 */
