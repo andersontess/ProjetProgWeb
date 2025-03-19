@@ -1,5 +1,6 @@
 [
     {
+      "id": "683466cc-71f0-41d2-8733-8212502a7a73",
       "name": "Crock Pot Roast",
       "nameFR": "Roti à la cocotte",
       "Author": "Unknown",
@@ -78,6 +79,7 @@
       "originalURL": "http://www.food.com/recipe/to-die-for-crock-pot-roast-27208"
     },
     {
+      "id": "71abd9a6-0732-45bc-b71c-b482378a0699",
       "name": "Roasted Asparagus",
       "nameFR": "Asperges roties",
       "Author": "Unknown",
@@ -120,6 +122,7 @@
       "originalURL": "http://www.food.com/recipe/roasted-asparagus-50847"
     },
     {
+      "id": "b84286c7-cd05-4911-991f-60649e6eeb4c",
       "name": "Curried Lentils and Rice",
       "nameFR": "Lentilles et Riz au curry",
       "Author": "Unknown",
@@ -166,6 +169,7 @@
       "imageURL": "http://dagzhsfg97k4.cloudfront.net/wp-content/uploads/2012/05/lentils3.jpg"
     },
     {
+      "id": "a43ecd3e-eb35-4912-a936-badac4935d11",
       "name": "Big Night Pizza",
       "nameFR": "La pizza des grands soirs",
       "Author": "Unknown",
@@ -227,6 +231,7 @@
       "imageURL": "http://upload.wikimedia.org/wikipedia/commons/c/c7/Spinach_pizza.jpg"
     },
     {
+      "id": "7e902811-76d4-415b-8fe4-6fc7987bb4c0",
       "name": "Cranberry and Apple Stuffed Acorn Squash Recipe",
       "nameFR": "Courge poivrée farcies aux cranberries et aux pommes",
       "Author": "Unknown",
@@ -281,6 +286,7 @@
       "originalURL": ""
     },
     {
+      "id": "4318da14-8610-4dbf-8814-9f6aeec794bd",
       "name": "Mic's Yorkshire Puds",
       "nameFR": "Yorkshire pudding  de Mickey",
       "Author": "Unknown",
@@ -325,6 +331,7 @@
       "originalURL": "https://fr.wikipedia.org/wiki/Yorkshire_pudding"
     },
     {
+      "id": "77a21b80-6df9-4fb7-b4b9-0399507dfb35",
       "name": "Old-Fashioned Oatmeal Cookies",
       "ingredients": [
         {
@@ -405,6 +412,7 @@
       "originalURL": "#"
     },
     {
+      "id": "164b03cb-aaf7-4fe0-8b41-41d5776d8c14",
       "name": "Blueberry Oatmeal Squares",
       "ingredients": [
         {
@@ -473,6 +481,7 @@
       "originalURL": "http://www.canadianliving.com/food/blueberry_oatmeal_squares.php"
     },
     {
+      "id": "8c33a5df-9b32-4105-977b-b029d4f1c550",
       "name": "Curried chicken salad",
       "ingredients": [
         {

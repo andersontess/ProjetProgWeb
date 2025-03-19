@@ -9,9 +9,14 @@ class Router // directs requests to the correct controllers.
 	 */
 	public function register(string $method, string $path, callable $handler): void
 	{
+		// conversion des parametres dynamiques en regex pour gerer les query strings et les id
+		$pathRegex = preg_replace('/\{([^\/]+)\}/', '(?P<\1>[^/]+)', $path);
+		$pathRegex = str_replace('/', '\/', $pathRegex); 
+		
 		$this->routes[] = [
 			'method' => strtoupper($method),
 			'path' => $path,
+			'regex' => '/^' . $pathRegex . '$/',
 			'handler' => $handler,
 		];
 	}
@@ -27,7 +32,11 @@ class Router // directs requests to the correct controllers.
 	{
 		// Get the HTTP method and path of the request
 		$method = $_SERVER['REQUEST_METHOD'];
-		$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+   		$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); 
+
+		//dd(parse_url($path));
+		//$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
+		
 
 		// Set the CORS headers
 		header("Access-Control-Allow-Origin: *");
@@ -35,12 +44,16 @@ class Router // directs requests to the correct controllers.
 		header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
 		foreach ($this->routes as $route) {
-			if ($route['method'] === $method && $route['path'] === $path) {
-				// If a route matches the request, call the handler
-				call_user_func($route['handler']);
+			if ($route['method'] === $method && $route['path'] === $path && preg_match($route['regex'], $path, $matches)) {
+				// Extract named parameters
+				$params = array_filter($matches, 'is_string', ARRAY_FILTER_USE_KEY);
+				
+				// Call handler with extracted params
+				call_user_func($route['handler'], $params);
 				return;
 			}
 		}
+	
 
 		// If no route was found, return a 404
 		http_response_code(404);
@@ -48,7 +61,3 @@ class Router // directs requests to the correct controllers.
 	}
 }
 
-
-// Ne supporte pas les variables
-// Modfiier le routeur pour qu'il supporte des morceaux variables et des morceaux statiques
-// 

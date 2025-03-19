@@ -91,3 +91,5 @@ class CommentController // manages comments and likes.
 		echo json_encode(['message' => 'All comments deleted']);
 	}
 }
+
+
