@@ -30,18 +30,14 @@ $router->register('POST', '/auth/register', [$authController, 'handleRegister'])
 
 
 // RECIPE ROUTES
-$router->register('GET', '/recipe', [$recipeController, 'handleGetAllRecipes']);
-$router->register('GET', '/recipe?search="your_query"', function ($params) use ($recipeController) {
-    echo $params;
-    $query = $params['search'] ?? ''; // Extract query parameter
-    echo $query;
-    $recipeController->handleSearchRecipe($query);
-});
+$router->register('GET', '/recipe', [$recipeController, 'handleSearchRecipe']);
+$router->register('GET', '/recipe/{recipe_id}', [$recipeController, 'handleConsultRecipe']);
+
 // $router->register('POST', '/recipe/photo', [$recipeController, 'handlePostPhotoRecipe']);
 // $router->register('POST', '/recipe/propose', [$recipeController, 'handleProposeRecipe']);
 // $router->register('PUT', '/recipe/{recipe_id}', [$recipeController, 'handleModifyRecipe']);
 // $router->register('POST', '/recipe/approve', [$recipeController, 'handleApproveRecipe']);
-// $router->register('GET', '/recipe/{recipe_id}', [$recipeController, 'handleConsultRecipe']);
+
 // $router->register('DELETE', '/recipe/{recipe_id}', [$recipeController, 'handleDeleteRecipe']);
 
 
