@@ -1,0 +1,10 @@
+{
+    "tessbanderson@gmail.com": {
+        "password": "$2y$12$9m6I97B6V7yjMG0X.1\/GNOmCRVNyROmtqggNTBO.7z.0Il2lyp.pW",
+        "role": "chef"
+    },
+    "tessndrsn@gmail.com": {
+        "password": "$2y$12$SV1F4uTs.gLLkDa4aDwn8.rf.BeuRpjSRKt4LJn\/ja73.Obt4hcCS",
+        "role": "cuisinier"
+    }
+}

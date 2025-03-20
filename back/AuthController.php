@@ -29,9 +29,11 @@ class AuthController
 
 		// 3. Validate the email and password
 
+		// email
 		$email = filter_var($email, FILTER_SANITIZE_EMAIL);
 		filter_var($email, FILTER_VALIDATE_EMAIL);
 
+		// password
 		$minLength = 8;
     	$maxLength = 20;
 
@@ -41,6 +43,7 @@ class AuthController
 			return;
     	}
 
+		// a l'inscription, l'utilisateur est cuisinier par defaut
 
 		// 4. Check if the email is already registered
 
@@ -59,7 +62,8 @@ class AuthController
 
 		// 6. Save the user data to the file\
 
-		$users[$email] = ["password" => $password];
+
+		$users[$email] = ["password" => $password, "role" => "cuisinier"];
 		file_put_contents($this->filePath, json_encode($users, JSON_PRETTY_PRINT));
 
 
@@ -91,6 +95,7 @@ class AuthController
 		// 2. Get the email and password from the POST data
 		$email = $_POST['email'];
 		$password = $_POST['password'];
+
 
 		// 3. Validate the email and password
 		$email = filter_var($email, FILTER_SANITIZE_EMAIL);

@@ -12,7 +12,7 @@ session_start(); // Start the session
 
 
 $router = new Router();
-$authController = new AuthController(__DIR__);
+$authController = new AuthController(__DIR__ . '/data/users.json');
 $commentController = new CommentController(__DIR__ . '/data/comments.json', $authController);
 $recipeController = new RecipeController(__DIR__ . '/data/recipes.json', $authController);
 
@@ -31,10 +31,10 @@ $router->register('POST', '/auth/register', [$authController, 'handleRegister'])
 
 // RECIPE ROUTES
 $router->register('GET', '/recipe', [$recipeController, 'handleSearchRecipe']);
-$router->register('GET', '/recipe/{recipe_id}', [$recipeController, 'handleConsultRecipe']);
+//$router->register('GET', '/recipe/{recipe_id}', [$recipeController, 'handleConsultRecipe']);
 
 // $router->register('POST', '/recipe/photo', [$recipeController, 'handlePostPhotoRecipe']);
-// $router->register('POST', '/recipe/propose', [$recipeController, 'handleProposeRecipe']);
+$router->register('POST', '/recipe/propose', [$recipeController, 'handleProposeRecipe']);
 // $router->register('PUT', '/recipe/{recipe_id}', [$recipeController, 'handleModifyRecipe']);
 // $router->register('POST', '/recipe/approve', [$recipeController, 'handleApproveRecipe']);
 

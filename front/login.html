@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+
+    <!-- Feuilles de style CSS et icône -->
+    <link rel="stylesheet" href="formLogin.css">
+    <link rel="icon" href="img/Logo-Page.png">
+
+    
+
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="form-container">
+
+            <!-- Image et bouton arrière -->
+            <div class="img-group">
+                <img src="img/formLogin.jpg" alt="form">
+                
+                <a href="home.html">
+                    <div class="back-container">
+                        <img src="img/Back_Arrow.png" alt="">
+                        <span>Retour</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Formulaire -->
+            <form id="connexion">
+                <h1>Connexion</h1>
+
+                <!-- Elements du formulaire -->
+                <input id="email" type="text" name="email" placeholder="Nom d'utilisateur" required/>
+                <input id="password" type="password"  name="password" placeholder="Mot de passe" required/>
+                <input type="submit" value="Se connecter"/>
+                <p>Vous n'avez pas de compte ? <a href="formCreate.php">Créer un compte</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+
+<script src="script.js" ></script> 
+</html>

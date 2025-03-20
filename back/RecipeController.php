@@ -36,15 +36,16 @@ class RecipeController {
 	}
 
 	// Handles clicking on a recipe to consult it
-	public function handleConsultRecipe() 
+	public function handleConsultRecipe(string $query) 
 	{
-		if (!file_exists($this->filePath)) {
-			return http_response_code(404);
-		}
-
-		$jsonData = file_get_contents($this->filePath);
-		$recipes = json_decode($jsonData, true);
+		$jsonData = $this->getAllRecipes();
 
 
+
+	}
+
+	public function handleProposeRecipe()
+	{
+		
 	}
 }

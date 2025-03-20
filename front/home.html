@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UCook</title>
+
+    <!-- Feuilles de style CSS et icône -->
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="icon" href="img/Logo-Page.png">
+    
+    <!-- Importations-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Scripts Ajax-->
+    <script src="js/home.js"></script>
+</head>
+<body>
+    <!--########## En-tête ##########-->
+    <header class="header">
+        <a href="#" class="logo">UCook</a>
+
+        <nav class="navbar">
+            <a href="home.php">Accueil</a>
+            <a href="#recipes">Recettes</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <nav class="navbar">
+            <a href="formLogin.php">Connexion</a>
+            <a href="formCreate.php">Crée un Compte</a>
+        </nav>
+    </header>
+
+    <!--########## Accueil ##########-->
+    <section class="home-container">
+        <div class="container">
+            <div class="row">
+                <div class="descrtiption-home">
+                    <h1>Bienvenue sur <span>VOTRE</span> site de recettes</h1>
+                    <p>Vous trouverez ici des recettes de cuisine simples et rapides à réaliser.</p>
+                    <p>Vous pouvez également partager vos propres recettes en vous inscrivant sur notre site.</p>
+
+                    <div class="buttons">
+                        <a href="#recipes" class="btn" onclick="">Recettes</a>
+                        <a href="#contact" class="btn" onclick="">Contact</a>
+                    </div>
+                </div>
+                <div class="img-home">
+                    <img src="img/home_img.png" alt="food" class="food-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--########## Recettes ##########-->
+    <section class="recipes-container" id="recipes">
+        <h1>Recettes</h1>
+
+        <!-- Les recettes ommnivores -->
+        <div class="container">
+            <h2>Omnivores</h2>
+            <div class="row" id="recipes-omnivores">
+                <!-- Les recettes seront affichées ici -->
+            </div>
+        </div>
+
+        <!-- Les recettes végétariennes -->
+        <div class="container">
+            <h2>Végétariens</h2>
+            <div class="row" id="recipes-vegetariens">
+                <!-- Les recettes seront affichées ici -->
+            </div>
+        
+        <!-- Les recettes végétariennes -->
+        <div class="container">
+            <h2>Vegans</h2>
+            <div class="row" id="recipes-vegans">
+                <!-- Les recettes seront affichées ici -->
+        </div>
+    </section>
+    
+    <div class="recipe-card hide">
+        <div class="cross"></div>
+    </div>
+
+<!--     <section class="contact-container" id="contact">
+        <div class="container">
+        <h1>Contact</h1>
+
+        </div>
+    </section> -->
+</body>
+</html>
