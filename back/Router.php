@@ -44,15 +44,16 @@ class Router // directs requests to the correct controllers.
 		header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
 		foreach ($this->routes as $route) {
-			
 			if ($route['method'] === $method && $route['path'] === $path && preg_match($route['regex'], $path, $matches)) {
 				// Extract named parameters
 				$query = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
+		
 				// if query not empty, parse it
 				$params = [];
 				if ($query) {
 					parse_str($query, $params);
 				}
+				
 				// Call handler with extracted params
 				call_user_func($route['handler'], $params);
 				return;
@@ -64,8 +65,4 @@ class Router // directs requests to the correct controllers.
 		http_response_code(404);
 		echo json_encode(['error' => 'Route not found']);
 	}
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> a97f7fa80101df03303315531d0bebc017351cd8
