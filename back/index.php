@@ -30,9 +30,13 @@ $router->register('POST', '/auth/register', [$authController, 'handleRegister'])
 
 
 // RECIPE ROUTES
+<<<<<<< HEAD
 $router->register('GET', '/recipe', [$recipeController, 'handleSearchRecipe']);
 //$router->register('GET', '/recipe/{recipe_id}', [$recipeController, 'handleConsultRecipe']);
 
+=======
+$router->register('GET', '/recipe', [$recipeController, 'handleGetAllRecipes']);
+>>>>>>> a97f7fa80101df03303315531d0bebc017351cd8
 // $router->register('POST', '/recipe/photo', [$recipeController, 'handlePostPhotoRecipe']);
 $router->register('POST', '/recipe/propose', [$recipeController, 'handleProposeRecipe']);
 // $router->register('PUT', '/recipe/{recipe_id}', [$recipeController, 'handleModifyRecipe']);
@@ -46,9 +50,3 @@ $router->register('POST', '/recipe/propose', [$recipeController, 'handleProposeR
 
 
 $router->handleRequest();
-
-
-
-?>
-
-

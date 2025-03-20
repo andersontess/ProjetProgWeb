@@ -64,4 +64,8 @@ class Router // directs requests to the correct controllers.
 		http_response_code(404);
 		echo json_encode(['error' => 'Route not found']);
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> a97f7fa80101df03303315531d0bebc017351cd8
