@@ -130,7 +130,7 @@ form {
 /****************************/
 /***    Form - Button     ***/
 /****************************/
-.form-container button{
+.form-container #btnCreateAccount{
     width: 100%;
     height: 45px;
     background: #ffc6c3;

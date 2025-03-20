@@ -16,17 +16,31 @@ const webServerAddress = "http://localhost:8080";
 
 
 
-const form2 = document.getElementById("connexion");
+const formConnexion = document.getElementById("connexion");
 
-if (form2) {
+if (formConnexion) {
 	// Trigger the getComments function when the form is submitted
-	form2.addEventListener("submit", async (event) => {
+	formConnexion.addEventListener("submit", async (event) => {
 	// Prevent the default form submission (page reload)
 	event.preventDefault();
-	const client = await connexion(event);
+	await connexion(event);
 	event.target.reset();
 });
 }
+
+const formCreationCompte = document.getElementById("creationCompte");
+
+if (formCreationCompte) {
+	// Trigger the getComments function when the form is submitted
+	formCreationCompte.addEventListener("submit", async (event) => {
+	// Prevent the default form submission (page reload)
+	event.preventDefault();
+	await creationCompte(event);
+	event.target.reset();
+});
+}
+
+
 
 
 // const button = document.getElementById("get-comments");
@@ -188,5 +202,40 @@ async function connexion(event) {
         }
     } catch (error) {
         console.error("Erreur lors de la connexion:", error);
+    }
+}
+
+
+
+async function creationCompte(event) {
+    const body = new URLSearchParams(new FormData(event.target));
+
+    console.log("Données envoyées:", body.toString());
+
+    try {
+        console.log("Envoi de la requête à:", `${webServerAddress}/auth/register`);
+        const response = await fetch(`${webServerAddress}/auth/register`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body,
+        });
+
+        console.log("Statut de la réponse HTTP:", response.status);
+        const text = await response.text(); // Lire la réponse en texte brut
+        console.log("Réponse brute du serveur:", text); // Debug
+
+        if (response.ok) {
+            const result = JSON.parse(text);
+            console.log("Création de compte réussie:", result);
+            window.location.href = result.redirect; // Redirection vers index.html
+
+            return result;
+        } else {
+            console.error("Échec de la création de compte:", response.status, response.statusText);
+        }
+    } catch (error) {
+        console.error("Erreur lors de la création de compte:", error);
     }
 }

@@ -58,7 +58,7 @@ form {
     border: #fece00 1px solid;
 }
 
-.form-container button{
+.form-container .inputConnexion {
     width: 100%;
     height: 45px;
     background: #fece00;

@@ -12,7 +12,7 @@ session_start(); // Start the session
 
 
 $router = new Router();
-$authController = new AuthController(__DIR__);
+$authController = new AuthController(__DIR__ . '/data/users.json');
 $commentController = new CommentController(__DIR__ . '/data/comments.json', $authController);
 $recipeController = new RecipeController(__DIR__ . '/data/recipes.json', $authController);
 

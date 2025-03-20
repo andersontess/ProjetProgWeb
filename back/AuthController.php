@@ -25,6 +25,7 @@ class AuthController
 
 		$email = $_POST['email'];
 		$password = $_POST['password'];
+		$role = $_POST['role'];
 
 
 		// 3. Validate the email and password
@@ -43,7 +44,9 @@ class AuthController
 			return;
     	}
 
-		// a l'inscription, l'utilisateur est cuisinier par defaut
+		// role
+
+		
 
 		// 4. Check if the email is already registered
 
@@ -63,7 +66,7 @@ class AuthController
 		// 6. Save the user data to the file\
 
 
-		$users[$email] = ["password" => $password, "role" => "cuisinier"];
+		$users[$email] = ["password" => $password, "role" => $role];
 		file_put_contents($this->filePath, json_encode($users, JSON_PRETTY_PRINT));
 
 
@@ -112,11 +115,19 @@ class AuthController
 
 		// 4. Check if the user exists and the password is correct
 		$users = $this->getAllUsers();
-		if (!isset($users[$email])) {
-			http_response_code(400);
-			echo json_encode(['error' => 'Email is not Registered']);
-			return;
+		print_r($users);
+
+		foreach ($users as $user) {
+			if (!($user['email'] == $email)) {
+				http_response_code(400);
+				echo json_encode(['error' => 'Email is not Registered']);
+				return;
+			} else {
+				echo "yesssssss";
+			}
 		}
+		
+		
 
 		// 5. Store the user session
 		// 6. Return a success message with HTTP status code 200
