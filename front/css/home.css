@@ -341,7 +341,6 @@ section{
     box-shadow: 0px 0px 8px -1px #555;
 }
       
-
 /*************************************/
 /***     Contact - Principal       ***/
 /*************************************/
@@ -351,8 +350,11 @@ section{
 }
 
 .contact-container .container h1{
-    width: 700px;
     font-family: 'Fredoka One', sans-serif;
     font-size: 60px;
     font-weight: 400;
+}
+
+.contact-container .container p{
+    width: 550px;
 }

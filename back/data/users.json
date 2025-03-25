@@ -1,8 +1,12 @@
-[
-    {
+{
+    "0": {
         "email": "tessbanderson@gmail.com",
         "password": "$2y$12$9m6I97B6V7yjMG0X.1\/GNOmCRVNyROmtqggNTBO.7z.0Il2lyp.pW",
         "role": "chef"
+    },
+    "cuisinier@gmail.com": {
+        "username": "cuisinier",
+        "password": "$2y$10$kJL83Aq6BeU9jeEuV9iPSOAtbn9.IzvBChyDsbnfmWj9jbR2sEfIe",
+        "role": "cuisinier"
     }
-
-]
+}

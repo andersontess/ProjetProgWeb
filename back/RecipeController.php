@@ -44,7 +44,17 @@ class RecipeController {
 
 		$jsonData = file_get_contents($this->filePath);
 		$recipes = json_decode($jsonData, true);
+	}
 
+	public function getVeganRecipes() : array{
+		$jsonData = $this-> getAllRecipes();
 
+		$veganRecipes = array_filter($jsonData, function($recipe){
+			return in_array('Vegan', $recipe('Without'));
+		});
+
+		http_response_code(200);
+		header('Content-Type: application/json');
+		return $veganRecipes;
 	}
 }

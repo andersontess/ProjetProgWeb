@@ -8,9 +8,6 @@
     <!-- Feuilles de style CSS et icône -->
     <link rel="stylesheet" href="css/formLogin.css">
     <link rel="icon" href="img/Logo-Page.png">
-
-    
-
 </head>
 
 <body>
@@ -21,7 +18,7 @@
             <div class="img-group">
                 <img src="img/formLogin.jpg" alt="form">
                 
-                <a href="home.html">
+                <a href="index.html">
                     <div class="back-container">
                         <img src="img/Back_Arrow.png" alt="">
                         <span>Retour</span>
@@ -34,14 +31,17 @@
                 <h1>Connexion</h1>
 
                 <!-- Elements du formulaire -->
-                <input id="email" type="text" name="email" placeholder="Nom d'utilisateur" required/>
+                <input id="email" type="text" name="email" placeholder="Email" required/>
                 <input id="password" type="password"  name="password" placeholder="Mot de passe" required/>
+
+                <!--Button-->
                 <input class="inputConnexion" type="submit" value="Se connecter"/>
-                <p>Vous n'avez pas de compte ? <a href="formCreate.php">Créer un compte</a></p>
+                <p>Vous n'avez pas de compte ? <a href="creerCompte.html">Créer un compte</a></p>
             </form>
         </div>
     </div>
-</body>
 
-<script src="script.js" ></script> 
+    <!-- Appel du fichier JS-->
+    <script src="script.js" ></script> 
+</body>
 </html>

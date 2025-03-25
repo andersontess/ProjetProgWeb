@@ -22,11 +22,10 @@ class AuthController
 
 
 		// 2. Get the email and password from the POST data
-
+		$username = $_POST['username'];
 		$email = $_POST['email'];
 		$password = $_POST['password'];
 		$role = $_POST['role'];
-
 
 		// 3. Validate the email and password
 
@@ -43,46 +42,36 @@ class AuthController
 			echo json_encode(['error' => 'Invalid Password']);
 			return;
     	}
-
-		// role
-
-		
-
-		// 4. Check if the email is already registered
-
+	
+		// 4. Check if the email and username is already registered
 		$users = $this->getAllUsers();
 		if (isset($users[$email])) {
 			http_response_code(400);
 			echo json_encode(['error' => 'Email Already Registered']);
 			return;
+		}else if(isset($users[$username])){
+			http_response_code(400);
+			echo json_encode(['error' => 'Username Already Registered']);
+			return;
 		}
 
-
 		// 5. Hash the password using password_hash
-
 		$password = password_hash($password, PASSWORD_DEFAULT);
 
-
 		// 6. Save the user data to the file\
-
-
-		$users[$email] = ["password" => $password, "role" => $role];
+		$users[$email] = ["username" => $username,"password" => $password, "role" => $role];
 		file_put_contents($this->filePath, json_encode($users, JSON_PRETTY_PRINT));
 
 
-
-		// 7. Return a success message with HTTP status code 201
-
+		// 7. Return a success message with HTTP status code 201 and the redirect
+		echo json_encode(['redirect'=>"login.html"]);
 		http_response_code(201);
-
+		
 		// If any error occurs, return an error message with the appropriate HTTP status code
 		// Make sure to set the Content-Type header to 'application/json' in the response
 		// You can use the json_encode function to encode an array as JSON
 		// You can use the http_response_code function to set the HTTP status code
 	}
-
-
-
 
 	// TODO: Implement the handleLogin method
 	public function handleLogin(): void
@@ -115,22 +104,27 @@ class AuthController
 
 		// 4. Check if the user exists and the password is correct
 		$users = $this->getAllUsers();
-		print_r($users);
-
-		foreach ($users as $user) {
-			if (!($user['email'] == $email)) {
-				http_response_code(400);
-				echo json_encode(['error' => 'Email is not Registered']);
-				return;
-			} else {
-				echo "yesssssss";
-			}
+		if (!(isset($users[$email]))){
+			http_response_code(400);
+			echo json_encode(['error' => 'Email is not Registered']);
+			return;
 		}
-		
-		
+
+		if (!password_verify($password, $users[$email]["password"])){
+			http_response_code(400);
+			echo json_encode(['error' => 'Incorrect password']);
+			return;
+		}
 
 		// 5. Store the user session
+		session_start();
+		$_SESSION['username'] = $users[$email]["username"];
+		$_SESSION['role'] = $users[$email]["role"];
+
 		// 6. Return a success message with HTTP status code 200
+		echo json_encode(['redirect'=>"index.html"]);
+		http_response_code(200);
+
 		// Additional hints:
 		// If any error occurs, return an error message with the appropriate HTTP status code
 		// Make sure to set the Content-Type header to 'application/json' in the response
