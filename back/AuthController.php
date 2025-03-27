@@ -117,7 +117,7 @@ class AuthController
 		}
 
 		// 5. Store the user session
-		session_start();
+
 		$_SESSION['username'] = $users[$email]["username"];
 		$_SESSION['role'] = $users[$email]["role"];
 
@@ -137,12 +137,13 @@ class AuthController
 
 	public function handleLogout(): void
 	{
-		session_destroy(); // Clear session
+		$_SESSION = [];
+    	session_destroy();
+    	
 		http_response_code(200);
-		echo json_encode(['message' => 'Logged out successfully']);
 	}
 
-	public function validateAuth(): ?string
+	public function validateAuth(): string
 	{
 		return $_SESSION['user'] ?? null;
 	}

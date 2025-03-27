@@ -1,3 +1,5 @@
+"use strict"
+
 // Description: This file contains the JavaScript code for the front-end of the application.
 
 const webServerAddress = "http://localhost:8080";
@@ -38,6 +40,17 @@ if (formConnexion) {
         event.target.reset();
     });
 }
+
+
+var email = document.getElementById("email");
+
+email.addEventListener("keyup", function (event) {
+  if (email.validity.typeMismatch) {
+    email.setCustomValidity("L'email est invalide");
+  } else {
+    email.setCustomValidity("");
+  }
+});
 
 // const button = document.getElementById("get-comments");
 // // Trigger the getComments function when the button is clicked
@@ -181,21 +194,25 @@ async function creationCompte(event) {
             },
             body,
         });
-
         console.log("Statut de la réponse HTTP:", response.status);
         const text = await response.text(); // Lire la réponse en texte brut
+        
         console.log("Réponse brute du serveur:", text); // Debug
+        
 
         if (response.ok) {
             const result = JSON.parse(text);
             console.log("Création de compte réussie:", result);
+            alert("Création de compte réussie");
             window.location.href = result.redirect; // Redirection vers index.html
 
             return result;
         } else {
+            alert("Password is invalid");
             console.error("Échec de la création de compte:", response.status, response.statusText);
         }
     } catch (error) {
+        alert("Compte n'a pas pu etre cree");
         console.error("Erreur lors de la création de compte:", error);
     }
 }
@@ -222,6 +239,7 @@ async function connexion(event) {
         if (response.ok) {
             const result = JSON.parse(text);
             console.log("Connexion réussie:", result);
+            localStorage.setItem("isAuth", "true");
             window.location.href = result.redirect; // Redirection vers index.html
 
             return result;
@@ -230,5 +248,14 @@ async function connexion(event) {
         }
     } catch (error) {
         console.error("Erreur lors de la connexion:", error);
+    }
+}
+
+
+function userRegistration() {
+    const isConnected = Boolean(localStorage.getItem("isAuth"));
+    if (isConnected) {
+        document.getElementsByClassName("navbar");
+        // create children in nav bar in index.html
     }
 }

@@ -1,12 +1,29 @@
 {
-    "0": {
-        "email": "tessbanderson@gmail.com",
-        "password": "$2y$12$9m6I97B6V7yjMG0X.1\/GNOmCRVNyROmtqggNTBO.7z.0Il2lyp.pW",
-        "role": "chef"
-    },
     "cuisinier@gmail.com": {
+        "user_id": "356b6b1f-c4b7-470f-9898-c5a11d2927d6",
         "username": "cuisinier",
         "password": "$2y$10$kJL83Aq6BeU9jeEuV9iPSOAtbn9.IzvBChyDsbnfmWj9jbR2sEfIe",
+        "role": "cuisinier"
+    },
+    "tessbanderson@gmail.com": {
+        "user_id": "65152ea1-9bc1-4022-96dd-f00f6f00ce86",
+        "username": null,
+        "password": "$2y$12$FweIdjjRcFJWVJ3OE3mas.4B.VbKnwJW0CpygalxRTjChzJij1UEq",
+        "role": null
+    },
+    "chef@gmail.com": {
+        "username": "chef_tess01",
+        "password": "$2y$12$i2lI0RG6nkjCLW7W0c7j9.jxm1z6K.ZHaA4VoyFTaxfgab88CBtRO",
+        "role": "cuisinier"
+    },
+    "test@test.com": {
+        "username": "test",
+        "password": "$2y$12$qgs0ny21W3yurU2uXfZba.YsnNo\/G9wv6c1\/qnCML0RSn.yIc3jTG",
+        "role": "cuisinier"
+    },
+    "test1@test.com": {
+        "username": "test1",
+        "password": "$2y$12$tigkj.IpCfqDlubeCyG4QeA7rd1zg02Ahzj55jMaz1pOPaImbyZ76",
         "role": "cuisinier"
     }
 }
