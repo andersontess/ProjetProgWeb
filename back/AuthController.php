@@ -117,7 +117,7 @@ class AuthController
 		}
 
 		// 5. Store the user session
-
+		session_start();
 		$_SESSION['username'] = $users[$email]["username"];
 		$_SESSION['role'] = $users[$email]["role"];
 
@@ -136,11 +136,13 @@ class AuthController
 	}
 
 	public function handleLogout(): void
-	{
+	{	
 		$_SESSION = [];
     	session_destroy();
     	
+		echo json_encode(['redirect'=>'index.html']);
 		http_response_code(200);
+		
 	}
 
 	public function validateAuth(): string
@@ -151,5 +153,18 @@ class AuthController
 	private function getAllUsers(): array
 	{
 		return file_exists($this->filePath) ? json_decode(file_get_contents($this->filePath), true) ?? [] : [];
+	}
+
+	public function isConnected(): void
+	{
+		$response = ["isAuthenticated" => true];
+
+		if (!isset($_SESSION['username']))
+		{
+			$response["isAuthenticated"] = false;
+		}
+
+		echo json_encode($response);
+		http_response_code(200);
 	}
 }

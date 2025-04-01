@@ -41,16 +41,34 @@ if (formConnexion) {
     });
 }
 
+//Pour le formulaire de deconnexion
+const formDeconnexion = document.getElementById("form-deconnexion");
+if (formDeconnexion){
+    formDeconnexion.addEventListener("submit", async(event)=>{
+        event.preventDefault();
+        await deconnexion(event);
+        event.target.reset();
+    });
+}
 
-var email = document.getElementById("email");
+//Lance toutes les scripts utiles lors du chargement de la page
+document.addEventListener("DOMContentLoaded", () =>{
+    checkAuthStatus();
+    displayOmnivoresRecipe();
+    displayVegetariensRecipe();
+    displayVeganRecipes();
+});
+
+/* var email = document.getElementById("email");
 
 email.addEventListener("keyup", function (event) {
   if (email.validity.typeMismatch) {
     email.setCustomValidity("L'email est invalide");
   } else {
     email.setCustomValidity("");
-  }
-});
+  } 
+});*/
+
 
 // const button = document.getElementById("get-comments");
 // // Trigger the getComments function when the button is clicked
@@ -72,7 +90,7 @@ email.addEventListener("keyup", function (event) {
 //  * @param {SubmitEvent} event The event that triggered the function
 //  * @returns {Object} The result of the form submission
 //  */
-// async function sendComment(event) {
+//  async function sendComment(event) {
 // 	const body = new URLSearchParams(new FormData(event.target));
 
 // 	try {
@@ -181,6 +199,9 @@ email.addEventListener("keyup", function (event) {
 // 	}
 // }
 
+/***************************/
+/** Pour les utilisateurs **/
+/***************************/
 async function creationCompte(event) {
     const body = new URLSearchParams(new FormData(event.target));
 
@@ -251,11 +272,182 @@ async function connexion(event) {
     }
 }
 
+async function deconnexion(event){
+    const body = new URLSearchParams(new FormData(event.target));
+    console.log("Données envoyées:", body.toString());
+
+    try{
+        console.log("Envoi de la requête à: ", `${webServerAddress}/auth/logout`);
+        const response = await fetch(`${webServerAddress}/auth/logout`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded", 
+            },
+            body,
+        });
+
+        console.log("Statut de la réponse HTTP:", response.status);
+        const text = await response.text();
+        console.log("Réponse brute du serveur",text);
+
+        if(response.ok) {
+            const result = JSON.parse(text);
+            console.log("Déconnexion réussie:", result);
+            localStorage.setItem("isAuth", "false");
+            window.location.href = result.redirect;
+
+            return result;
+        } else {
+            console.error("Échec de la déconnexion:", response.status, response.statusText);
+        }
+    } catch (error) {
+        console.error("Erreur lors de la déconnexion:", error);
+    }
+}
 
 function userRegistration() {
     const isConnected = Boolean(localStorage.getItem("isAuth"));
     if (isConnected) {
         document.getElementsByClassName("navbar");
         // create children in nav bar in index.html
+    }
+}
+
+/***********************/
+/** Pour les recettes **/
+/***********************/
+async function displayOmnivoresRecipe() {
+    try {
+        console.log("Envoi de la requête à: ", `${webServerAddress}/recipe/omnivoresRecipes`);
+
+        // Envoi de la requête GET avec fetch() et récupération de la réponse
+        const response = await fetch(`${webServerAddress}/recipe/omnivoresRecipes`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+            }
+        });
+
+        // Afficher le statut de la réponse
+        console.log("Statut de la réponse HTTP:", response.status);
+
+        // Vérifier si la réponse est correcte (statut 200)
+        if (response.ok) {
+            const result = await response.json(); // Parse la réponse JSON
+            console.log("Recettes omnivores récupérés:", result);  // Affiche les recettes véganes
+            for(let i = 0; i < result.length; i++){
+                $("#recipes-omnivores").append('<div class="recipe" data-id="'+result[i].id+'" onclick="showRecipe(this)"><img src="'+result[i].imageURL+'" alt="food" class="food-image"><h2>'+result[i].nameFR+'</h2></div>');
+            }
+        } else {
+            console.error("Échec de la requête:", response.status, response.statusText);
+        }
+    } catch (error) {
+        console.error("Erreur lors de l'affichage des recettes omnivores:", error);
+    }
+}
+
+async function displayVegetariensRecipe() {
+    try {
+        console.log("Envoi de la requête à: ", `${webServerAddress}/recipe/vegeRecipes`);
+
+        // Envoi de la requête GET avec fetch() et récupération de la réponse
+        const response = await fetch(`${webServerAddress}/recipe/vegeRecipes`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+            }
+        });
+
+        // Afficher le statut de la réponse
+        console.log("Statut de la réponse HTTP:", response.status);
+
+        // Vérifier si la réponse est correcte (statut 200)
+        if (response.ok) {
+            const result = await response.json(); // Parse la réponse JSON
+            console.log("Recettes omnivores récupérés:", result);  // Affiche les recettes véganes
+            for(let i = 0; i < result.length; i++){
+                $("#recipes-vegetariens").append('<div class="recipe" data-id="'+result[i].id+'" onclick="showRecipe(this)"><img src="'+result[i].imageURL+'" alt="food" class="food-image"><h2>'+result[i].nameFR+'</h2></div>');
+            }
+        } else {
+            console.error("Échec de la requête:", response.status, response.statusText);
+        }
+    } catch (error) {
+        console.error("Erreur lors de l'affichage des recettes omnivores:", error);
+    }
+}
+
+async function displayVeganRecipes() {
+    try {
+        console.log("Envoi de la requête à: ", `${webServerAddress}/recipe/veganRecipes`);
+
+        // Envoi de la requête GET avec fetch() et récupération de la réponse
+        const response = await fetch(`${webServerAddress}/recipe/veganRecipes`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+            }
+        });
+
+        // Afficher le statut de la réponse
+        console.log("Statut de la réponse HTTP:", response.status);
+
+        // Vérifier si la réponse est correcte (statut 200)
+        if (response.ok) {
+            const result = await response.json(); // Parse la réponse JSON
+            console.log("Recettes véganes récupérés:", result);  // Affiche les recettes véganes
+            for(let i = 0; i < result.length; i++){
+                $("#recipes-vegans").append('<div class="recipe" data-id="'+result[i].id+'" onclick="showRecipe(this)"><img src="'+result[i].imageURL+'" alt="food" class="food-image"><h2>'+result[i].nameFR+'</h2></div>');
+            }
+        } else {
+            console.error("Échec de la requête:", response.status, response.statusText);
+        }
+    } catch (error) {
+        console.error("Erreur lors de l'affichage des recettes véganes:", error);
+    }
+}
+
+async function showRecipe(obj){
+    //const recipeId = encodeURIComponent(obj.getAttribute("value"));
+    
+    const recipeId = obj.getAttribute("data-id").trim();
+    console.log("Envoi de la requête à: ", `${webServerAddress}/recipe/${recipeId}`);
+    
+    // Envoi de la requête GET avec fetch() et récupération de la réponse
+     const response = await fetch(`${webServerAddress}/recipe/${recipeId}`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",  // Assurez-vous que le serveur attend du JSON
+        }
+    });
+    
+    console.log("Réponse du serveur:", response.status);
+
+/*     // Vérifier si la réponse est OK et récupérer les données
+    if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+    } else {
+        console.error("Erreur lors de la récupération des données", response.status);
+    } */
+}
+
+
+/**************************/
+/** Pour les utilisateur **/
+/**************************/
+async function checkAuthStatus(){
+    try{
+        console.log("Envoi de la requête à: ", `${webServerAddress}/auth/connected`);
+
+        // Envoi de la requête GET avec fetch() et récupération de la réponse
+        const response = await fetch(`${webServerAddress}/auth/connected`, {
+            method: "POST",
+        });
+
+        // Afficher le statut de la réponse
+        console.log("Valeur de la connexion :", response.status);
+
+    }  catch (error) {
+        console.error("Erreur de la vérification de connexion:", error);
     }
 }

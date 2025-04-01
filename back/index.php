@@ -20,7 +20,7 @@ $recipeController = new RecipeController(__DIR__ . '/data/recipes.json', $authCo
 $router->register('POST', '/auth/login', [$authController, 'handleLogin']);
 $router->register('POST', '/auth/logout', [$authController, 'handleLogout']);
 $router->register('POST', '/auth/register', [$authController, 'handleRegister']);
-
+$router->register('POST', '/auth/connected', [$authController, 'isConnected']);
 
 // COMMENT ROUTES
 // $router->register('POST', '/comment/{recipe_id}', [$commentController, 'handlePostCommentRequest']); // F
@@ -32,6 +32,9 @@ $router->register('POST', '/auth/register', [$authController, 'handleRegister'])
 // RECIPE ROUTES
 $router->register('GET', '/recipe', [$recipeController, 'handleSearchRecipe']);
 $router->register('GET', '/recipe/{recipe_id}', [$recipeController, 'handleConsultRecipe']);
+$router->register('GET', '/recipe/omnivoresRecipes', [$recipeController, 'getOmnivoresRecipes']);
+$router->register('GET', '/recipe/vegeRecipes', [$recipeController, 'getVegetarianRecipes']);
+$router->register('GET', '/recipe/veganRecipes', [$recipeController, 'getVeganRecipes']);
 
 // $router->register('POST', '/recipe/photo', [$recipeController, 'handlePostPhotoRecipe']);
 // $router->register('POST', '/recipe/propose', [$recipeController, 'handleProposeRecipe']);
@@ -46,7 +49,6 @@ $router->register('GET', '/recipe/{recipe_id}', [$recipeController, 'handleConsu
 
 
 $router->handleRequest();
-
 
 
 ?>
