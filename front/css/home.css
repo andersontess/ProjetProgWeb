@@ -57,13 +57,7 @@ section{
     background: transparent;
 }
 
-.logo{
-    font-size: 32px;
-    color: #fff;
-    font-weight: 700;
-}
-
-.navbar a{
+.navbar a {
     position: relative;
     font-size: 18px;
     color: #fff;
@@ -87,6 +81,16 @@ section{
     width: 100%;
 }
 
+.navbar form .inputDeconnexion {
+    background: transparent;
+    border: none;
+    position: relative;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    cursor: pointer;
+}
 /**********************************/
 /***     Contenu - Accueil      ***/
 /**********************************/
@@ -96,9 +100,6 @@ section{
     height: 90%;
     position: relative;
     background: linear-gradient(#46bd37,#003000);
-    /* background-color: rgb(202, 74, 65); */
-    /* background-color: #46bd37;*/
-    /* background: linear-gradient(#46bd37,#005800);*/
 }
 
 .descrtiption-home{
@@ -127,11 +128,13 @@ section{
 }
 
 .descrtiption-home p{
-    /*font-family: 'Fredoka One', sans-serif;*/
     font-size: 20px;
     line-height: 30px;
 }
 
+.header img{
+    width: 93px;
+}
 /************************************/
 /***      Accueil - Buttons       ***/
 /************************************/
@@ -340,7 +343,15 @@ section{
     background: #fff;
     box-shadow: 0px 0px 8px -1px #555;
 }
-      
+
+/*Button "voir plus"*/
+.recipe-card .btn-voirplus{
+    background: linear-gradient(to left,#2e7724, #003000);
+    padding: 10px 20px;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+}
 /*************************************/
 /***     Contact - Principal       ***/
 /*************************************/

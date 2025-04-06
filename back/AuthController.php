@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 class AuthController
 {
@@ -117,7 +118,7 @@ class AuthController
 		}
 
 		// 5. Store the user session
-
+		$_SESSION['id'] = $users[$email]["id"];
 		$_SESSION['username'] = $users[$email]["username"];
 		$_SESSION['role'] = $users[$email]["role"];
 
@@ -136,11 +137,13 @@ class AuthController
 	}
 
 	public function handleLogout(): void
-	{
+	{	
 		$_SESSION = [];
     	session_destroy();
     	
+		echo json_encode(['redirect'=>'index.html']);
 		http_response_code(200);
+		
 	}
 
 	public function validateAuth(): string
@@ -152,4 +155,6 @@ class AuthController
 	{
 		return file_exists($this->filePath) ? json_decode(file_get_contents($this->filePath), true) ?? [] : [];
 	}
+
+
 }

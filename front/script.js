@@ -41,16 +41,67 @@ if (formConnexion) {
     });
 }
 
+//Pour le bouton fermer des recettes
+const btnCloseRecipe = document.getElementById("btn-close");
+if (btnCloseRecipe){
+    btnCloseRecipe.addEventListener("click", function(){
+        $(".recipe-card").addClass("hide"); //JQuery
+    });
+}
 
-var email = document.getElementById("email");
+//Lance toutes les scripts utiles lors du chargement d'une page
+const recipeContainer = document.getElementById("recipes");
+const navbar = document.getElementById("user-navbar");
+document.addEventListener("DOMContentLoaded", () =>{
+    if (navbar){
+        userRegistration();
+
+        //Pour le formulaire de deconnexion (Il doit être ici car le formulaire est créée dans userRegistration)
+        const formDeconnexion = document.getElementById("form-deconnexion");
+        if (formDeconnexion){
+            formDeconnexion.addEventListener("submit", async(event)=>{
+                event.preventDefault();
+                await deconnexion(event);
+                event.target.reset();
+            });
+        }
+
+        //Pour le formulaire d'un commentaire
+        const formComment = document.getElementById("form-comment");
+        if (formComment){
+            formComment.addEventListener("submit", async(event)=>{
+                event.preventDefault();
+                await addComment(event);
+                event.target.reset();
+            });
+        }
+    }
+    
+    //Pour la page index.html
+    if (recipeContainer){
+        displayOmnivoresRecipe();
+        displayVegetariensRecipe();
+        displayVeganRecipes();
+    }
+
+    //Pour la page recipe.html
+    const container = document.getElementById("info-recipe");
+    if (container){
+        consultRecipe();
+        showComments();
+    }
+});
+
+/* var email = document.getElementById("email");
 
 email.addEventListener("keyup", function (event) {
   if (email.validity.typeMismatch) {
     email.setCustomValidity("L'email est invalide");
   } else {
     email.setCustomValidity("");
-  }
-});
+  } 
+});*/
+
 
 // const button = document.getElementById("get-comments");
 // // Trigger the getComments function when the button is clicked
@@ -72,7 +123,7 @@ email.addEventListener("keyup", function (event) {
 //  * @param {SubmitEvent} event The event that triggered the function
 //  * @returns {Object} The result of the form submission
 //  */
-// async function sendComment(event) {
+//  async function sendComment(event) {
 // 	const body = new URLSearchParams(new FormData(event.target));
 
 // 	try {
@@ -181,6 +232,9 @@ email.addEventListener("keyup", function (event) {
 // 	}
 // }
 
+/***************************/
+/** Pour les utilisateurs **/
+/***************************/
 async function creationCompte(event) {
     const body = new URLSearchParams(new FormData(event.target));
 
@@ -239,7 +293,7 @@ async function connexion(event) {
         if (response.ok) {
             const result = JSON.parse(text);
             console.log("Connexion réussie:", result);
-            localStorage.setItem("isAuth", "true");
+            localStorage.setItem("isAuth", true);
             window.location.href = result.redirect; // Redirection vers index.html
 
             return result;
@@ -251,11 +305,419 @@ async function connexion(event) {
     }
 }
 
+async function deconnexion(event){
+    const body = new URLSearchParams(new FormData(event.target));
+    console.log("Données envoyées:", body.toString());
+
+    try{
+        console.log("Envoi de la requête à: ", `${webServerAddress}/auth/logout`);
+        const response = await fetch(`${webServerAddress}/auth/logout`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded", 
+            },
+            body,
+        });
+
+        console.log("Statut de la réponse HTTP:", response.status);
+        const text = await response.text();
+        console.log("Réponse brute du serveur",text);
+
+        if(response.ok) {
+            const result = JSON.parse(text);
+            console.log("Déconnexion réussie:", result);
+            localStorage.setItem("isAuth", false);
+            window.location.href = result.redirect;
+
+            return result;
+        } else {
+            console.error("Échec de la déconnexion:", response.status, response.statusText);
+        }
+    } catch (error) {
+        console.error("Erreur lors de la déconnexion:", error);
+    }
+}
 
 function userRegistration() {
-    const isConnected = Boolean(localStorage.getItem("isAuth"));
-    if (isConnected) {
-        document.getElementsByClassName("navbar");
-        // create children in nav bar in index.html
+    const isConnected = localStorage.getItem("isAuth");
+    const navbar = document.getElementById("user-navbar");
+    const formComment = document.getElementById("form-comment");
+    
+    console.log("IsConnected : ", isConnected);
+    
+    //L'utilisateur est connecté
+    if (isConnected === "true"){
+        //Bouton de déconnexion
+        $("#user-navbar").append('<form id="form-deconnexion"><input class="inputDeconnexion" type="submit" value="Déconnexion"/></form>');
+
+        if (formComment){
+            $("#form-comment").before("<h5>Give your opinion / Donner votre avis</h5>");
+            $("#input-firstname").append("<input type='text' name='firstname' placeholder='Firstname/Prenom' required/>");
+            $("#input-lastname").append("<input type='text' name='lastname' placeholder='Lastname/Nom' required/>");
+            $("#txtArea-message").append("<textarea id='message' name='message' rows='5' cols='33'></textarea>");
+            $("#txtArea-message").after("<input class='btn btn-primary' type='submit' value='Envoyer'/>");
+        }
+    }
+
+    //L'utilisateur est déconnecté
+    if (localStorage.getItem("isAuth" === null) || isConnected === "false") {
+        const a1 = document.createElement("a");
+        a1.href = "login.html"; 
+        a1.textContent = "Connexion";
+    
+        const a2 = document.createElement("a");
+        a2.href = "creerCompte.html"; 
+        a2.textContent = "Créer un compte"; 
+    
+        navbar.appendChild(a1);
+        navbar.appendChild(a2);
+    }                
+}
+
+async function addComment(event) {
+    const recipeId = JSON.parse(localStorage.getItem("data")).id;
+    const body = new URLSearchParams(new FormData(event.target));
+    body.append("idrecipe", recipeId);
+
+    console.log("Données envoyées:", body.toString());
+    try {
+        console.log("Envoi de la requête à:", `${webServerAddress}/comment/${recipeId}`);
+        const response = await fetch(`${webServerAddress}/comment/${recipeId}`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body,
+        });
+        console.log("Statut de la réponse HTTP:", response.status);
+        const text = await response.text(); // Lire la réponse en texte brut
+        console.log("Réponse brute du serveur:", text); // Debug
+        
+
+        if (response.ok) {
+            const result = JSON.parse(text);
+            console.log("Création du commentaire réussie:", result);
+            //window.location.reload();
+
+            return result;
+        } else {
+            alert("Password is invalid");
+            console.error("Échec de la création du commentaire:", response.status, response.statusText);
+        }
+    } catch (error) {
+        alert("Le commentaire n'a pas pu être créé");
+        console.error("Erreur lors de la création du commentaire:", error);
+    }
+}
+
+/***********************/
+/** Pour les recettes **/
+/***********************/
+async function displayOmnivoresRecipe() {
+    try {
+        console.log("Envoi de la requête à: ", `${webServerAddress}/recipe/omnivoresRecipes`);
+
+        // Envoi de la requête GET avec fetch() et récupération de la réponse
+        const response = await fetch(`${webServerAddress}/recipe/omnivoresRecipes`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+            }
+        });
+
+        // Afficher le statut de la réponse
+        console.log("Statut de la réponse HTTP:", response.status);
+
+        // Vérifier si la réponse est correcte (statut 200)
+        if (response.ok) {
+            const result = await response.json(); // Parse la réponse JSON
+            console.log("Recettes omnivores récupérés:", result);  // Affiche les recettes véganes
+            for(let i = 0; i < result.length; i++){
+                $("#recipes-omnivores").append('<div class="recipe" data-id="'+result[i].id+'" onclick="showRecipe(this)"><img src="'+result[i].imageURL+'" alt="food" class="food-image"><h2>'+result[i].nameFR+'</h2></div>');
+            }
+        } else {
+            console.error("Échec de la requête:", response.status, response.statusText);
+        }
+    } catch (error) {
+        console.error("Erreur lors de l'affichage des recettes omnivores:", error);
+    }
+}
+
+async function displayVegetariensRecipe() {
+    try {
+        console.log("Envoi de la requête à: ", `${webServerAddress}/recipe/vegeRecipes`);
+
+        // Envoi de la requête GET avec fetch() et récupération de la réponse
+        const response = await fetch(`${webServerAddress}/recipe/vegeRecipes`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+            }
+        });
+
+        // Afficher le statut de la réponse
+        console.log("Statut de la réponse HTTP:", response.status);
+
+        // Vérifier si la réponse est correcte (statut 200)
+        if (response.ok) {
+            const result = await response.json(); // Parse la réponse JSON
+            console.log("Recettes omnivores récupérés:", result);  // Affiche les recettes véganes
+            for(let i = 0; i < result.length; i++){
+                $("#recipes-vegetariens").append('<div class="recipe" data-id="'+result[i].id+'" onclick="showRecipe(this)"><img src="'+result[i].imageURL+'" alt="food" class="food-image"><h2>'+result[i].nameFR+'</h2></div>');
+            }
+        } else {
+            console.error("Échec de la requête:", response.status, response.statusText);
+        }
+    } catch (error) {
+        console.error("Erreur lors de l'affichage des recettes omnivores:", error);
+    }
+}
+
+async function displayVeganRecipes() {
+    try {
+        console.log("Envoi de la requête à: ", `${webServerAddress}/recipe/veganRecipes`);
+
+        // Envoi de la requête GET avec fetch() et récupération de la réponse
+        const response = await fetch(`${webServerAddress}/recipe/veganRecipes`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+            }
+        });
+
+        // Afficher le statut de la réponse
+        console.log("Statut de la réponse HTTP:", response.status);
+
+        // Vérifier si la réponse est correcte (statut 200)
+        if (response.ok) {
+            const result = await response.json(); // Parse la réponse JSON
+            console.log("Recettes véganes récupérés:", result);  // Affiche les recettes véganes
+            for(let i = 0; i < result.length; i++){
+                $("#recipes-vegans").append('<div class="recipe" data-id="'+result[i].id+'" onclick="showRecipe(this)"><img src="'+result[i].imageURL+'" alt="food" class="food-image"><h2>'+result[i].nameFR+'</h2></div>');
+            }
+        } else {
+            console.error("Échec de la requête:", response.status, response.statusText);
+        }
+    } catch (error) {
+        console.error("Erreur lors de l'affichage des recettes véganes:", error);
+    }
+}
+
+async function showRecipe(obj){
+    //const recipeId = encodeURIComponent(obj.getAttribute("value"));
+    
+    const recipeId = obj.getAttribute("data-id").trim();
+    console.log("Envoi de la requête à: ", `${webServerAddress}/recipe/${recipeId}`);
+    
+    // Envoi de la requête GET avec fetch() et récupération de la réponse
+     const response = await fetch(`${webServerAddress}/recipe/${recipeId}`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",  // Assurez-vous que le serveur attend du JSON
+        }
+    });
+    
+    console.log("Réponse du serveur:", response.status);
+
+    // Vérifier si la réponse est OK et récupérer les données
+    if (response.ok) {
+        const data = await response.json();
+        $(".recipe-card").removeClass("hide");
+        $(".names").remove();
+        $(".ingredient-container").remove();
+        $(".toRecipe").remove();
+        $(".btn-voirplus").remove();
+
+        //Pour les noms et l'image
+        let $names = $("<div class='names'>");
+        let $nameReceipe = $("<div class='nameRecipe'>");
+        let $nameAuthor = $("<div class='nameAuthor'>");
+        //Pour la liste des ingrédients
+        let $containerIng = $("<div class='ingredient-container'>");
+        let $flexIngredients = $("<div class='flex-Ingredients'>");
+        
+        //Nom de la receitte
+        $nameReceipe.append(data.nameFR);
+        $names.append($nameReceipe);
+        //Nom de l'auteur de la recette
+        $nameAuthor.append(data.Author);
+        $names.append($nameAuthor);
+        //Image de la recette
+        $names.append("<img src='"+data.imageURL+"' alt='food' class='food-image'>");
+        //Liste des ingrédients
+        $containerIng.append("<h2>Ingredients : </h2>");
+        $containerIng.append($flexIngredients);
+        
+        if (data.ingredientsFR != null){
+            for (let ingredient of data.ingredientsFR){
+                let $ingredient = $("<div class='ingredient'>");
+                let $img_card = $("<div class='img-card'>");
+        
+                $ingredient.append($img_card);
+                $img_card.append("<img src='"+ingredient.imageIng+"' alt='Ing' class='Ing-image'>");
+        
+                
+                $ingredient.append("<span class='quantity'>"+ingredient.quantity+"</span>");
+                $ingredient.append("<span class='name'>de "+ingredient.name+"</span>");
+        
+                $flexIngredients.append($ingredient);
+            }
+        }else {
+            for (let ingredient of data.ingredients){
+                let $ingredient = $("<div class='ingredient'>");
+                let $img_card = $("<div class='img-card'>");
+        
+                $ingredient.append($img_card);
+                $img_card.append("<img src='"+ingredient.imageIng+"' alt='Ing' class='Ing-image'>");
+        
+                
+                $ingredient.append("<span class='quantity'>"+ingredient.quantity+"</span>");
+                $ingredient.append("<span class='name'>of "+ingredient.name+"</span>");
+        
+                $flexIngredients.append($ingredient);
+            }
+        }
+        
+        $(".recipe-card").append($names);
+        $(".recipe-card").append($containerIng);
+        $(".recipe-card").append("<div onclick='sendToPageRecipe()'><span class='btn-voirplus'>Voir plus</span></div>");
+        localStorage.setItem("data", JSON.stringify(data)); //On save au cas où l'utilisateur voudrait regarder plus    
+    } else {
+        console.error("Erreur lors de la récupération des données", response.status);
+    }
+}
+
+async function sendToPageRecipe(){
+    window.location.href="recipe.html";
+}
+
+async function consultRecipe(){
+    const dataString = localStorage.getItem("data");
+    const data = JSON.parse(dataString);
+
+    //On vérifie si la langue français est disponible
+    if (data["nameFR"] == null || data["ingredientsFR"] == null || data["descriptionFR"] == null){
+        $(".main-info-recipe").after("<div class='alert-lg col-1'>Cette recette n'est pas traduite entièrement en Français.</div>")
+        
+        //En-tête
+        $("#recipe-name").append(data["name"]);
+        $("#auteur").append(data["Author"]);
+        $("#duree").append(formatTime(data["timers"]));
+
+        //Box de gauche
+        if (data["Without"] != null)
+        {
+            for(let sans of data["Without"])
+            {
+                $("#without").append(sans +", ");
+            }
+        }
+        $("#description").append(data["description"]);
+        $("#img-recipe").append("<img src="+data["imageURL"]+" alt=img-"+data["name"]+">");
+        
+        //Box de droit
+        for (let ingredient of data["ingredients"]){
+            $("#list-ingredients").append(
+                "<div class='p-2 border rounded'>"+
+                    "<span>"+ingredient["name"]+"</span>"+
+                    "<img src="+ingredient["imageIng"]+" alt=img-"+ingredient["name"]+">"+
+                    "<p>"+ingredient["quantity"]+"</p>"+
+                "</div>");
+        }
+
+        let index = 1;
+        for (let etape of data["steps"]){
+            $("#list-preparation").append(
+                "<div class='p-2 border rounded'>"+
+                    "<span>"+index+". "+etape+"</span>"+
+                "</div>");
+                index++;
+        }
+    }else {
+        //En-tête
+        $("#recipe-name").append(data["nameFR"]);
+        $("#auteur").append(data["Author"]);
+        $("#duree").append(formatTime(data["timers"]));
+
+        //Box de gauche
+        if (data["Without"] != null)
+        {
+            for(let sans of data["Without"])
+            {
+                $("#without").append(sans +", ");
+            }
+        }
+        $("#description").append(data["descriptionFR"]);
+        $("#img-recipe").append("<img src="+data["imageURL"]+" alt=img-"+data["name"]+">");
+        
+        //Box de droit
+        for (let ingredient of data["ingredientsFR"]){
+            $("#list-ingredients").append(
+                "<div class='p-2 border rounded'>"+
+                    "<span>"+ingredient["name"]+"</span>"+
+                    "<img src="+ingredient["imageIng"]+" alt=img-"+ingredient["name"]+">"+
+                    "<p>"+ingredient["quantity"]+"</p>"+
+                "</div>");
+        }
+
+        let index = 1;
+        for (let etape of data["setpsFR"]){
+            $("#list-preparation").append(
+                "<div class='p-2 border rounded'>"+
+                    "<span>"+index+". "+etape+"</span>"+
+                "</div>");
+                index++;
+        }
+    }  
+}
+
+function formatTime(timers){
+    if (timers == null){ return "-"; }
+
+    const minutesTotal = timers.reduce((tempsTotal, valeurCourante)=> tempsTotal + valeurCourante,0);
+    const heures = Math.floor(minutesTotal / 60);
+    const minutes = minutesTotal % 60;
+
+    //On gère l'affichage
+    if (heures === 0)
+        return `${minutes}min`;
+    if (minutes === 0)
+        return `${heures}h00`;
+    return `${heures}h${minutes}`;
+}
+
+async function showComments(){
+    const recipeId = JSON.parse(localStorage.getItem("data")).id;
+
+    try {
+        console.log("Envoi de la requête à:", `${webServerAddress}/comment/${recipeId}`);
+        const response = await fetch(`${webServerAddress}/comment/${recipeId}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+
+        console.log("Statut de la réponse HTTP:", response.status);
+        const text = await response.text(); // Lire la réponse en texte brut
+        console.log("Réponse brute du serveur:", text); // Debug
+        
+
+        if (response.ok) {
+            const commentaires = JSON.parse(text);
+            /*Affichage des commentaires*/
+            if (commentaires[recipeId] === undefined){
+                return;
+            };
+
+            for (let i=0; i< commentaires[recipeId].length; i++){
+                $("#commentaires").append("<div class='col-12 col-md-6 border rounded'>"+commentaires[recipeId][i].message+"</div>");
+            }
+        } else {
+            alert("Comment is invalid");
+            console.error("Échec de l'affichage des commentaires:", response.status, response.statusText);
+        }
+    } catch (error) {
+        console.error("Erreur lors de la récupération des commentaires", error);
     }
 }

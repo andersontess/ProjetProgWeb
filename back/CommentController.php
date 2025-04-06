@@ -11,6 +11,17 @@ class CommentController // manages comments and likes.
 		$this->authController = $authController;
 	}
 
+	// Retrieves all comments from the file
+	private function getAllComments(): array
+	{
+		if (!file_exists($this->filePath)) {
+			return [];
+		}
+
+		$content = file_get_contents($this->filePath);
+		return json_decode($content, true) ?? [];
+	}
+
 	// Handles the POST /comment route
 	public function handlePostCommentRequest(): void
 	{
@@ -22,6 +33,7 @@ class CommentController // manages comments and likes.
 		}
 
 		// Validate and sanitize form data
+		$idrecipe = filter_input(INPUT_POST, 'idrecipe', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 		$firstname = filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 		$lastname = filter_input(INPUT_POST, 'lastname', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 		$message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -41,7 +53,7 @@ class CommentController // manages comments and likes.
 		];
 
 		// Save the comment
-		$this->saveComment($newComment);
+		$this->saveComment($idrecipe, $newComment);
 
 		// Return the updated list of comments
 		http_response_code(200);
@@ -50,23 +62,18 @@ class CommentController // manages comments and likes.
 	}
 
 	// Saves a new comment to the file
-	private function saveComment(array $comment): void
+	private function saveComment(string $recipeId,array $comment): void
 	{
 		$comments = $this->getAllComments();
-		$comments[] = $comment;
+		
+		//S'il y a pas de commentaikre (ici d'id) on crée un tableau
+		if(!isset($comments[$recipeId])){
+			$comments[$recipeId] = [];
+		}
+		
+		$comments[$recipeId][] = $comment;
 
 		file_put_contents($this->filePath, json_encode($comments, JSON_PRETTY_PRINT));
-	}
-
-	// Retrieves all comments from the file
-	private function getAllComments(): array
-	{
-		if (!file_exists($this->filePath)) {
-			return [];
-		}
-
-		$content = file_get_contents($this->filePath);
-		return json_decode($content, true) ?? [];
 	}
 
 	public function handleGetCommentsRequest(): void

@@ -13,16 +13,13 @@
 <body>
     <!--########## En-tête ##########-->
     <header class="header">
-        <a href="#" class="logo">UCook</a>
+        <img src="img/logoV2.png" alt="logo">
 
         <nav class="navbar">
             <a href="index.html">Accueil</a>
             <a href="#recipes">Recettes</a>
-            <a href="#contact">Contact</a>
         </nav>
-        <nav class="navbar">
-            <a href="login.html">Connexion</a>
-            <a href="creerCompte.html">Crée un Compte</a>
+        <nav id="user-navbar" class="navbar">
         </nav>
     </header>
 
@@ -37,7 +34,6 @@
 
                     <div class="buttons">
                         <a href="#recipes" class="btn" onclick="">Recettes</a>
-                        <a href="#contact" class="btn" onclick="">Contact</a>
                     </div>
                 </div>
                 <div class="img-home">
@@ -75,10 +71,11 @@
     </section>
     
     <div class="recipe-card hide">
-        <div class="cross"></div>
+        <div id="btn-close" class="cross"></div>
     </div>
     
-    <!-- Appel du fichier JS-->
+    <!-- Appel du fichier JS et JQuery-->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="script.js" ></script> 
 </body>
 </html>

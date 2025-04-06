@@ -8,7 +8,6 @@ require_once 'functions.php';
 
 
 
-session_start(); // Start the session
 
 
 $router = new Router();
@@ -21,16 +20,18 @@ $router->register('POST', '/auth/login', [$authController, 'handleLogin']);
 $router->register('POST', '/auth/logout', [$authController, 'handleLogout']);
 $router->register('POST', '/auth/register', [$authController, 'handleRegister']);
 
-
 // COMMENT ROUTES
-// $router->register('POST', '/comment/{recipe_id}', [$commentController, 'handlePostCommentRequest']); // F
-// $router->register('GET', '/comment/{recipe_id}', [$commentController, 'handleGetCommentsRequest']); // F
+$router->register('POST', '/comment/{recipe_id}', [$commentController, 'handlePostCommentRequest']);
+$router->register('GET', '/comment/{recipe_id}', [$commentController, 'handleGetCommentsRequest']);
 // $router->register('DELETE', '/comment/{recipe_id}', [$commentController, 'handleDeleteCommentRequest']);
 // $router->register('POST', '/comment/{recipe_id}/like', [$commentController, 'handleLikeComment']);
 
 
 // RECIPE ROUTES
 $router->register('GET', '/recipe', [$recipeController, 'handleSearchRecipe']);
+$router->register('GET', '/recipe/omnivoresRecipes', [$recipeController, 'getOmnivoresRecipes']);
+$router->register('GET', '/recipe/vegeRecipes', [$recipeController, 'getVegetarianRecipes']);
+$router->register('GET', '/recipe/veganRecipes', [$recipeController, 'getVeganRecipes']);
 $router->register('GET', '/recipe/{recipe_id}', [$recipeController, 'handleConsultRecipe']);
 
 // $router->register('POST', '/recipe/photo', [$recipeController, 'handlePostPhotoRecipe']);
@@ -46,7 +47,6 @@ $router->register('GET', '/recipe/{recipe_id}', [$recipeController, 'handleConsu
 
 
 $router->handleRequest();
-
 
 
 ?>
