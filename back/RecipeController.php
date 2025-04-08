@@ -23,7 +23,6 @@ class RecipeController {
 
 	public function handleSearchRecipe(array $params)
 	{
-		echo "On rentre dans SearchRecipe ";
 		$jsonData = $this->getAllRecipes();
 		$search = $params['search'] ?? null;
 		if ($search) {

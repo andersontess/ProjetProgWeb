@@ -710,8 +710,14 @@ async function showComments(){
                 return;
             };
 
+            console.log("Nb commentaires :", commentaires[recipeId].length);
+
             for (let i=0; i< commentaires[recipeId].length; i++){
-                $("#commentaires").append("<div class='col-12 col-md-6 border rounded'>"+commentaires[recipeId][i].message+"</div>");
+                let time = new Date(commentaires[recipeId][i].timestamp);
+                const date = time.toISOString().split("T")[0];
+                const heure = time.toISOString().split("T")[1].split('.')[0];
+                $("#commentaires").append("<div class='block-comment"+i+" col-md-6 mb-4'><div class='fw-bold'>"+commentaires[recipeId][i].firstname+" "+commentaires[recipeId][i].lastname+ " " + date + " à " + heure +"</div>");
+                $(".block-comment"+i+"").append("<div class='border rounded p-1'>"+commentaires[recipeId][i].message+"</div>");
             }
         } else {
             alert("Comment is invalid");

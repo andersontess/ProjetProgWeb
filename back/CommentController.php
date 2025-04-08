@@ -38,7 +38,7 @@ class CommentController // manages comments and likes.
 		$lastname = filter_input(INPUT_POST, 'lastname', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 		$message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-		if (!$firstname || !$lastname || !$message) {
+		if (!$idrecipe || $firstname || !$lastname || !$message) {
 			http_response_code(400);
 			echo json_encode(['error' => 'Missing required fields. Fields' . $firstname . $lastname . $message]);
 			return;

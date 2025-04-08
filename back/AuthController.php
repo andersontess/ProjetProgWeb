@@ -10,7 +10,6 @@ class AuthController
 		$this->filePath = $filePath;
 	}
 
-	// TODO: Implement the handleRegister method
 	public function handleRegister(): void
 	{		
 		// Hints:
@@ -74,7 +73,6 @@ class AuthController
 		// You can use the http_response_code function to set the HTTP status code
 	}
 
-	// TODO: Implement the handleLogin method
 	public function handleLogin(): void
 	{
 		// Hints:
