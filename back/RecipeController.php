@@ -21,18 +21,24 @@ class RecipeController {
 		return is_array($recipes) ? $recipes : [];
 	}
 
-	public function handleSearchRecipe(array $params)
+	public function handleSearchRecipe(array $params = []) // make param optional
 	{
-		$jsonData = $this->getAllRecipes();
-		$search = $params['search'] ?? null;
-		if ($search) {
-			$jsonData = array_filter($jsonData, function ($recipe) use ($search) {
-				return strpos(strtolower($recipe['name']), strtolower($search)) !== false;
-			});
-		}
-		http_response_code(200);
-		header('Content-Type: application/json');
-		echo json_encode($jsonData);
+    if (empty($params)) {
+        $params = $_GET; // fallback to query string
+    }
+
+    $jsonData = $this->getAllRecipes();
+    $search = $params['search'] ?? null;
+
+    if ($search) {
+        $jsonData = array_filter($jsonData, function ($recipe) use ($search) {
+            return strpos(strtolower($recipe['name']), strtolower($search)) !== false;
+        });
+    }
+
+    http_response_code(200);
+    header('Content-Type: application/json');
+    echo json_encode($jsonData);
 	}
 
 	// Handles clicking on a recipe to consult it

@@ -91,6 +91,51 @@ section{
     margin-left: 40px;
     cursor: pointer;
 }
+
+.searchbar {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+    margin-left: 400px;
+    margin-top: -50px;
+    width: 100%;
+    max-width: 600px;
+    padding: 10px 20px;
+}
+
+.searchbar input {
+    width: 100%;
+    padding: 14px 20px;
+    padding-left: 45px; /* space for icon */
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    border: 2px solid #7b9972;
+    border-radius: 30px;
+    outline: none;
+    background-color: #fefae0;
+    color: #003000;
+    box-shadow: 0 2px 10px rgba(0, 48, 0, 0.1);
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.searchbar input:focus {
+    border-color: #2e7724;
+    box-shadow: 0 0 12px rgba(46, 119, 36, 0.4);
+}
+
+.searchbar::before {
+    content: "🔍";
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #003000;
+    pointer-events: none;
+}
+
 /**********************************/
 /***     Contenu - Accueil      ***/
 /**********************************/
@@ -102,7 +147,7 @@ section{
     background: linear-gradient(#46bd37,#003000);
 }
 
-.descrtiption-home{
+.description-home{
     flex: 0 0 60%;
     max-width: 60%;
     color: #fff;
@@ -117,17 +162,17 @@ section{
     width: 120%;
 }
 
-.descrtiption-home h1{
+.description-home h1{
     font-size: 60px;
     font-weight: 700;
     margin-bottom: 20px;
 }
 
-.descrtiption-home h1 span{
+.description-home h1 span{
     color: #005800;
 }
 
-.descrtiption-home p{
+.description-home p{
     font-size: 20px;
     line-height: 30px;
 }
@@ -138,11 +183,11 @@ section{
 /************************************/
 /***      Accueil - Buttons       ***/
 /************************************/
-.descrtiption-home .buttons{
+.description-home .buttons{
     margin-top: 80px;
 }
 
-.descrtiption-home .buttons .btn{
+.description-home .buttons .btn{
     margin-right: 30px;
     font-size: 16px;
     font-weight: 500;
@@ -154,7 +199,7 @@ section{
     transition: all 0.3s ease;
 }
 
-.descrtiption-home .buttons .btn:hover{
+.description-home .buttons .btn:hover{
     transform: scale(1.1);
 }
 

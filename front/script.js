@@ -17,6 +17,8 @@ const webServerAddress = "http://localhost:8080";
 // }
 
 
+
+
 // Pour le formulaire de création de compte
 const formCreationCompte = document.getElementById("creationCompte");
 if (formCreationCompte) {
@@ -92,6 +94,29 @@ document.addEventListener("DOMContentLoaded", () =>{
     }
 });
 
+
+const searchInput = document.getElementById("searchedRecipe");
+document.addEventListener("DOMContentLoaded", () =>{
+    if (searchInput) {
+        searchInput.addEventListener("input", async () => {
+            const searchTerm = searchInput.value.trim();
+            if (searchTerm.length > 1) {
+                const recipes = await searchRecipes(searchTerm);
+                displaySearchResults(recipes);
+            } else {
+                // Optional: reset to default recipes when input is empty
+                clearSearchResults();
+                displayOmnivoresRecipe();
+                displayVegetariensRecipe();
+                displayVeganRecipes();
+            }
+        });
+    }
+});
+
+
+
+
 /* var email = document.getElementById("email");
 
 email.addEventListener("keyup", function (event) {
@@ -110,13 +135,6 @@ email.addEventListener("keyup", function (event) {
 // 	await displayComments(comments);
 // });
 
-
-// const search = document.getElementById("get-recipes");
-// // Trigger the getRecipes function when the button is clicked
-// button.addEventListener("click", async () => {
-// 	const recipes = await getRecipes();
-// 	await displayRecipes(recipes);
-// });
 
 // /**
 //  * This function sends a POST request to the server with the form data to add a new comment.
@@ -200,37 +218,6 @@ email.addEventListener("keyup", function (event) {
 // 	// - element.innerHTML
 // }
 
-
-// async function getRecipes() {
-// 	const searchedRecipe = document.getElementById("searchedRecipe").value;
-// 	console.log("Texte recherché: ", searchedRecipe); 
-//     try {
-// 		// Send a POST request to the server with the form data
-// 		const response = await fetch(`${webServerAddress}/recipe/?search=`+searchedRecipe, {
-// 			method: "GET",
-// 			headers: {
-// 				"Content-Type": "application/x-www-form-urlencoded",
-// 			},
-// 			// Serialize the form data to URL-encoded format
-// 			body,
-// 		});
-
-// 		if (response.ok) {
-// 			// If the request was successful, log the result
-// 			const result = await response.json();
-// 			console.log("Form submitted successfully:", result);
-// 			return result;
-// 		} else {
-// 			console.error(
-// 				"Form submission failed:",
-// 				response.status,
-// 				response.statusText
-// 			);
-// 		}
-// 	} catch (error) {
-// 		console.error("Error occurred:", error);
-// 	}
-// }
 
 /***************************/
 /** Pour les utilisateurs **/
@@ -323,11 +310,11 @@ async function deconnexion(event){
         const text = await response.text();
         console.log("Réponse brute du serveur",text);
 
-        if(response.ok) {
+        if (response.ok) {
             const result = JSON.parse(text);
             console.log("Déconnexion réussie:", result);
             localStorage.setItem("isAuth", false);
-            window.location.href = result.redirect;
+            window.location.href = result.redirect; // redirection vers login.html
 
             return result;
         } else {
@@ -491,8 +478,8 @@ async function displayVeganRecipes() {
         // Vérifier si la réponse est correcte (statut 200)
         if (response.ok) {
             const result = await response.json(); // Parse la réponse JSON
-            console.log("Recettes véganes récupérés:", result);  // Affiche les recettes véganes
-            for(let i = 0; i < result.length; i++){
+            console.log("Recettes véganes récupérées:", result);  // Affiche les recettes véganes
+            for (let i = 0; i < result.length; i++) {
                 $("#recipes-vegans").append('<div class="recipe" data-id="'+result[i].id+'" onclick="showRecipe(this)"><img src="'+result[i].imageURL+'" alt="food" class="food-image"><h2>'+result[i].nameFR+'</h2></div>');
             }
         } else {
@@ -727,3 +714,52 @@ async function showComments(){
         console.error("Erreur lors de la récupération des commentaires", error);
     }
 }
+
+
+async function searchRecipes(query) {
+    try {
+        const response = await fetch(`${webServerAddress}/recipe?search=${encodeURIComponent(query)}`);
+        const rawText = await response.text(); // lire d'abord en texte brut
+        console.log("Texte brut reçu du serveur:", rawText);
+
+        const result = JSON.parse(rawText);
+        console.log("Objet JSON parsé:", result);
+
+        return result;
+    } catch (error) {
+        console.error("Erreur lors de la recherche de recettes:", error);
+        return [];
+    }
+}
+
+
+function displaySearchResults(recipes) {
+    // Clear all three containers for clean search results
+    $("#recipes-omnivores").empty();
+    $("#recipes-vegetariens").empty();
+    $("#recipes-vegans").empty();
+
+    if (recipes.length === 0) {
+        $("#recipes-omnivores").append("<p>Aucune recette trouvée.</p>");
+        return;
+    }
+
+    for (let recipe of recipes) {
+        const recipeCard = `
+            <div class="recipe" data-id="${recipe.id}" onclick="showRecipe(this)">
+                <img src="${recipe.imageURL}" alt="food" class="food-image">
+                <h2>${recipe.nameFR || recipe.name}</h2>
+            </div>
+        `;
+        $("#recipes-omnivores").append(recipeCard);
+    }
+}
+
+function clearSearchResults() {
+    $("#recipes-omnivores").empty();
+    $("#recipes-vegetariens").empty();
+    $("#recipes-vegans").empty();
+}
+
+
+

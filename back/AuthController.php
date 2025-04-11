@@ -139,7 +139,7 @@ class AuthController
 		$_SESSION = [];
     	session_destroy();
     	
-		echo json_encode(['redirect'=>'index.html']);
+		echo json_encode(['redirect'=>'login.html']);
 		http_response_code(200);
 		
 	}
