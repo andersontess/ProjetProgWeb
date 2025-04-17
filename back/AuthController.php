@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 class AuthController
 {
@@ -10,6 +9,19 @@ class AuthController
 		$this->filePath = $filePath;
 	}
 
+	public function generateUuid(): string
+	{
+		//sprintf : retourne une chaîne formatée
+		//mt_rand : génère une valeur aléatoire
+		return sprintf('%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
+			mt_rand(0, 0xffff), mt_rand(0, 0xffff),
+			mt_rand(0, 0xffff),
+			mt_rand(0, 0x0fff) | 0x4000, // version 4
+			mt_rand(0, 0x3fff) | 0x8000, // variant
+			mt_rand(0, 0xffff), mt_rand(0, 0xffff), mt_rand(0, 0xffff)
+		);
+	}
+	
 	public function handleRegister(): void
 	{		
 		// Hints:
@@ -22,6 +34,7 @@ class AuthController
 
 
 		// 2. Get the email and password from the POST data
+		$id = $this->generateUuid();
 		$username = $_POST['username'];
 		$email = $_POST['email'];
 		$password = $_POST['password'];
@@ -59,7 +72,7 @@ class AuthController
 		$password = password_hash($password, PASSWORD_DEFAULT);
 
 		// 6. Save the user data to the file\
-		$users[$email] = ["username" => $username,"password" => $password, "role" => $role];
+		$users[$email] = ["id"=> $id, "username" => $username,"password" => $password, "role" => $role];
 		file_put_contents($this->filePath, json_encode($users, JSON_PRETTY_PRINT));
 
 
@@ -148,11 +161,14 @@ class AuthController
 	{
 		return $_SESSION['user'] ?? null;
 	}
+	
+	public function getIdUser(): void
+	{
+		echo json_encode($_SESSION['id'] ?? null);
+	}
 
 	private function getAllUsers(): array
 	{
 		return file_exists($this->filePath) ? json_decode(file_get_contents($this->filePath), true) ?? [] : [];
 	}
-
-
 }

@@ -22,14 +22,16 @@
         "password": "$2y$12$i2lI0RG6nkjCLW7W0c7j9.jxm1z6K.ZHaA4VoyFTaxfgab88CBtRO",
         "role": "cuisinier"
     },
-    "test@test.com": {
-        "username": "test",
-        "password": "$2y$12$qgs0ny21W3yurU2uXfZba.YsnNo\/G9wv6c1\/qnCML0RSn.yIc3jTG",
+    "test@gmail.com": {
+        "id": "b997b216-2ba5-440c-860e-1c1bb2848142",
+        "username": "testeur1",
+        "password": "$2y$10$vFDenfR9RGQyzmfyu54vqOY1KVoNugO7E4a5r.Pbd49J.dpNdCKr.",
         "role": "cuisinier"
     },
-    "test1@test.com": {
-        "username": "test1",
-        "password": "$2y$12$tigkj.IpCfqDlubeCyG4QeA7rd1zg02Ahzj55jMaz1pOPaImbyZ76",
+    "maxime11@gmail.com": {
+        "id": "a658ea8f-1725-4bc4-afbb-c9fd6b0fd5c1",
+        "username": "maxime11",
+        "password": "$2y$10$lXs5tE9jtJP1Lb8yNo1wIOL.6X.baGPQYNw0EzHM56L4phM4H3fXa",
         "role": "cuisinier"
     }
 }

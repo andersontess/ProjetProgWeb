@@ -1,0 +1,131 @@
+/*********************/
+/***    Général    ***/
+/*********************/
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    height: 100vh;
+    background : #f3f3f3;
+}
+
+.main-container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/******************************/
+/***      Form - Général    ***/
+/******************************/
+.form-container{
+    display: flex;
+    align-items: center;
+    border: 1px solid #dddcdc;
+    border-radius: 25px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+}
+
+form {
+    padding: 10px;
+}
+
+/*******************************/
+/***      Form - Elements    ***/
+/*******************************/
+.form-container h1{
+    text-align: center;
+    color: #fece00;
+}
+
+.form-container input{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: #dddcdc 1px solid;
+    border-radius: 50px;
+}
+
+.form-container input:focus{
+    outline: none;
+    border: #fece00 1px solid;
+}
+
+.form-container .inputConnexion {
+    width: 100%;
+    height: 45px;
+    background: #fece00;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.form-container p{
+    text-align: center;
+    margin : 20px 0 15px;
+}
+
+.form-container p a{
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.form-container .msg_error{
+    font-weight: 600;
+    color: rgb(216, 0, 0);
+}
+/*********************/
+/***     Image     ***/
+/*********************/
+.form-container img{
+    padding: 10px 10px;
+    width: 100%;
+    max-width: 700px;
+    border-radius: 25px;
+}
+
+/***************************/
+/***    Retour Arrière   ***/
+/***************************/
+.img-group {
+    position: relative;
+}
+
+.back-container{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 105px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    border-radius: 25px;
+    color: #fff;
+    background-color: #fece00;    
+}
+
+.back-container img{
+    width: 40px;
+    margin: 5px 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.back-container span{
+    position: relative;
+    left: -5px;
+}
+

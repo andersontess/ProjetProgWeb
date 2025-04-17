@@ -38,14 +38,15 @@ class CommentController // manages comments and likes.
 		$lastname = filter_input(INPUT_POST, 'lastname', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 		$message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-		if (!$idrecipe || $firstname || !$lastname || !$message) {
+		if (!$idrecipe || !$firstname || !$lastname || !$message) {
 			http_response_code(400);
-			echo json_encode(['error' => 'Missing required fields. Fields' . $firstname . $lastname . $message]);
+			echo json_encode(['error' => 'Missing required fields. Fields' .$idrecipe . $firstname . $lastname . $message]);
 			return;
 		}
 
 		// Create a new comment
 		$newComment = [
+			'id_user' => $_SESSION['id'],
 			'firstname' => $firstname,
 			'lastname' => $lastname,
 			'message' => $message,
@@ -84,6 +85,43 @@ class CommentController // manages comments and likes.
 	}
 
 	public function handleDeleteCommentRequest(): void
+	{
+		//On récupère l'ID de la recette 
+		$uri = $_SERVER['REQUEST_URI'];
+		$scinde = explode("/", $uri);
+		$recipeId = end($scinde);
+
+		//On récupère le timestamp
+		$rawData = file_get_contents("php://input");
+		$data = json_decode($rawData, true);
+		$timestamp = $data['timestamp'] ?? null;
+
+
+		//On récupère tout les commentaires
+		$comments = $this->getAllComments();
+
+		//Il n'existe pas de commentaire pour l'id envoyer
+		if(!isset($comments[$recipeId])){
+			http_response_code(400);
+			echo json_encode(['error' => 'Recipe ID doesn\'t exist']);
+			return;
+		}
+
+		$comments[$recipeId] = array_filter($comments[$recipeId], function($comment) use ($timestamp) {
+            return $comment['timestamp'] !== $timestamp;  // Si le timestamp ne correspond pas, garder le commentaire
+        });
+
+		// Réindexer les commentaires (array_filter enlève les index numériques)
+		$comments[$recipeId] = array_values($comments[$recipeId]);
+
+
+		file_put_contents($this->filePath, json_encode($comments, JSON_PRETTY_PRINT));
+	
+		http_response_code(200);
+		echo json_encode(['message' => 'Comment deleted '.$timestamp]);
+	}
+
+	public function handleDeleteAllCommentRequest(): void
 	{
 		$email = $this->authController->validateAuth();
 		if (!$email) {

@@ -1,12 +1,12 @@
 <?php
+session_start();
 
 require_once 'Router.php';
 require_once 'RecipeController.php';
 require_once 'CommentController.php';
 require_once 'AuthController.php';
 require_once 'functions.php';
-
-
+ 
 
 
 
@@ -19,11 +19,12 @@ $recipeController = new RecipeController(__DIR__ . '/data/recipes.json', $authCo
 $router->register('POST', '/auth/login', [$authController, 'handleLogin']);
 $router->register('POST', '/auth/logout', [$authController, 'handleLogout']);
 $router->register('POST', '/auth/register', [$authController, 'handleRegister']);
+$router->register('POST', '/auth/userId', [$authController, 'getIdUser']);
 
 // COMMENT ROUTES
 $router->register('POST', '/comment/{recipe_id}', [$commentController, 'handlePostCommentRequest']);
 $router->register('GET', '/comment/{recipe_id}', [$commentController, 'handleGetCommentsRequest']);
-// $router->register('DELETE', '/comment/{recipe_id}', [$commentController, 'handleDeleteCommentRequest']);
+$router->register('DELETE', '/comment/{recipe_id}', [$commentController, 'handleDeleteCommentRequest']);
 // $router->register('POST', '/comment/{recipe_id}/like', [$commentController, 'handleLikeComment']);
 
 

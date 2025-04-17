@@ -4,6 +4,7 @@
     "name": "Chicken curry",
     "nameFR": "Poulet au curry",
     "Author": "Unknown",
+    "Auteur": "Inconnu",
     "Without": ["NoGluten","Omnivore"],
     "description": "A delicious chicken curry, a classic of Indian cuisine.",
     "descriptionFR": "Un délicieux poulet au curry, un classique de la cuisine indienne.",
@@ -148,7 +149,7 @@
       "Mélanger les pâtes avec la sauce."
     ],
     "timers" : [5,5,0,0],
-    "imageURL": "img/recipe/pates_carbonara.png",
+    "imageURL": "img/recipe/pates_cabonara.png",
     "originalURL": "#"
   },
   {
@@ -458,7 +459,7 @@
     "name": "Curried Lentils and Rice",
     "nameFR": "Lentilles et Riz au curry",
     "Author": "Unknown",
-    "Without": ["NoGluten","NoMilk", "Vegan"],
+    "Without": ["NoGluten","NoMilk"],
     "ingredients": [
       {
         "quantity": "1 quart",

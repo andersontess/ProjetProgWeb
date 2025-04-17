@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UCook</title>
+
+    <!-- Feuilles de style CSS et icône -->
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/styleSearchBar.css">
+    <link rel="icon" href="img/Logo-Page.png">
+</head>
+<body>
+    <!--########## En-tête ##########-->
+    <header class="header">
+        <img src="img/logoV2.png" alt="logo">
+
+        <nav id="user-navbar" class="navbar">
+        </nav>
+    </header>
+
+    <!--########## Accueil ##########-->
+    <section class="home-container">
+        <div class="container">
+            <div class="row">
+                <div class="descrtiption-home">
+                    <h1>Bienvenue sur <span>VOTRE</span> site de recettes</h1>
+                    <p>Vous trouverez ici des recettes de cuisine simples et rapides à réaliser.</p>
+                    <p>Vous pouvez également partager vos propres recettes en vous inscrivant sur notre site.</p>
+
+                    <div class="buttons">
+                        <a href="#recipes" class="btn" onclick="">Recettes</a>
+                    </div>
+                </div>
+                <div class="img-home">
+                    <img src="img/home_img.png" alt="food" class="food-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--########## Recettes ##########-->
+    <section class="recipes-container" id="recipes">
+        <h1>Recettes</h1>
+        
+        <div class="search-bar">
+            <input id="searchedRecipe" type="search" name="search" pattern=".*\S.*" required>
+            <button class="search-btn" type="submit"><span>Search</span></button>
+        </div>
+        
+        <!-- Les recettes de la recherche affichés ici-->
+        <div id="container-search" class="container">
+
+        </div>
+
+        <div id="presentation-recipes">
+            <!-- On affiche les recettes ici -->
+        </div>
+    </section>
+    
+    <div class="recipe-card hide">
+        <div id="btn-close" class="cross"></div>
+    </div>
+    
+    <!-- Appel du fichier JS et JQuery-->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="script.js" ></script> 
+</body>
+</html>
