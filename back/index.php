@@ -19,7 +19,7 @@ $recipeController = new RecipeController(__DIR__ . '/data/recipes.json', $authCo
 $router->register('POST', '/auth/login', [$authController, 'handleLogin']);
 $router->register('POST', '/auth/logout', [$authController, 'handleLogout']);
 $router->register('POST', '/auth/register', [$authController, 'handleRegister']);
-$router->register('POST', '/auth/userId', [$authController, 'getIdUser']);
+$router->register('POST', '/auth/userSession', [$authController, 'getSession']);
 
 // COMMENT ROUTES
 $router->register('POST', '/comment/{recipe_id}', [$commentController, 'handlePostCommentRequest']);
@@ -30,10 +30,10 @@ $router->register('DELETE', '/comment/{recipe_id}', [$commentController, 'handle
 
 // RECIPE ROUTES
 $router->register('GET', '/recipe', [$recipeController, 'handleSearchRecipe']);
-$router->register('GET', '/recipe/omnivoresRecipes', [$recipeController, 'getOmnivoresRecipes']);
-$router->register('GET', '/recipe/vegeRecipes', [$recipeController, 'getVegetarianRecipes']);
-$router->register('GET', '/recipe/veganRecipes', [$recipeController, 'getVeganRecipes']);
+$router->register('GET', '/recipe/indexRecipes', [$recipeController, 'getRecipesByType']);
 $router->register('GET', '/recipe/{recipe_id}', [$recipeController, 'handleConsultRecipe']);
+$router->register('POST', '/recipe/translate/{recipe_id}', [$recipeController, 'handleTranslateRecipe']);
+
 
 // $router->register('POST', '/recipe/photo', [$recipeController, 'handlePostPhotoRecipe']);
 // $router->register('POST', '/recipe/propose', [$recipeController, 'handleProposeRecipe']);

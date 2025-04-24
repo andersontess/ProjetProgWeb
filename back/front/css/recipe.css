@@ -6,19 +6,15 @@
 /*********************/
 *{
     margin: 0;
-    padding: 0;
+    /* padding: 0; */
     text-decoration: none;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 } 
 
-html {
-    scroll-behavior: smooth; /*Permet un effet de scroll*/
-}
-
 body{
     min-height: 100vh;
-}  
+} 
 
 /***********************************/
 /***    Classes réutilisables    ***/
@@ -28,18 +24,6 @@ section{
     position: relative;
     margin-top: 89px;
     min-height: 100vh;
-}
-
-.container{
-    max-width: 1200px;
-    width: 100%;
-    margin: auto;
-}
-
-.row{
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
 }
 
 .box {
@@ -126,6 +110,7 @@ section{
     font-weight: 600;
 }
 
+/*Alert*/
 .recipe-container .alert-lg{
     background: #FFDB9B;
     padding: 10px 20px;
@@ -139,10 +124,43 @@ section{
     text-align: center;
 }
 
+.recipe-container .alert-lg button{
+    background: #ffdb9b;
+    border: 3px solid #FFA502;
+    border-radius: 20px;
+    padding: 5px 10px;
+    color: #CE8500;
+    transition: all 0.3s ease;
+}
+
+.recipe-container .alert-lg button:hover{
+    transform: scale(1.1);
+}
+
+/*Select*/
+#lg-select {
+    width: 150px;
+    padding: 3px 5px;
+    background: #f2f2fc;
+    border: none;
+    border-bottom: 1px solid #bbbbbb;
+}
+
+#lg-select:focus {
+    outline: none;
+    border: none;
+    color: #006e00;
+    border-bottom: 1px solid #006e00;
+}
+
+#lg-select option{
+    color : black;
+}
 /*Box de gauche : image, description */
 .recipe-container .left-info{
     text-align: center;
     padding: 10px 30px;
+    /* margin: 0 10px; */
 }
 
 .recipe-container #img-recipe{
@@ -162,6 +180,7 @@ section{
 /*Box de droite :  */
 .recipe-container .right-info{
     padding: 10px 30px;
+    /*margin: 0 10px;*/
 }
 
 .recipe-container .right-info h2{
@@ -203,6 +222,7 @@ section{
 /*****************************/
 .recipe-container .commentaires{
     padding: 10px 30px;
+    width: 100%;
 }
 
 .recipe-container .commentaires h2{
@@ -214,6 +234,7 @@ section{
     font-weight: 500;
     color: #006e00;
 }
+
 /*Formulaire*/
 .recipe-container .commentaires form{
     margin: auto;
@@ -232,6 +253,7 @@ section{
     outline: none;
     border: #005800 2px solid;
 }
+
 .recipe-container .commentaires form textarea{
     width: 100%;
     padding: 10px;

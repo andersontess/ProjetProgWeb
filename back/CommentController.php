@@ -25,14 +25,20 @@ class CommentController // manages comments and likes.
 	// Handles the POST /comment route
 	public function handlePostCommentRequest(): void
 	{
-		// Ensure the correct Content-Type header
-		if ($_SERVER['CONTENT_TYPE'] !== 'application/x-www-form-urlencoded') {
-			http_response_code(400);
-			echo json_encode(['error' => 'Invalid Content-Type header']);
+		if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+			http_response_code(405);
+			echo json_encode(['error' => 'Method Not Allowed']);
 			return;
 		}
 
-		// Validate and sanitize form data
+		// Make sure Content-Type is multipart/form-data to accept images
+		if (strpos($_SERVER['CONTENT_TYPE'], 'multipart/form-data') === false) {
+			http_response_code(400);
+			echo json_encode(['error' => 'Content-Type must be multipart/form-data']);
+			return;
+		}
+
+		// Retrieve form fields
 		$idrecipe = filter_input(INPUT_POST, 'idrecipe', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 		$firstname = filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 		$lastname = filter_input(INPUT_POST, 'lastname', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -40,30 +46,51 @@ class CommentController // manages comments and likes.
 
 		if (!$idrecipe || !$firstname || !$lastname || !$message) {
 			http_response_code(400);
-			echo json_encode(['error' => 'Missing required fields. Fields' .$idrecipe . $firstname . $lastname . $message]);
+			echo json_encode(['error' => 'Missing required fields.']);
 			return;
 		}
 
-		// Create a new comment
+		// Handle optional image upload
+		$imageUrl = null;
+		if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
+			$uploadDir = __DIR__ . '/front/img/comments/';
+			if (!file_exists($uploadDir)) {
+				mkdir($uploadDir, 0777, true); // create directory if not exists
+			}
+
+			$fileTmp = $_FILES['image']['tmp_name'];
+			$fileName = uniqid() . "_" . basename($_FILES['image']['name']);
+			$targetPath = $uploadDir . $fileName;
+
+			if (move_uploaded_file($fileTmp, $targetPath)) {
+				// Image uploaded successfully
+				$imageUrl = "/front/img/comments/" . $fileName;
+			} else {
+				http_response_code(500);
+				echo json_encode(['error' => 'Failed to upload image']);
+				return;
+			}
+		}
+
+		// Create new comment
 		$newComment = [
 			'id_user' => $_SESSION['id'],
 			'firstname' => $firstname,
 			'lastname' => $lastname,
 			'message' => $message,
 			'timestamp' => date('c'),
+			'imageUrl' => $imageUrl
 		];
 
-		// Save the comment
 		$this->saveComment($idrecipe, $newComment);
 
-		// Return the updated list of comments
 		http_response_code(200);
 		header('Content-Type: application/json');
 		echo json_encode($this->getAllComments());
 	}
 
 	// Saves a new comment to the file
-	private function saveComment(string $recipeId,array $comment): void
+	private function saveComment(string $recipeId, array $comment): void
 	{
 		$comments = $this->getAllComments();
 		

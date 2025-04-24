@@ -1,942 +1,1092 @@
 [
-  {
-    "id": "144c33d1-0921-44b0-b7b6-e552c906680d",
-    "name": "Chicken curry",
-    "nameFR": "Poulet au curry",
-    "Author": "Unknown",
-    "Auteur": "Inconnu",
-    "Without": ["NoGluten","Omnivore"],
-    "description": "A delicious chicken curry, a classic of Indian cuisine.",
-    "descriptionFR": "Un délicieux poulet au curry, un classique de la cuisine indienne.",
-    "ingredients":[
-      {
-        "quantity":"500g",
-        "name": "Chicken",
-        "type": "Meat",
-        "imageIng":"img/ingredients/poulet.jpg"
-      },
-      {
-        "quantity":"2 spoons",
-        "name":"Curry",
-        "type": "Spicy",
-        "imageIng":"img/ingredients/curry.jpg"
-      },
-      {
-        "quantity":"20cl",
-        "name":"Sour cream",
-        "type": "Condiments",
-        "imageIng":"img/ingredients/creme-fraiche.webp"
-      },
-      {
-        "quantity":"3",
-        "name":"Chili peppers",
-        "type":"Condiments",
-        "imageIng":"img/ingredients/piments-rouges.webp"
-      }
-    ],
-    "ingredientsFR":[
-      {
-        "quantity":"500g",
-        "name": "Poulet",
-        "type": "Viande",
-        "imageIng":"img/ingredients/poulet.jpg"
-      },
-      {
-        "quantity":"2 cuillères",
-        "name":"Curry",
-        "type": "Piment",
-        "imageIng":"img/ingredients/curry.jpg"
-      },
-      {
-        "quantity":"20cl",
-        "name":"Crème fraîche",
-        "type": "Condiments",
-        "imageIng": "img/ingredients/creme-fraiche.webp"
-      },
-      {
-        "quantity":"3",
-        "name":"Piments",
-        "type":"Condiments",
-        "imageIng":"img/ingredients/piments-rouges.webp"
-      }
-    ],
-    "steps":[
-      "Brown the chicken in a frying pan.",
-      "Add the curry powder and crème fraîche",
-      "Simmer for 10 minutes.",
-      "Add the chilli pepper."
-    ],
-    "setpsFR": [
-      "Faire revenir le poulet dans une poêle.",
-      "Ajouter le curry et la crème fraîche.",
-      "Laisser mijoter 10 minutes.",
-      "Ajouter le piment."
-    ],
-    "timers": [10,1,10,1],
-    "imageURL": "img/recipe/poulet_curry.png",
-    "originalURL": "#"
-  },
-  {
-    "id": "1a0337ec-404c-4af0-9f2a-9b1ce2126a5d",
-    "name": "Pasta carbonara",
-    "nameFR": "Pâtes carbonara",
-    "Author": "Paul",
-    "Without": ["NoGluten"],
-    "description": "A pasta carbonara dish, a classic of Italian cuisine.",
-    "descriptionFR": "Un plat de pâtes à la carbonara, un classique de la cuisine italienne.",
-    "ingredients":[
-      {
-        "quantity":"200g",
-        "name": "Pasta",
-        "type": "Condiments",
-        "imageIng":"img/ingredients/spaghetti.webp"
-      },
-      {
-        "quantity":"100g",
-        "name":"Bacon",
-        "type": "Meat",
-        "imageIng":"img/ingredients/bacon.webp"
-      },
-      {
-        "quantity":"20cl",
-        "name":"Sour cream",
-        "type": "Condiments",
-        "imageIng":"img/ingredients/creme-fraiche.webp"
-      },
-      {
-        "quantity":"50g",
-        "name":"Parmesan",
-        "type":"Dairy",
-        "imageIng":"img/ingredients/parmesan.webp"
-      }
-    ],
-    "ingredientsFR":[
-      {
-        "quantity":"200g",
-        "name": "Pâtes",
-        "type": "Condiments",
-        "imageIng":"img/ingredients/spaghetti.webp"
-      },
-      {
-        "quantity":"100g",
-        "name":"Lardons",
-        "type": "Viande",
-        "imageIng":"img/ingredients/bacon.webp"
-      },
-      {
-        "quantity":"20cl",
-        "name":"Crème fraîche",
-        "type": "Condiments",
-        "imageIng":"img/ingredients/creme-fraiche.webp"
-      },
-      {
-        "quantity":"50g",
-        "name":"Parmesan",
-        "type":"Produit laitier",
-        "imageIng":"img/ingredients/parmesan.webp"
-      }
-    ],
-    "steps" : [
-      "Cook the pasta",
-      "Brown the bacon in a frying pan",
-      "Add the crème fraîche and Parmesan.",
-      "Mix the pasta with the sauce."
-    ],
-    "setpsFR": [
-      "Faire cuire les pâtes.",
-      "Faire revenir les lardons dans une poêle.",
-      "Ajouter la crème fraîche et le parmesan.",
-      "Mélanger les pâtes avec la sauce."
-    ],
-    "timers" : [5,5,0,0],
-    "imageURL": "img/recipe/pates_cabonara.png",
-    "originalURL": "#"
-  },
-  {
-    "id": "114c9dc8-75cd-4a8c-a9ea-ebfdbb765bf3",
-    "name": "Cantonese rice",
-    "nameFR": "Riz cantonais",
-    "Author": "Unknown",
-    "Without": ["NoGluten","NoMilk","Omnivore"],
-    "ingredients":[
-      {
-        "quantity":"200g",
-        "name": "Rice",
-        "type": "Condiments",
-        "imageIng":"img/ingredients/riz.webp"
-      },
-      {
-        "quantity":"2",
-        "name":"Eggs",
-        "type": "Meat",
-        "imageIng":"img/ingredients/oeuf.webp"
-      },
-      {
-        "quantity":"100g",
-        "name":"Peas",
-        "type": "Condiments",
-        "imageIng":"img/ingredients/petits-pois.webp"
-      },
-      {
-        "quantity":"100g",
-        "name":"Ham",
-        "type":"Meat",
-        "imageIng":"img/ingredients/jambon-blanc.webp"
-      }
-    ],
-    "steps": [
-      "Cook the rice",
-      "Cook the eggs.",
-      "Brown the peas and ham in a frying pan.",
-      "Mix the rice with the peas and ham."
-    ],
-    "timers" : [10,9,3,0],
-    "imageURL": "img/recipe/riz_cantonais.png"
-  },
-  {
-    "id": "07ce220c-4afe-41aa-a353-772c5630b9fc",
-    "name":"Caesar salad",
-    "nameFR": "Salade César",
-    "Author": "Jean",
-    "Without": ["NoGluten","NoMilk","Omnivore"],
-    "description": "A delicious Caesar salad, a classic of American cuisine",
-    "descriptionFR": "Une délicieuse salade César, un classique de la cuisine américaine.",
-    "ingredients":[
-      {
-        "quantity":"1",
-        "name": "Salade",
-        "type": "Produce",
-        "imageIng":"img/ingredients/salade.webp"
-      },
-      {
-        "quantity":"200g",
-        "name":"Chicken",
-        "type": "Meat",
-        "imageIng":"img/ingredients/poulet.jpg"
-      },
-      {
-        "quantity":"50g",
-        "name":"Bread",
-        "type": "Baking",
-        "imageIng":"img/ingredients/pain.webp"
-      },
-      {
-        "quantity":"50g",
-        "name":"Parmesan",
-        "type":"Dairy",
-        "imageIng":"img/ingredients/parmesan.webp"
-      }
-    ],
-    "steps": [
-      "Wash the salad",
-      "Cook the chicken",
-      "Cut the slices of bread into cubes.Heat the oil in a frying pan and brown the croutons.",
-      "Toss the salad with the croutons and Parmesan."
-    ],
-    "timers" : [2,10,5,0],
-    "imageURL": "img/recipe/salade_cesar.png",
-    "originalURL": "#"
-  },
-  {
-    "id": "336b8dd8-bd4e-460c-8de2-a082199097a7", 
-    "name": "Apple pie",
-    "nameFR": "Tarte aux pommes",
-    "Author": "Paul",
-    "Without": ["NoMilk","Vegetarian"],
-    "description":"A delicious apple tart, a classic of French cuisine",
-    "descriptionFR": "Une délicieuse tarte aux pommes, un classique de la cuisine française.",
-    "ingredients":[
-      {
-        "quantity":"1",
-        "name": "Shortcrust pastry",
-        "type": "Produce",
-        "imageIng":"img/ingredients/pate-feuilletee.webp"
-      },
-      {
-        "quantity":"4",
-        "name":"Appels",
-        "type": "Produce",
-        "imageIng":"img/ingredients/pommes.webp"
-      },
-      {
-        "quantity":"100g",
-        "name":"Sugar",
-        "type": "Baking",
-        "imageIng":"img/ingredients/sucre.webp"
-      },
-      {
-        "quantity":"1 teaspoon",
-        "name":"Cinnamon",
-        "type":"Produce",
-        "imageIng":"img/ingredients/cannelle.webp"
-      }
-    ],
-    "steps": [
-        "Roll out the pastry in a tin",
-        "Peel and slice the apples",
-        "Arrange the apples on the pastry",
-        "Sprinkle with sugar and cinnamon",
-        "Bake for 30 minutes at 180°C."
-    ],
-    "timers" : [2,5,2,2,30],
-    "imageURL": "img/recipe/tarte_pommes.png",
-    "originalURL": "#"
-  },
-  {
-    "id": "509c16a6-0472-424d-b779-c7cc66ee35e3",
-    "name":"Tartiflette", 
-    "nameFR":"Tartiflette",
-    "Author": "Romain",
-    "description": "A delicious tartiflette, a classic Savoyard dish",
-    "Without": ["Omnivore"],
-    "ingredients":[
-      {
-        "quantity":"1kg",
-        "name": "Potatoes",
-        "type": "Produce",
-        "imageIng":"img/ingredients/pommes-de-terre.webp"
-      },
-      {
-        "quantity":"1",
-        "name":"Reblochon cheese",
-        "type": "Dairy",
-        "imageIng":"img/ingredients/reblochon.webp"
-      },
-      {
-        "quantity":"200g",
-        "name":"Lardons",
-        "type": "Meat",
-        "imageIng":"img/ingredients/lardons.webp"
-      },
-      {
-        "quantity":"2",
-        "name":"Onions",
-        "type":"Produce",
-        "imageIng":"img/ingredients/oignon.webp"
-      }
-    ],
-    "steps": [
-      "Cook the potatoes",
-      "Brown the bacon and onions in a frying pan",
-      "Arrange the potatoes in a dish.",
-      "Add the bacon and onions.",
-      "Arrange the reblochon cheese on top",
-      "Bake for 30 minutes at 180°C."
-    ],
-    "imageURL": "img/recipe/tartiflette.png",
-    "originalURL": "#"
-  },
-  {
-    "id": "e911fcf4-2fa9-4e5f-b970-9d5be481c095",
-    "name": "Crock Pot Roast",
-    "nameFR":"Roti à la cocotte",
-    "Author": "Unknown",
-    "Without": ["NoGluten","NoMilk"],
-    "ingredients": [
-      {
-        "quantity": "1",
-        "name": "beef roast",
-        "type": "Meat",
-        "imageIng":"img/ingredients/roti-de-veau.webp"
-      },
-      {
-        "quantity": "1 package",
-        "name": "brown gravy mix",
-        "type": "Baking",
-        "imageIng":"img/ingredients/brown-gravy.webp"
-      },
-      {
-        "quantity": "1 package",
-        "name": "dried Italian salad dressing mix",
-        "type": "Condiments",
-        "imageIng":"img/ingredients/dried-Italian-salad-dressing-mix.jpg"
-      },
-      {
-        "quantity": "1 package",
-        "name": "dry ranch dressing mix",
-        "type": "Condiments",
-        "imageIng":"img/ingredients/dry ranch dressing mix.png"
-      },
-      {
-        "quantity": "1/2 cup",
-        "name": "water",
-        "type": "Drinks",
-        "imageIng":"img/ingredients/eau.webp"
-      }
-    ],
-    "ingredientsFR": [
-      {
-        "quantity": "1",
-        "name": "roti de boeuf",
-        "type": "Viande",
-        "imageIng":"img/ingredients/roti-de-veau.webp"
-      },
-      {
-        "quantity": "1 sachet",
-        "name": "melange sauce au vin",
-        "type": "Aide culinaire",
-        "imageIng":"img/ingredients/brown-gravy.webp"
-      },
-      {
-        "quantity": "1 package",
-        "name": null,
-        "type": "Condiments",
-        "imageIng":"img/ingredients/dried-Italian-salad-dressing-mix.jpg"
-      },
-      {
-        "quantity": "1 package",
-        "name": null,
-        "type": "Condiments",
-        "imageIng":"img/ingredients/dry ranch dressing mix.png"
-      },
-      {
-        "quantity": "1/2 verre",
-        "name": "eau",
-        "type": "Boisson",
-        "imageIng":"img/ingredients/eau.webp"
-      }
-    ],
-    "steps": [
-      "Place beef roast in crock pot.",
-      "Mix the dried mixes together in a bowl and sprinkle over the roast.",
-      "Pour the water around the roast.",
-      "Cook on low for 7-9 hours."
-    ],
-    "stepsFR": [
-      "Placer le roti dans la cocotte en fonte",
-      "Melanger les sachets de sauces en poudre dans un bol et saupoudrer le roti avec.",
-      "Arroser le roti",
-      "Cuire à feu doux entre 7 et 9 heures."
-    ],
-    "timers": [1,1,1,420],
-    "imageURL": "http://img.sndimg.com/food/image/upload/w_266/v1/img/recipes/27/20/8/picVfzLZo.jpg",
-    "originalURL": "http://www.food.com/recipe/to-die-for-crock-pot-roast-27208"
-  },
-  {
-    "id" : "fa30eccc-4631-46fb-876d-b8e001a94d09",
-    "name": "Roasted Asparagus",
-    "nameFR": "Asperges roties",
-    "Author": "Unknown",
-    "Without": ["NoGluten","NoMilk", "Vegan"],
-    "ingredients": [
-      {
-        "quantity": "1 lb",
-        "name": "asparagus",
-        "type": "Produce",
-        "imageIng":"img/ingredients/asperges-vertes.webp"
-      },
-      {
-        "quantity": "1 1/2 tbsp",
-        "name": "olive oil",
-        "type": "Condiments",
-        "imageIng":"img/ingredients/huile-d-olive.webp"
-      },
-      {
-        "quantity": "1/2 tsp",
-        "name": "kosher salt",
-        "type": "Baking",
-        "imageIng":"img/ingredients/sel.webp"
-      }
-    ],
-    "steps": [
-      "Preheat oven to 425°F.",
-      "Cut off the woody bottom part of the asparagus spears and discard.",
-      "With a vegetable peeler, peel off the skin on the bottom 2-3 inches of the spears (this keeps the asparagus from being all.\",string.\", and if you eat asparagus you know what I mean by that).",
-      "Place asparagus on foil-lined baking sheet and drizzle with olive oil.",
-      "Sprinkle with salt.",
-      "With your hands, roll the asparagus around until they are evenly coated with oil and salt.",
-      "Roast for 10-15 minutes, depending on the thickness of your stalks and how tender you like them.",
-      "They should be tender when pierced with the tip of a knife.",
-      "The tips of the spears will get very brown but watch them to prevent burning.",
-      "They are great plain, but sometimes I serve them with a light vinaigrette if we need something acidic to balance out our meal."
-    ],
-    "timers": [0,0,0,0,0,0,10,0,0,0],
-    "imageURL": "http://img.sndimg.com/food/image/upload/w_266/v1/img/recipes/50/84/7/picMcSyVd.jpg",
-    "originalURL": "http://www.food.com/recipe/roasted-asparagus-50847"
-  },
-  {
-    "id" : "c1fb3f82-2d2f-4f73-9e96-cd40f915f236",
-    "name": "Curried Lentils and Rice",
-    "nameFR": "Lentilles et Riz au curry",
-    "Author": "Unknown",
-    "Without": ["NoGluten","NoMilk"],
-    "ingredients": [
-      {
-        "quantity": "1 quart",
-        "name": "beef broth",
-        "type": "Misc",
-        "imageIng":"img/ingredients/beef-broth.jpg"
-      },
-      {
-        "quantity": "1 cup",
-        "name": "dried green lentils",
-        "type": "Misc",
-        "imageIng":"img/ingredients/lentilles.webp"
-      },
-      {
-        "quantity": "1/2 cup",
-        "name": "basmati rice",
-        "type": "Misc",
-        "imageIng":"img/ingredients/riz.webp"
-      },
-      {
-        "quantity": "1 tsp",
-        "name": "curry powder",
-        "type": "Condiments",
-        "imageIng":"img/ingredients/curry.jpg"
-      },
-      {
-        "quantity": "1 tsp",
-        "name": "salt",
-        "type": "Condiments",
-        "imageIng":"img/ingredients/sel.webp"
-      }
-    ],
-    "steps": [
-      "Bring broth to a low boil.",
-      "Add curry powder and salt.",
-      "Cook lentils for 20 minutes.",
-      "Add rice and simmer for 20 minutes.",
-      "Enjoy!"
-    ],
-    "timers": [0,0,20,20,0],
-    "imageURL": "img/recipe/lentilles_riz_curry.png"
-  },
-  {
-    "id": "8c928589-3f3b-415a-8110-287f04d4640b", 
-    "name": "Big Night Pizza",
-    "nameFR": "La pizza des grands soirs",
-    "Author": "Unknown",
-    "Without": ["Vegetarian"],
-    "ingredients": [
-        {
-          "quantity": "5 teaspoons",
-          "name": "yeast",
-          "type": "Baking",
-          "imageIng":"img/ingredients/levure-fraiche.webp"
-        },
-        {
-          "quantity": "5 cups",
-          "name": "flour",
-          "type": "Baking",
-          "imageIng":"img/ingredients/farine.webp"
-        },
-        {
-          "quantity": "4 tablespoons",
-          "name": "vegetable oil",
-          "type": "Baking",
-          "imageIng":"img/ingredients/huile-d-olive.webp"
-        },
-        {
-          "quantity": "2 tablespoons",
-          "name": "sugar",    
-          "type": "Baking",
-          "imageIng":"img/ingredients/sucre.webp"
-        },
-        {
-          "quantity": "2 teaspoons",
-          "name": "salt",
-          "type": "Baking",
-          "imageIng":"img/ingredients/sel.webp"
-        },
-        {
-          "quantity": "2 cups",
-          "name": "hot water",
-          "type": "Misc",
-          "imageIng":"img/ingredients/eau.webp"
-        },
-        {
-          "quantity": "1/4 cup",
-          "name": "pizza sauce",
-          "type": "Misc",
-          "imageIng":"img/ingredients/puree-de-tomates.webp"
-        },
-        {
-          "quantity": "3/4 cup",
-          "name": "mozzarella cheese",
-          "type": "Dairy",
-          "imageIng":"img/ingredients/mozzarella.webp"
-        }
-    ],
-    "steps": [
-      "Add hot water to yeast in a large bowl and let sit for 15 minutes.",
-      "Mix in oil, sugar, salt, and flour and let sit for 1 hour.",
-      "Knead the dough and spread onto a pan.",
-      "Spread pizza sauce and sprinkle cheese.",
-      "Add any optional toppings as you wish.",
-      "Bake at 400 deg Fahrenheit for 15 minutes.",
-      "Enjoy!"
-    ],
-    "timers": [15,60,0,0,0,15,0],
-    "imageURL": "http://upload.wikimedia.org/wikipedia/commons/c/c7/Spinach_pizza.jpg"
-  },
-  {
-    "id": "15f2918b-4244-44c1-8973-9c27265ea53c",
-    "name": "Cranberry and Apple Stuffed Acorn Squash Recipe",
-    "nameFR": "Courge poivrée farcies aux cranberries et aux pommes",
-    "Author": "Unknown",
-    "Without": ["NoGluten", "Vegetarian"],
-    "ingredients": [
-      {
-        "quantity": "2",
-        "name": "acorn squash",
-        "type": "Produce",
-        "imageIng":"img/ingredients/citrouille.webp"
-      },
-      {
-        "quantity": "1",
-        "name": "boiling water",
-        "type": "Drinks",
-        "imageIng":"img/ingredients/eau.webp"
-      },
-      {
-        "quantity": "2",
-        "name": "apples chopped into 1.4 inch pieces",
-        "type": "Produce",
-        "imageIng":"img/ingredients/pommes.webp"
-      },
-      {
-        "quantity": "1/2 cup",
-        "name": "dried cranberries",
-        "type": "Produce",
-        "imageIng":"img/ingredients/cranberries-sechees.webp"
-      },
-      {
-        "quantity": "1 teaspoon",
-        "name": "cinnamon",
-        "type": "Baking",
-        "imageIng":"img/ingredients/cannelle.webp"
-      },
-      {
-        "quantity": "2 tablespoons",
-        "name": "melted butter",
-        "type": "Dairy",
-        "imageIng":"img/ingredients/beurre.webp"
-      }
-    ],
-    "steps": [
-      "Cut squash in half, remove seeds.",
-      "Place squash in baking dish, cut-side down.",
-      "Pour 1/4-inch water into dish.",
-      "Bake for 30 minutes at 350 degrees F.",
-      "In large bowl, combine remaining ingredients.",
-      "Remove squash from oven, fill with mix.",
-      "Bake for 30-40 more minutes, until squash tender.",
-      "Enjoy!"
-    ],
-    "timers": [0,0,0,30,0,0,30,0],
-    "imageURL": "http://elanaspantry.com/wp-content/uploads/2008/10/acorn_squash_with_cranberry.jpg",
-    "originalURL": ""
-  },
-  {
-    "id" : "bdd7a385-97d7-48c3-b5dd-459515a30cc5",
-    "name": "Mic's Yorkshire Puds",
-    "nameFR": "Yorkshire pudding  de Mickey",
-    "Author": "Unknown",
-    "Without": ["Vegetarian"],
-    "ingredients": [
-      {
-        "quantity": "200g",
-        "name": "plain flour",
-        "type": "Baking",
-        "imageIng":"img/ingredients/farine.webp"
-      },
-      {
-        "quantity": "3",
-        "name": "eggs",
-        "type": "Dairy",
-        "imageIng":"img/ingredients/oeuf.webp"
-      },
-      {
-        "quantity": "300ml",
-        "name": "milk",
-        "type": "Dairy",
-        "imageIng":"img/ingredients/lait.webp"
-      },
-      {
-        "quantity": "3 tbsp",
-        "name": "vegetable oil",
-        "type": "Condiments",
-        "imageIng":"img/ingredients/huile-d-olive.webp"
-      }
-    ],
-    "steps": [
-      "Put the flour and some seasoning into a large bowl.",
-      "Stir in eggs, one at a time.",
-      "Whisk in milk until you have a smooth batter.",
-      "Chill in the fridge for at least 30 minutes.",
-      "Heat oven to 220C/gas mark 7.",
-      "Pour the oil into the holes of a 8-hole muffin tin.",
-      "Heat tin in the oven for 5 minutes.",
-      "Ladle the batter mix into the tin.",
-      "Bake for 30 minutes until well browned and risen."
-    ],
-    "timers": [0,0,0,30,0,0,5,0,30],
-    "imageURL": "http://upload.wikimedia.org/wikipedia/commons/f/f9/Yorkshire_Pudding.jpg",
-    "originalURL": "https://fr.wikipedia.org/wiki/Yorkshire_pudding"
-  },
-  {
-    "id": "e619209b-9b62-41c3-9f42-311ee8e4b9e2",
-    "name": "Old-Fashioned Oatmeal Cookies",
-    "ingredients": [
-      {
-        "quantity": "1 cup",
-        "name": "raisins",
-        "type": "Produce",
-        "imageIng":"img/ingredients/raisin-sec.webp"
-      },
-      {
-        "quantity": "1",
-        "name": "cup water",
-        "type": "Drinks",
-        "imageIng":"img/ingredients/eau.webp"
-      },
-      {
-        "quantity": "3/4 cup",
-        "name": "shortening",
-        "type": "Baking",
-        "imageIng":"img/ingredients/shortening.png"
-      },
-      {
-        "quantity": "1 1/2 cups",
-        "name": "sugar",
-        "type": "Baking",
-        "imageIng":"img/ingredients/sucre.webp"
-      },
-      {
-        "quantity": "2 1/2 cups",
-        "name": "flour",
-        "type": "Baking",
-        "imageIng":"img/ingredients/farine.webp"
-      },
-      {
-        "quantity": "1 tsp.",
-        "name": "soda",
-        "type": "Baking",
-        "imageIng":"img/ingredients/soda.jpg"
-      },
-      {
-        "quantity": "1 tsp.",
-        "name": "salt",
-        "type": "Baking",
-        "imageIng":"img/ingredients/sel.webp"
-      },
-      {
-        "quantity": "1 tsp.",
-        "name": "cinnamon",
-        "type": "Baking",
-        "imageIng":"img/ingredients/cannelle.webp"
-      },
-      {
-        "quantity": "1/2 tsp.",
-        "name": "baking powder",
-        "type": "Baking",
-        "imageIng":"img/ingredients/levure-fraiche.webp"
-      },
-      {
-        "quantity": "1/2 tsp.",
-        "name": "cloves",
-        "type": "Baking",
-        "imageIng":"img/ingredients/clous-de-girofle-piles.webp"
-      },
-      {
-        "quantity": "2 cups",
-        "name": "oats",
-        "type": "Baking",
-        "imageIng":"img/ingredients/avoine.webp"
-      },
-      {
-        "quantity": "1/2 cup",
-        "name": "chopped nuts",
-        "type": "Baking",
-        "imageIng":"img/ingredients/noix.webp"
-      }
-    ],
-    "steps": [
-      "Simmer raisins and water over medium heat until raisins are plump, about 15 minutes.",
-      "Drain raisins, reserving the liquid.",
-      "Add enough water to reserved liquid to measure 1/2 cup.",
-      "Heat oven to 400°.",
-      "Mix thoroughly shortening, sugar, eggs and vanilla.",
-      "Stir in reserved liquid.",
-      "Blend in remaining ingredients.",
-      "Drop dough by rounded teaspoonfuls about 2 inches apart onto ungreased baking sheet.",
-      "Bake 8 to 10 minutes or until light brown.",
-      "About 6 1/2 dozen cookies."
-    ],
-    "timers": [15,0,0,0,0,0,0,0,8,0],
-    "imageURL": "http://s3.amazonaws.com/gmi-digital-library/65caecf7-a8f7-4a09-8513-2659cf92871e.jpg",
-    "originalURL": "#"
-  },
-  {
-    "id": "912eb4a8-3030-4c75-92e3-be7c8598555b",
-    "name": "Blueberry Oatmeal Squares",
-    "ingredients": [
-      {
-        "quantity": "2-1/2 cups",
-        "name": "rolled oats, (not instant)",
-        "type": "Baking",
-        "imageIng":"img/ingredients/avoine.webp"
-      },
-      {
-        "quantity": "1-1/4 cups",
-        "name": "all-purpose flour",
-        "type": "Baking",
-        "imageIng":"img/ingredients/farine.webp"
-      },
-      {
-        "quantity": "1 tbsp",
-        "name": "grated orange rind",
-        "type": "Produce",
-        "imageIng":"img/ingredients/orange.webp"
-      },
-      {
-        "quantity": "1/4 tsp",
-        "name": "salt",
-        "type": "Baking",
-        "imageIng":"img/ingredients/sel.webp"
-      },
-      {
-        "quantity": "1 cup",
-        "name": "cold butter, cubed",
-        "type": "Baking",
-        "imageIng":"img/ingredients/beurre.webp"
-      },
-      {
-        "quantity": "3/4 cup",
-        "name": "packed brown sugar",
-        "type": "Baking",
-        "imageIng":"img/ingredients/sucre-roux.webp"
-      },
-      {
-        "quantity": "3 cups",
-        "name": "fresh blueberries",
-        "type": "Produce",
-        "imageIng":"img/ingredients/myrtilles.webp"
-      },
-      {
-        "quantity": "1/2 cup",
-        "name": "granulated sugar",
-        "type": "Baking",
-        "imageIng":"img/ingredients/sucre.webp"
-      },
-      {
-        "quantity": "1/3 cup",
-        "name": "orange juice",
-        "type": "Produce",
-        "imageIng":"img/ingredients/jus-d-orange.webp"
-      },
-      {
-        "quantity": "4 tsp",
-        "name": "cornstarch",
-        "type": "Baking",
-        "imageIng":"img/ingredients/mais.webp"
-      }
-    ],
-    "steps": [
-      "Filling: In saucepan, bring blueberries, sugar and orange juice to boil; reduce heat and simmer until tender, about 10 minutes.",
-      "Whisk cornstarch with 2 tbsp (25 mL) water; whisk into blueberries and boil, stirring, until thickened, about 1 minute.",
-      "Place plastic wrap directly on surface; refrigerate until cooled, about 1 hour.",
-      "In large bowl, whisk together oats, flour, sugar, orange rind and salt ; with pastry blender, cut in butter until in coarse crumbs.",
-      "Press half into 8-inch (2 L) square parchment paper–lined metal cake pan; spread with blueberry filling.",
-      "Bake in centre of 350°F oven until light golden, about 45 minutes.",
-      "Let cool on rack before cutting into squares.",
-      "(Make-ahead: Cover and refrigerate for up to 2 days or overwrap with heavy-duty foil and freeze for up to 2 weeks.)"
-    ],
-    "timers": [10,1,60,0,0,45,0,0],
-    "imageURL": "http://www.canadianliving.com/img/photos/biz/blueberry-oatmeal-squares5801359401371.jpg",
-    "originalURL": "http://www.canadianliving.com/food/blueberry_oatmeal_squares.php"
-  },
-  {
-    "id": "b77c70fe-2821-40d7-9e16-e88e174e8431",
-    "name": "Curried chicken salad",
-    "ingredients": [
-      {
-        "quantity": "3",
-        "name": "skinless, boneless chicken breasts, halved lengthwise",
-        "type": "Meat",
-        "imageIng":"img/ingredients/blanc-de-poulet.webp"
-      },
-      {
-        "quantity": "1/2 cup",
-        "name": "mayonnaise",
-        "type": "Baking",
-        "imageIng":"img/ingredients/mayonnaise.webp"
-      },
-      {
-        "quantity": "1 tbsp",
-        "name": "lemon zest",
-        "type": "Produce",
-        "imageIng":"img/ingredients/citron.webp"
-      },
-      {
-        "quantity": "1 tbsp ",
-        "name": "lemon juice",
-        "type": "Produce",
-        "imageIng":"img/ingredients/jus-de-citron.webp"
-      },
-      {
-        "quantity": "1 1/2 tsp",
-        "name": "curry powder",
-        "type": "Baking",
-        "imageIng":"img/ingredients/curry.jpg"
-      },
-      {
-        "quantity": "1/4 tsp",
-        "name": "salt",
-        "type": "Baking",
-        "imageIng":"img/ingredients/sel.webp"
-      },
-      {
-        "quantity": "2",
-        "name": "ripe mangoes, diced",
-        "type": "Produce",
-        "imageIng":"img/ingredients/mangue.webp"
-      },
-      {
-        "quantity": "1/4 cup",
-        "name": "dried cranberries",
-        "type": "Produce",
-        "imageIng":"img/ingredients/cranberries-sechees.webp"
-      },
-      {
-        "quantity": "2",
-        "name": "green onions, thinly sliced",
-        "type": "Produce",
-        "imageIng":"img/ingredients/ciboule.webp"
-      },
-      {
-        "quantity": "1",
-        "name": "celery stalk, finely chopped",
-        "type": "Produce",
-        "imageIng":"img/ingredients/celeri.webp"
-      },
-      {
-        "quantity": "6 leaves",
-        "name": "Boston lettuce",
-        "type": "Produce",
-        "imageIng":"img/ingredients/salade.webp"
-      },
-      {
-        "quantity": "6",
-        "name": "English muffins, toasted",
-        "type": "Misc",
-        "imageIng":"img/ingredients/muffins-anglais.jpg"
-      }
-    ],
-    "steps": [
-      "ARRANGE chicken in a single layer in a large pot.",
-      "Add water to just cover.",
-      "Bring to a boil over medium-high.",
-      "Flip chicken, reduce heat to medium and simmer until cooked, about 6 more min.",
-      "Cool.",
-      "STIR mayo with lemon zest, juice, curry and salt in large bowl.",
-      "Using 2 forks, shred chicken, then stir into mayo mixture with mango, cranberries, green onions and celery.",
-      "Divide among muffins with lettuce leaves",
-      "Sandwich with tops"
-    ],
-    "timers": [0,0,0,6,0,0,0,0,0],
-    "imageURL": "http://www.chatelaine.com/wp-content/uploads/2013/05/Curried-chicken-salad.jpg",
-    "originalURL": "http://www.chatelaine.com/recipe/stovetop-cooking-method/curried-chicken-salad/"
-  }
+    {
+        "id": "144c33d1-0921-44b0-b7b6-e552c906680d",
+        "name": "Chicken curry",
+        "nameFR": "Poulet au curry",
+        "Author": "Unknown",
+        "AuthorFR": "Inconnu",
+        "Without": [
+            "NoGluten",
+            "Omnivore"
+        ],
+        "description": "A delicious chicken curry, a classic of Indian cuisine.",
+        "descriptionFR": "Un délicieux poulet au curry, un classique de la cuisine indienne.",
+        "ingredients": [
+            {
+                "quantity": "500g",
+                "name": "Chicken",
+                "type": "Meat",
+                "imageIng": "img\/ingredients\/poulet.jpg"
+            },
+            {
+                "quantity": "2 spoons",
+                "name": "Curry",
+                "type": "Spicy",
+                "imageIng": "img\/ingredients\/curry.jpg"
+            },
+            {
+                "quantity": "20cl",
+                "name": "Sour cream",
+                "type": "Condiments",
+                "imageIng": "img\/ingredients\/creme-fraiche.webp"
+            },
+            {
+                "quantity": "3",
+                "name": "Chili peppers",
+                "type": "Condiments",
+                "imageIng": "img\/ingredients\/piments-rouges.webp"
+            }
+        ],
+        "ingredientsFR": [
+            {
+                "quantity": "500g",
+                "name": "Poulet",
+                "type": "Viande",
+                "imageIng": "img\/ingredients\/poulet.jpg"
+            },
+            {
+                "quantity": "2 cuillères",
+                "name": "Curry",
+                "type": "Piment",
+                "imageIng": "img\/ingredients\/curry.jpg"
+            },
+            {
+                "quantity": "20cl",
+                "name": "Crème fraîche",
+                "type": "Condiments",
+                "imageIng": "img\/ingredients\/creme-fraiche.webp"
+            },
+            {
+                "quantity": "3",
+                "name": "Piments",
+                "type": "Condiments",
+                "imageIng": "img\/ingredients\/piments-rouges.webp"
+            }
+        ],
+        "steps": [
+            "Brown the chicken in a frying pan.",
+            "Add the curry powder and crème fraîche",
+            "Simmer for 10 minutes.",
+            "Add the chilli pepper."
+        ],
+        "stepsFR": [
+            "Faire revenir le poulet dans une poêle.",
+            "Ajouter le curry et la crème fraîche.",
+            "Laisser mijoter 10 minutes.",
+            "Ajouter le piment."
+        ],
+        "timers": [
+            10,
+            1,
+            10,
+            1
+        ],
+        "imageURL": "img\/recipe\/poulet_curry.png",
+        "originalURL": "#"
+    },
+    {
+        "id": "1a0337ec-404c-4af0-9f2a-9b1ce2126a5d",
+        "name": "Pasta carbonara",
+        "nameFR": "Pâtes carbonara",
+        "Author": "Paul",
+        "AuthorFR": "Paul",
+        "Without": [
+            "NoGluten"
+        ],
+        "description": "A pasta carbonara dish, a classic of Italian cuisine.",
+        "descriptionFR": "Un plat de pâtes à la carbonara, un classique de la cuisine italienne.",
+        "ingredients": [
+            {
+                "quantity": "200g",
+                "name": "Pasta",
+                "type": "Condiments",
+                "imageIng": "img\/ingredients\/spaghetti.webp"
+            },
+            {
+                "quantity": "100g",
+                "name": "Bacon",
+                "type": "Meat",
+                "imageIng": "img\/ingredients\/bacon.webp"
+            },
+            {
+                "quantity": "20cl",
+                "name": "Sour cream",
+                "type": "Condiments",
+                "imageIng": "img\/ingredients\/creme-fraiche.webp"
+            },
+            {
+                "quantity": "50g",
+                "name": "Parmesan",
+                "type": "Dairy",
+                "imageIng": "img\/ingredients\/parmesan.webp"
+            }
+        ],
+        "ingredientsFR": [
+            {
+                "quantity": "200g",
+                "name": "Pâtes",
+                "type": "Condiments",
+                "imageIng": "img\/ingredients\/spaghetti.webp"
+            },
+            {
+                "quantity": "100g",
+                "name": "Lardons",
+                "type": "Viande",
+                "imageIng": "img\/ingredients\/bacon.webp"
+            },
+            {
+                "quantity": "20cl",
+                "name": "Crème fraîche",
+                "type": "Condiments",
+                "imageIng": "img\/ingredients\/creme-fraiche.webp"
+            },
+            {
+                "quantity": "50g",
+                "name": "Parmesan",
+                "type": "Produit laitier",
+                "imageIng": "img\/ingredients\/parmesan.webp"
+            }
+        ],
+        "steps": [
+            "Cook the pasta",
+            "Brown the bacon in a frying pan",
+            "Add the crème fraîche and Parmesan.",
+            "Mix the pasta with the sauce."
+        ],
+        "stepsFR": [
+            "Faire cuire les pâtes.",
+            "Faire revenir les lardons dans une poêle.",
+            "Ajouter la crème fraîche et le parmesan.",
+            "Mélanger les pâtes avec la sauce."
+        ],
+        "timers": [
+            5,
+            5,
+            0,
+            0
+        ],
+        "imageURL": "img\/recipe\/pates_cabonara.png",
+        "originalURL": "#"
+    },
+    {
+        "id": "114c9dc8-75cd-4a8c-a9ea-ebfdbb765bf3",
+        "name": "Cantonese rice",
+        "nameFR": "Riz cantonais",
+        "Author": "Unknown",
+        "Without": [
+            "NoGluten",
+            "NoMilk",
+            "Omnivore"
+        ],
+        "ingredients": [
+            {
+                "quantity": "200g",
+                "name": "Rice",
+                "type": "Condiments",
+                "imageIng": "img\/ingredients\/riz.webp"
+            },
+            {
+                "quantity": "2",
+                "name": "Eggs",
+                "type": "Meat",
+                "imageIng": "img\/ingredients\/oeuf.webp"
+            },
+            {
+                "quantity": "100g",
+                "name": "Peas",
+                "type": "Condiments",
+                "imageIng": "img\/ingredients\/petits-pois.webp"
+            },
+            {
+                "quantity": "100g",
+                "name": "Ham",
+                "type": "Meat",
+                "imageIng": "img\/ingredients\/jambon-blanc.webp"
+            }
+        ],
+        "steps": [
+            "Cook the rice",
+            "Cook the eggs.",
+            "Brown the peas and ham in a frying pan.",
+            "Mix the rice with the peas and ham."
+        ],
+        "timers": [
+            10,
+            9,
+            3,
+            0
+        ],
+        "imageURL": "img\/recipe\/riz_cantonais.png"
+    },
+    {
+        "id": "07ce220c-4afe-41aa-a353-772c5630b9fc",
+        "name": "Caesar salad",
+        "nameFR": "Salade César",
+        "Author": "Jean",
+        "AuthorFR": "Jean",
+        "Without": [
+            "NoGluten",
+            "NoMilk",
+            "Omnivore"
+        ],
+        "description": "A delicious Caesar salad, a classic of American cuisine",
+        "descriptionFR": "Une délicieuse salade César, un classique de la cuisine américaine.",
+        "ingredients": [
+            {
+                "quantity": "1",
+                "name": "Salade",
+                "type": "Produce",
+                "imageIng": "img\/ingredients\/salade.webp"
+            },
+            {
+                "quantity": "200g",
+                "name": "Chicken",
+                "type": "Meat",
+                "imageIng": "img\/ingredients\/poulet.jpg"
+            },
+            {
+                "quantity": "50g",
+                "name": "Bread",
+                "type": "Baking",
+                "imageIng": "img\/ingredients\/pain.webp"
+            },
+            {
+                "quantity": "50g",
+                "name": "Parmesan",
+                "type": "Dairy",
+                "imageIng": "img\/ingredients\/parmesan.webp"
+            }
+        ],
+        "steps": [
+            "Wash the salad",
+            "Cook the chicken",
+            "Cut the slices of bread into cubes.Heat the oil in a frying pan and brown the croutons.",
+            "Toss the salad with the croutons and Parmesan."
+        ],
+        "timers": [
+            2,
+            10,
+            5,
+            0
+        ],
+        "imageURL": "img\/recipe\/salade_cesar.png",
+        "originalURL": "#"
+    },
+    {
+        "id": "336b8dd8-bd4e-460c-8de2-a082199097a7",
+        "name": "Apple pie",
+        "nameFR": "Tarte aux pommes",
+        "Author": "Paul",
+        "AuthorFR": "Paul",
+        "Without": [
+            "NoMilk",
+            "Vegetarian"
+        ],
+        "description": "A delicious apple tart, a classic of French cuisine",
+        "descriptionFR": "Une délicieuse tarte aux pommes, un classique de la cuisine française.",
+        "ingredients": [
+            {
+                "quantity": "1",
+                "name": "Shortcrust pastry",
+                "type": "Produce",
+                "imageIng": "img\/ingredients\/pate-feuilletee.webp"
+            },
+            {
+                "quantity": "4",
+                "name": "Appels",
+                "type": "Produce",
+                "imageIng": "img\/ingredients\/pommes.webp"
+            },
+            {
+                "quantity": "100g",
+                "name": "Sugar",
+                "type": "Baking",
+                "imageIng": "img\/ingredients\/sucre.webp"
+            },
+            {
+                "quantity": "1 teaspoon",
+                "name": "Cinnamon",
+                "type": "Produce",
+                "imageIng": "img\/ingredients\/cannelle.webp"
+            }
+        ],
+        "steps": [
+            "Roll out the pastry in a tin",
+            "Peel and slice the apples",
+            "Arrange the apples on the pastry",
+            "Sprinkle with sugar and cinnamon",
+            "Bake for 30 minutes at 180°C."
+        ],
+        "timers": [
+            2,
+            5,
+            2,
+            2,
+            30
+        ],
+        "imageURL": "img\/recipe\/tarte_pommes.png",
+        "originalURL": "#"
+    },
+    {
+        "id": "509c16a6-0472-424d-b779-c7cc66ee35e3",
+        "name": "Tartiflette",
+        "nameFR": "Tartiflette",
+        "Author": "Romain",
+        "AuthorFR": "Romain",
+        "description": "A delicious tartiflette, a classic Savoyard dish",
+        "Without": [
+            "Omnivore"
+        ],
+        "ingredients": [
+            {
+                "quantity": "1kg",
+                "name": "Potatoes",
+                "type": "Produce",
+                "imageIng": "img\/ingredients\/pommes-de-terre.webp"
+            },
+            {
+                "quantity": "1",
+                "name": "Reblochon cheese",
+                "type": "Dairy",
+                "imageIng": "img\/ingredients\/reblochon.webp"
+            },
+            {
+                "quantity": "200g",
+                "name": "Lardons",
+                "type": "Meat",
+                "imageIng": "img\/ingredients\/lardons.webp"
+            },
+            {
+                "quantity": "2",
+                "name": "Onions",
+                "type": "Produce",
+                "imageIng": "img\/ingredients\/oignon.webp"
+            }
+        ],
+        "steps": [
+            "Cook the potatoes",
+            "Brown the bacon and onions in a frying pan",
+            "Arrange the potatoes in a dish.",
+            "Add the bacon and onions.",
+            "Arrange the reblochon cheese on top",
+            "Bake for 30 minutes at 180°C."
+        ],
+        "imageURL": "img\/recipe\/tartiflette.png",
+        "originalURL": "#"
+    },
+    {
+        "id": "e911fcf4-2fa9-4e5f-b970-9d5be481c095",
+        "name": "Crock Pot Roast",
+        "nameFR": "Roti à la cocotte",
+        "Author": "Unknown",
+        "AuthorFR": "Inconnu",
+        "Without": [
+            "NoGluten",
+            "NoMilk"
+        ],
+        "ingredients": [
+            {
+                "quantity": "1",
+                "name": "beef roast",
+                "type": "Meat",
+                "imageIng": "img\/ingredients\/roti-de-veau.webp"
+            },
+            {
+                "quantity": "1 package",
+                "name": "brown gravy mix",
+                "type": "Baking",
+                "imageIng": "img\/ingredients\/brown-gravy.webp"
+            },
+            {
+                "quantity": "1 package",
+                "name": "dried Italian salad dressing mix",
+                "type": "Condiments",
+                "imageIng": "img\/ingredients\/dried-Italian-salad-dressing-mix.jpg"
+            },
+            {
+                "quantity": "1 package",
+                "name": "dry ranch dressing mix",
+                "type": "Condiments",
+                "imageIng": "img\/ingredients\/dry-ranch-dressing-mix.png"
+            },
+            {
+                "quantity": "1\/2 cup",
+                "name": "water",
+                "type": "Drinks",
+                "imageIng": "img\/ingredients\/eau.webp"
+            }
+        ],
+        "ingredientsFR": [
+            {
+                "quantity": "1",
+                "name": "roti de boeuf",
+                "type": "Viande",
+                "imageIng": "img\/ingredients\/roti-de-veau.webp"
+            },
+            {
+                "quantity": "1 sachet",
+                "name": "melange sauce au vin",
+                "type": "Aide culinaire",
+                "imageIng": "img\/ingredients\/brown-gravy.webp"
+            },
+            {
+                "quantity": "1 paquet",
+                "name": "A",
+                "type": "Condiments",
+                "imageIng": "img\/ingredients\/dried-Italian-salad-dressing-mix.jpg"
+            },
+            {
+                "quantity": "1 paquet",
+                "name": "BB",
+                "type": "Condiments",
+                "imageIng": "img\/ingredients\/dry-ranch-dressing-mix.png"
+            },
+            {
+                "quantity": "1\/2 verre",
+                "name": "eau",
+                "type": "Boisson",
+                "imageIng": "img\/ingredients\/eau.webp"
+            }
+        ],
+        "steps": [
+            "Place beef roast in crock pot.",
+            "Mix the dried mixes together in a bowl and sprinkle over the roast.",
+            "Pour the water around the roast.",
+            "Cook on low for 7-9 hours."
+        ],
+        "stepsFR": [
+            "Placer le roti dans la cocotte en fonte",
+            "Melanger les sachets de sauces en poudre dans un bol et saupoudrer le roti avec.",
+            "Arroser le roti",
+            "Cuire à feu doux entre 7 et 9 heures."
+        ],
+        "timers": [
+            1,
+            1,
+            1,
+            420
+        ],
+        "imageURL": "http:\/\/img.sndimg.com\/food\/image\/upload\/w_266\/v1\/img\/recipes\/27\/20\/8\/picVfzLZo.jpg",
+        "originalURL": "http:\/\/www.food.com\/recipe\/to-die-for-crock-pot-roast-27208"
+    },
+    {
+        "id": "fa30eccc-4631-46fb-876d-b8e001a94d09",
+        "name": "Roasted Asparagus",
+        "nameFR": "Asperges roties",
+        "Author": "Unknown",
+        "AuthorFR": "Inconnu",
+        "Without": [
+            "NoGluten",
+            "NoMilk",
+            "Vegan"
+        ],
+        "ingredients": [
+            {
+                "quantity": "1 lb",
+                "name": "asparagus",
+                "type": "Produce",
+                "imageIng": "img\/ingredients\/asperges-vertes.webp"
+            },
+            {
+                "quantity": "1 1\/2 tbsp",
+                "name": "olive oil",
+                "type": "Condiments",
+                "imageIng": "img\/ingredients\/huile-d-olive.webp"
+            },
+            {
+                "quantity": "1\/2 tsp",
+                "name": "kosher salt",
+                "type": "Baking",
+                "imageIng": "img\/ingredients\/sel.webp"
+            }
+        ],
+        "steps": [
+            "Preheat oven to 425°F.",
+            "Cut off the woody bottom part of the asparagus spears and discard.",
+            "With a vegetable peeler, peel off the skin on the bottom 2-3 inches of the spears (this keeps the asparagus from being all.\",string.\", and if you eat asparagus you know what I mean by that).",
+            "Place asparagus on foil-lined baking sheet and drizzle with olive oil.",
+            "Sprinkle with salt.",
+            "With your hands, roll the asparagus around until they are evenly coated with oil and salt.",
+            "Roast for 10-15 minutes, depending on the thickness of your stalks and how tender you like them.",
+            "They should be tender when pierced with the tip of a knife.",
+            "The tips of the spears will get very brown but watch them to prevent burning.",
+            "They are great plain, but sometimes I serve them with a light vinaigrette if we need something acidic to balance out our meal."
+        ],
+        "timers": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            10,
+            0,
+            0,
+            0
+        ],
+        "imageURL": "http:\/\/img.sndimg.com\/food\/image\/upload\/w_266\/v1\/img\/recipes\/50\/84\/7\/picMcSyVd.jpg",
+        "originalURL": "http:\/\/www.food.com\/recipe\/roasted-asparagus-50847"
+    },
+    {
+        "id": "c1fb3f82-2d2f-4f73-9e96-cd40f915f236",
+        "name": "Curried Lentils and Rice",
+        "nameFR": "Lentilles et Riz au curry",
+        "Author": "Unknown",
+        "AuthorFR": "Inconnu",
+        "Without": [
+            "NoGluten",
+            "NoMilk"
+        ],
+        "ingredients": [
+            {
+                "quantity": "1 quart",
+                "name": "beef broth",
+                "type": "Misc",
+                "imageIng": "img\/ingredients\/beef-broth.jpg"
+            },
+            {
+                "quantity": "1 cup",
+                "name": "dried green lentils",
+                "type": "Misc",
+                "imageIng": "img\/ingredients\/lentilles.webp"
+            },
+            {
+                "quantity": "1\/2 cup",
+                "name": "basmati rice",
+                "type": "Misc",
+                "imageIng": "img\/ingredients\/riz.webp"
+            },
+            {
+                "quantity": "1 tsp",
+                "name": "curry powder",
+                "type": "Condiments",
+                "imageIng": "img\/ingredients\/curry.jpg"
+            },
+            {
+                "quantity": "1 tsp",
+                "name": "salt",
+                "type": "Condiments",
+                "imageIng": "img\/ingredients\/sel.webp"
+            }
+        ],
+        "steps": [
+            "Bring broth to a low boil.",
+            "Add curry powder and salt.",
+            "Cook lentils for 20 minutes.",
+            "Add rice and simmer for 20 minutes.",
+            "Enjoy!"
+        ],
+        "timers": [
+            0,
+            0,
+            20,
+            20,
+            0
+        ],
+        "imageURL": "img\/recipe\/lentilles_riz_curry.png"
+    },
+    {
+        "id": "8c928589-3f3b-415a-8110-287f04d4640b",
+        "name": "Big Night Pizza",
+        "nameFR": "La pizza des grands soirs",
+        "Author": "Unknown",
+        "AuthorFR": "Inconnu",
+        "Without": [
+            "Vegetarian"
+        ],
+        "ingredients": [
+            {
+                "quantity": "5 teaspoons",
+                "name": "yeast",
+                "type": "Baking",
+                "imageIng": "img\/ingredients\/levure-fraiche.webp"
+            },
+            {
+                "quantity": "5 cups",
+                "name": "flour",
+                "type": "Baking",
+                "imageIng": "img\/ingredients\/farine.webp"
+            },
+            {
+                "quantity": "4 tablespoons",
+                "name": "vegetable oil",
+                "type": "Baking",
+                "imageIng": "img\/ingredients\/huile-d-olive.webp"
+            },
+            {
+                "quantity": "2 tablespoons",
+                "name": "sugar",
+                "type": "Baking",
+                "imageIng": "img\/ingredients\/sucre.webp"
+            },
+            {
+                "quantity": "2 teaspoons",
+                "name": "salt",
+                "type": "Baking",
+                "imageIng": "img\/ingredients\/sel.webp"
+            },
+            {
+                "quantity": "2 cups",
+                "name": "hot water",
+                "type": "Misc",
+                "imageIng": "img\/ingredients\/eau.webp"
+            },
+            {
+                "quantity": "1\/4 cup",
+                "name": "pizza sauce",
+                "type": "Misc",
+                "imageIng": "img\/ingredients\/puree-de-tomates.webp"
+            },
+            {
+                "quantity": "3\/4 cup",
+                "name": "mozzarella cheese",
+                "type": "Dairy",
+                "imageIng": "img\/ingredients\/mozzarella.webp"
+            }
+        ],
+        "steps": [
+            "Add hot water to yeast in a large bowl and let sit for 15 minutes.",
+            "Mix in oil, sugar, salt, and flour and let sit for 1 hour.",
+            "Knead the dough and spread onto a pan.",
+            "Spread pizza sauce and sprinkle cheese.",
+            "Add any optional toppings as you wish.",
+            "Bake at 400 deg Fahrenheit for 15 minutes.",
+            "Enjoy!"
+        ],
+        "timers": [
+            15,
+            60,
+            0,
+            0,
+            0,
+            15,
+            0
+        ],
+        "imageURL": "http:\/\/upload.wikimedia.org\/wikipedia\/commons\/c\/c7\/Spinach_pizza.jpg"
+    },
+    {
+        "id": "15f2918b-4244-44c1-8973-9c27265ea53c",
+        "name": "Cranberry and Apple Stuffed Acorn Squash Recipe",
+        "nameFR": "Courge poivrée farcies aux cranberries et aux pommes",
+        "Author": "Unknown",
+        "AuthorFR": "Inconnu",
+        "Without": [
+            "NoGluten",
+            "Vegetarian"
+        ],
+        "ingredients": [
+            {
+                "quantity": "2",
+                "name": "acorn squash",
+                "type": "Produce",
+                "imageIng": "img\/ingredients\/citrouille.webp"
+            },
+            {
+                "quantity": "1",
+                "name": "boiling water",
+                "type": "Drinks",
+                "imageIng": "img\/ingredients\/eau.webp"
+            },
+            {
+                "quantity": "2",
+                "name": "apples chopped into 1.4 inch pieces",
+                "type": "Produce",
+                "imageIng": "img\/ingredients\/pommes.webp"
+            },
+            {
+                "quantity": "1\/2 cup",
+                "name": "dried cranberries",
+                "type": "Produce",
+                "imageIng": "img\/ingredients\/cranberries-sechees.webp"
+            },
+            {
+                "quantity": "1 teaspoon",
+                "name": "cinnamon",
+                "type": "Baking",
+                "imageIng": "img\/ingredients\/cannelle.webp"
+            },
+            {
+                "quantity": "2 tablespoons",
+                "name": "melted butter",
+                "type": "Dairy",
+                "imageIng": "img\/ingredients\/beurre.webp"
+            }
+        ],
+        "steps": [
+            "Cut squash in half, remove seeds.",
+            "Place squash in baking dish, cut-side down.",
+            "Pour 1\/4-inch water into dish.",
+            "Bake for 30 minutes at 350 degrees F.",
+            "In large bowl, combine remaining ingredients.",
+            "Remove squash from oven, fill with mix.",
+            "Bake for 30-40 more minutes, until squash tender.",
+            "Enjoy!"
+        ],
+        "timers": [
+            0,
+            0,
+            0,
+            30,
+            0,
+            0,
+            30,
+            0
+        ],
+        "imageURL": "http:\/\/elanaspantry.com\/wp-content\/uploads\/2008\/10\/acorn_squash_with_cranberry.jpg",
+        "originalURL": ""
+    },
+    {
+        "id": "bdd7a385-97d7-48c3-b5dd-459515a30cc5",
+        "name": "Mic's Yorkshire Puds",
+        "nameFR": "Yorkshire pudding  de Mickey",
+        "Author": "Unknown",
+        "AuthorFR": "Inconnu",
+        "Without": [
+            "Vegetarian"
+        ],
+        "ingredients": [
+            {
+                "quantity": "200g",
+                "name": "plain flour",
+                "type": "Baking",
+                "imageIng": "img\/ingredients\/farine.webp"
+            },
+            {
+                "quantity": "3",
+                "name": "eggs",
+                "type": "Dairy",
+                "imageIng": "img\/ingredients\/oeuf.webp"
+            },
+            {
+                "quantity": "300ml",
+                "name": "milk",
+                "type": "Dairy",
+                "imageIng": "img\/ingredients\/lait.webp"
+            },
+            {
+                "quantity": "3 tbsp",
+                "name": "vegetable oil",
+                "type": "Condiments",
+                "imageIng": "img\/ingredients\/huile-d-olive.webp"
+            }
+        ],
+        "steps": [
+            "Put the flour and some seasoning into a large bowl.",
+            "Stir in eggs, one at a time.",
+            "Whisk in milk until you have a smooth batter.",
+            "Chill in the fridge for at least 30 minutes.",
+            "Heat oven to 220C\/gas mark 7.",
+            "Pour the oil into the holes of a 8-hole muffin tin.",
+            "Heat tin in the oven for 5 minutes.",
+            "Ladle the batter mix into the tin.",
+            "Bake for 30 minutes until well browned and risen."
+        ],
+        "timers": [
+            0,
+            0,
+            0,
+            30,
+            0,
+            0,
+            5,
+            0,
+            30
+        ],
+        "imageURL": "http:\/\/upload.wikimedia.org\/wikipedia\/commons\/f\/f9\/Yorkshire_Pudding.jpg",
+        "originalURL": "https:\/\/fr.wikipedia.org\/wiki\/Yorkshire_pudding"
+    },
+    {
+        "id": "e619209b-9b62-41c3-9f42-311ee8e4b9e2",
+        "name": "Old-Fashioned Oatmeal Cookies",
+        "ingredients": [
+            {
+                "quantity": "1 cup",
+                "name": "raisins",
+                "type": "Produce",
+                "imageIng": "img\/ingredients\/raisin-sec.webp"
+            },
+            {
+                "quantity": "1",
+                "name": "cup water",
+                "type": "Drinks",
+                "imageIng": "img\/ingredients\/eau.webp"
+            },
+            {
+                "quantity": "3\/4 cup",
+                "name": "shortening",
+                "type": "Baking",
+                "imageIng": "img\/ingredients\/shortening.png"
+            },
+            {
+                "quantity": "1 1\/2 cups",
+                "name": "sugar",
+                "type": "Baking",
+                "imageIng": "img\/ingredients\/sucre.webp"
+            },
+            {
+                "quantity": "2 1\/2 cups",
+                "name": "flour",
+                "type": "Baking",
+                "imageIng": "img\/ingredients\/farine.webp"
+            },
+            {
+                "quantity": "1 tsp.",
+                "name": "soda",
+                "type": "Baking",
+                "imageIng": "img\/ingredients\/soda.jpg"
+            },
+            {
+                "quantity": "1 tsp.",
+                "name": "salt",
+                "type": "Baking",
+                "imageIng": "img\/ingredients\/sel.webp"
+            },
+            {
+                "quantity": "1 tsp.",
+                "name": "cinnamon",
+                "type": "Baking",
+                "imageIng": "img\/ingredients\/cannelle.webp"
+            },
+            {
+                "quantity": "1\/2 tsp.",
+                "name": "baking powder",
+                "type": "Baking",
+                "imageIng": "img\/ingredients\/levure-fraiche.webp"
+            },
+            {
+                "quantity": "1\/2 tsp.",
+                "name": "cloves",
+                "type": "Baking",
+                "imageIng": "img\/ingredients\/clous-de-girofle-piles.webp"
+            },
+            {
+                "quantity": "2 cups",
+                "name": "oats",
+                "type": "Baking",
+                "imageIng": "img\/ingredients\/avoine.webp"
+            },
+            {
+                "quantity": "1\/2 cup",
+                "name": "chopped nuts",
+                "type": "Baking",
+                "imageIng": "img\/ingredients\/noix.webp"
+            }
+        ],
+        "steps": [
+            "Simmer raisins and water over medium heat until raisins are plump, about 15 minutes.",
+            "Drain raisins, reserving the liquid.",
+            "Add enough water to reserved liquid to measure 1\/2 cup.",
+            "Heat oven to 400°.",
+            "Mix thoroughly shortening, sugar, eggs and vanilla.",
+            "Stir in reserved liquid.",
+            "Blend in remaining ingredients.",
+            "Drop dough by rounded teaspoonfuls about 2 inches apart onto ungreased baking sheet.",
+            "Bake 8 to 10 minutes or until light brown.",
+            "About 6 1\/2 dozen cookies."
+        ],
+        "timers": [
+            15,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            8,
+            0
+        ],
+        "imageURL": "http:\/\/s3.amazonaws.com\/gmi-digital-library\/65caecf7-a8f7-4a09-8513-2659cf92871e.jpg",
+        "originalURL": "#"
+    },
+    {
+        "id": "912eb4a8-3030-4c75-92e3-be7c8598555b",
+        "name": "Blueberry Oatmeal Squares",
+        "ingredients": [
+            {
+                "quantity": "2-1\/2 cups",
+                "name": "rolled oats, (not instant)",
+                "type": "Baking",
+                "imageIng": "img\/ingredients\/avoine.webp"
+            },
+            {
+                "quantity": "1-1\/4 cups",
+                "name": "all-purpose flour",
+                "type": "Baking",
+                "imageIng": "img\/ingredients\/farine.webp"
+            },
+            {
+                "quantity": "1 tbsp",
+                "name": "grated orange rind",
+                "type": "Produce",
+                "imageIng": "img\/ingredients\/orange.webp"
+            },
+            {
+                "quantity": "1\/4 tsp",
+                "name": "salt",
+                "type": "Baking",
+                "imageIng": "img\/ingredients\/sel.webp"
+            },
+            {
+                "quantity": "1 cup",
+                "name": "cold butter, cubed",
+                "type": "Baking",
+                "imageIng": "img\/ingredients\/beurre.webp"
+            },
+            {
+                "quantity": "3\/4 cup",
+                "name": "packed brown sugar",
+                "type": "Baking",
+                "imageIng": "img\/ingredients\/sucre-roux.webp"
+            },
+            {
+                "quantity": "3 cups",
+                "name": "fresh blueberries",
+                "type": "Produce",
+                "imageIng": "img\/ingredients\/myrtilles.webp"
+            },
+            {
+                "quantity": "1\/2 cup",
+                "name": "granulated sugar",
+                "type": "Baking",
+                "imageIng": "img\/ingredients\/sucre.webp"
+            },
+            {
+                "quantity": "1\/3 cup",
+                "name": "orange juice",
+                "type": "Produce",
+                "imageIng": "img\/ingredients\/jus-d-orange.webp"
+            },
+            {
+                "quantity": "4 tsp",
+                "name": "cornstarch",
+                "type": "Baking",
+                "imageIng": "img\/ingredients\/mais.webp"
+            }
+        ],
+        "steps": [
+            "Filling: In saucepan, bring blueberries, sugar and orange juice to boil; reduce heat and simmer until tender, about 10 minutes.",
+            "Whisk cornstarch with 2 tbsp (25 mL) water; whisk into blueberries and boil, stirring, until thickened, about 1 minute.",
+            "Place plastic wrap directly on surface; refrigerate until cooled, about 1 hour.",
+            "In large bowl, whisk together oats, flour, sugar, orange rind and salt ; with pastry blender, cut in butter until in coarse crumbs.",
+            "Press half into 8-inch (2 L) square parchment paper–lined metal cake pan; spread with blueberry filling.",
+            "Bake in centre of 350°F oven until light golden, about 45 minutes.",
+            "Let cool on rack before cutting into squares.",
+            "(Make-ahead: Cover and refrigerate for up to 2 days or overwrap with heavy-duty foil and freeze for up to 2 weeks.)"
+        ],
+        "timers": [
+            10,
+            1,
+            60,
+            0,
+            0,
+            45,
+            0,
+            0
+        ],
+        "imageURL": "http:\/\/www.canadianliving.com\/img\/photos\/biz\/blueberry-oatmeal-squares5801359401371.jpg",
+        "originalURL": "http:\/\/www.canadianliving.com\/food\/blueberry_oatmeal_squares.php"
+    },
+    {
+        "id": "b77c70fe-2821-40d7-9e16-e88e174e8431",
+        "name": "Curried chicken salad",
+        "ingredients": [
+            {
+                "quantity": "3",
+                "name": "skinless, boneless chicken breasts, halved lengthwise",
+                "type": "Meat",
+                "imageIng": "img\/ingredients\/blanc-de-poulet.webp"
+            },
+            {
+                "quantity": "1\/2 cup",
+                "name": "mayonnaise",
+                "type": "Baking",
+                "imageIng": "img\/ingredients\/mayonnaise.webp"
+            },
+            {
+                "quantity": "1 tbsp",
+                "name": "lemon zest",
+                "type": "Produce",
+                "imageIng": "img\/ingredients\/citron.webp"
+            },
+            {
+                "quantity": "1 tbsp ",
+                "name": "lemon juice",
+                "type": "Produce",
+                "imageIng": "img\/ingredients\/jus-de-citron.webp"
+            },
+            {
+                "quantity": "1 1\/2 tsp",
+                "name": "curry powder",
+                "type": "Baking",
+                "imageIng": "img\/ingredients\/curry.jpg"
+            },
+            {
+                "quantity": "1\/4 tsp",
+                "name": "salt",
+                "type": "Baking",
+                "imageIng": "img\/ingredients\/sel.webp"
+            },
+            {
+                "quantity": "2",
+                "name": "ripe mangoes, diced",
+                "type": "Produce",
+                "imageIng": "img\/ingredients\/mangue.webp"
+            },
+            {
+                "quantity": "1\/4 cup",
+                "name": "dried cranberries",
+                "type": "Produce",
+                "imageIng": "img\/ingredients\/cranberries-sechees.webp"
+            },
+            {
+                "quantity": "2",
+                "name": "green onions, thinly sliced",
+                "type": "Produce",
+                "imageIng": "img\/ingredients\/ciboule.webp"
+            },
+            {
+                "quantity": "1",
+                "name": "celery stalk, finely chopped",
+                "type": "Produce",
+                "imageIng": "img\/ingredients\/celeri.webp"
+            },
+            {
+                "quantity": "6 leaves",
+                "name": "Boston lettuce",
+                "type": "Produce",
+                "imageIng": "img\/ingredients\/salade.webp"
+            },
+            {
+                "quantity": "6",
+                "name": "English muffins, toasted",
+                "type": "Misc",
+                "imageIng": "img\/ingredients\/muffins-anglais.jpg"
+            }
+        ],
+        "steps": [
+            "ARRANGE chicken in a single layer in a large pot.",
+            "Add water to just cover.",
+            "Bring to a boil over medium-high.",
+            "Flip chicken, reduce heat to medium and simmer until cooked, about 6 more min.",
+            "Cool.",
+            "STIR mayo with lemon zest, juice, curry and salt in large bowl.",
+            "Using 2 forks, shred chicken, then stir into mayo mixture with mango, cranberries, green onions and celery.",
+            "Divide among muffins with lettuce leaves",
+            "Sandwich with tops"
+        ],
+        "timers": [
+            0,
+            0,
+            0,
+            6,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "imageURL": "http:\/\/www.chatelaine.com\/wp-content\/uploads\/2013\/05\/Curried-chicken-salad.jpg",
+        "originalURL": "http:\/\/www.chatelaine.com\/recipe\/stovetop-cooking-method\/curried-chicken-salad\/"
+    }
 ]

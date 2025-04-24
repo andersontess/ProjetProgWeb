@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,11 +29,12 @@
     <!--########## Affichage de la recette  ##########-->
     <section class="recipe-container" id="info-recipe">
         <div class="container">
+
             <!-- Première case : Informations importantes -->
             <div class="row">
-                <div class="main-info-recipe col-4 me-3 box">
+                <div id="main" class="main-info-recipe col-4 me-3 box">
                     <h1 id="recipe-name"></h1>
-                    <h4 id="auteur"></h4>
+                    <h4 id="auteur"></h4></h4>
                     <h4 id="duree"></h4>
                     <h6 id="without"></h6>
                 </div>
@@ -45,7 +46,7 @@
                     <div id="img-recipe"></div>
                     <p id="description"></p>
                 </div>
-                <div class="right-info box col-7">
+                <div class="right-info box col-7 flex-grow-1">
                     <h2>Ingrédients</h2>
                     <div id="list-ingredients" class="d-flex flex-wrap gap-3"></div>
 
@@ -66,6 +67,16 @@
                             </div>
                             <div id="input-lastname" class="col-md-6">
                                 <!-- INPUT NOM -->
+                            </div>
+                        </div>
+                        
+                        <!-- Ajout d'image-->
+                        <div class="mb-3">
+                            <label for="image" class="form-label fw-bold"></label>
+                            <input class="form-control" type="file" id="image" name="image" accept="image/*">
+                            <div id="imagePreviewContainer" class="mt-3" style="display: none;">
+                                <p class="mb-1 fw-semibold"></p>
+                                <img id="imagePreview" src="#" alt="Aperçu de l'image" class="img-fluid rounded shadow" style="max-height: 200px;">
                             </div>
                         </div>
 

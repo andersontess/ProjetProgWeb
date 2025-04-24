@@ -1,37 +1,8 @@
 {
-    "admin@gmail.com": {
-        "id": "0a66617b-b2ac-4d8d-acc6-82bf53669a8d",
-        "username": "LeBoss",
-        "password": "$2y$10$jDZRhldONTnnim0X2Wu5h.Vj2I16ArqpUi\/X1rGniBKwWjXAlbnFi",
-        "role": "admin"
-    },
-    "cuisinier@gmail.com": {
-        "id": "356b6b1f-c4b7-470f-9898-c5a11d2927d6",
-        "username": "cuisinier",
-        "password": "$2y$10$kJL83Aq6BeU9jeEuV9iPSOAtbn9.IzvBChyDsbnfmWj9jbR2sEfIe",
-        "role": "cuisinier"
-    },
-    "tessbanderson@gmail.com": {
-        "id": "65152ea1-9bc1-4022-96dd-f00f6f00ce86",
-        "username": null,
-        "password": "$2y$12$FweIdjjRcFJWVJ3OE3mas.4B.VbKnwJW0CpygalxRTjChzJij1UEq",
-        "role": null
-    },
-    "chef@gmail.com": {
-        "username": "chef_tess01",
-        "password": "$2y$12$i2lI0RG6nkjCLW7W0c7j9.jxm1z6K.ZHaA4VoyFTaxfgab88CBtRO",
-        "role": "cuisinier"
-    },
-    "test@gmail.com": {
-        "id": "b997b216-2ba5-440c-860e-1c1bb2848142",
-        "username": "testeur1",
-        "password": "$2y$10$vFDenfR9RGQyzmfyu54vqOY1KVoNugO7E4a5r.Pbd49J.dpNdCKr.",
-        "role": "cuisinier"
-    },
-    "maxime11@gmail.com": {
-        "id": "a658ea8f-1725-4bc4-afbb-c9fd6b0fd5c1",
-        "username": "maxime11",
-        "password": "$2y$10$lXs5tE9jtJP1Lb8yNo1wIOL.6X.baGPQYNw0EzHM56L4phM4H3fXa",
-        "role": "cuisinier"
+    "trad@gmail.com": {
+        "id": "b73d72d2-0cc0-4220-bf5a-3a5024bb1983",
+        "username": "traducteur",
+        "password": "$2y$10$70sdvW\/MY2lpxWeQ5Mml1OSDO68bao.pY2lzOIOc2Vma3tyvM5L6S",
+        "role": "traducteur"
     }
 }

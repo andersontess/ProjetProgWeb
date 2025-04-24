@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page traduction</title>
+
+    <!-- Feuilles de style CSS et icône -->
+    <link rel="stylesheet" href="css/recipe.css">
+    <link rel="stylesheet" href="css/translate.css">
+    <link rel="icon" href="img/Logo-Page.png">
+
+    <!-- Ajout de bootstrap -->
+    <!-- icons et police d'ecriture -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!--########## En-tête ##########-->
+    <header class="header">
+        <a href="index.html">
+            <img src="img/logo.png" alt="logo">
+        </a>
+        
+        <nav id="user-navbar" class="navbar">
+        </nav>
+    </header>
+
+    <section>
+        <form id="form-translate">
+    
+            <div class="row">
+                <!-- Recette en Anglais -->
+                <div class="lg-en col-6 px-3">
+                    <h1 class="m-2 px-2">Recipe in English</h1>
+                    <!-- Name of the recipe -->
+                    <div id='name' class="box"> 
+                        <!-- Insert the name of the recipe -->
+                    </div>
+                    
+
+                    <div class="row ">
+                        <!-- Author + Without -->
+                        <div class="col-6 d-flex flex-column justify-content-start">
+                            <div class="author box my-2">
+                                <!-- Insert the author's name -->
+                            </div>
+                            <div class="without box my-2">
+                                <p class="p-without"> <!-- Insert without --></p>
+                            </div>
+                        </div>
+
+                        <!-- Description -->
+                        <div id="description" class="col-6 d-flex my-2">
+                            <div class="box w-100">
+                                <div class="description">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ingredients -->
+                    <div id="ingredients-en" class="ingredients-container box mt-3">
+                        <h2>Ingredients</h2>
+                        <div class="ingredients d-flex flex-wrap justify-content-center px-2 py-1">
+                            <!-- Insert ingredients -->
+                        </div>
+                    </div>
+
+                    <!-- Steps -->
+                    <div id="steps-en" class="steps-container box mt-3">
+                        <h2>Steps</h2>
+                        <div class="steps d-flex flex-wrap justify-content-center px-2 py-1">
+                            <!-- Insert the recipe steps -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recette en Français -->
+                <div class="lg-fr col-6 px-3">
+                    <h1 class="m-2">Recette en Français</h1>
+                    <!-- Nom de la recette -->
+                    <div id='nameFR' class="box"></div>
+                    
+                    
+                    <div class="row">
+                        <!-- Auteur + Without -->
+                        <div class="col-6 d-flex flex-column justify-content-start">
+                            <div class="author box my-2"></div>
+                            <div class="without box my-2"><p class="p-without"></p></div>
+                        </div>
+
+                        <!-- Description -->
+                        <div id="descriptionFR" class="col-6 d-flex my-2">
+                            <div class="box w-100">
+                                <div class="descriptionFR">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ingrédients -->
+                    <div id="ingredients-fr" class="ingredients-container box mt-3">
+                        <h2>Ingrédients</h2>
+                        <div class="ingredientsFR d-flex flex-wrap justify-content-center px-2 py-1"></div>
+                    </div>
+
+                    <!-- étapes -->
+                    <div id="steps-fr" class="steps-container box mt-3">
+                        <h2>Étapes</h2>
+                        <div class="etapes d-flex flex-wrap justify-content-center px-2 py-1"></div>
+                    </div>
+                </div>
+            </div>
+            <input type="submit" value="Ajouter la traduction">
+        </form>
+    </section>
+
+    <script>
+        //Pour refresh la page toutes les secondes
+        function autoRefresh() {
+            window.location = window.location.href;
+        }
+        //setInterval('autoRefresh()', 1000);
+    </script>
+
+    <!-- Appel du fichier JS et JQuery-->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="script.js" ></script> 
+</body>
+</html>

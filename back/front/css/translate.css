@@ -1,0 +1,105 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Epilogue&family=Fredoka+One&display=swap');
+
+/*********************/
+/***    Général    ***/
+/*********************/
+*{
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+} 
+
+/***********************************/
+/***    Classes réutilisables    ***/
+/***********************************/
+section{
+    background: #f2f2fc;
+    position: relative;
+    margin-top: 89px;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.box {
+    background: #fdf9ff;
+    border: 1px solid #e8dfec;
+    border-radius: 30px;
+}
+
+/*****************************/
+/***        Recette        ***/
+/*****************************/
+#form-translate h1, #form-translate h2 {
+    text-align: center;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+#form-translate .ingredients-container h2::after,
+#form-translate .steps-container h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 8px;
+    border-radius: 5px;
+    background: #006e00;
+    margin: 10px auto 20px;
+}
+
+/*Inputs*/
+#form-translate input {
+    width: 250px;
+    margin: 10px 0;
+    padding-left: 10px;
+    border-radius: 20px;
+    border: #dddcdc 1px solid;
+    border-radius: 50px;
+}
+
+#form-translate input:focus{
+    outline: none;
+    border: #005800 2px solid;
+}
+
+#form-translate textarea{
+    display: block;
+    margin: auto;
+}
+
+/*Author et Without*/
+#form-translate p {
+    margin: 0;
+    padding: 5px;
+    text-align: center;
+}
+
+/*Ingredients*/
+#form-translate ul{
+    list-style-type: none;
+}
+
+#form-translate .ingredientsFR li input{
+    margin: 3px;
+}
+
+/*Etapes*/
+#form-translate .steps .step-container p,
+#form-translate .etapes .step-container p{
+    width: 300px;
+    background: #fff;
+}
+
+/*Button*/
+#form-translate input[type="submit"]{
+    background: #006e00;
+    color: white;
+    display: block;
+    margin: 10px auto;
+    padding: 10px 5px;
+    transition: all 0.3s ease;
+}
+
+#form-translate input[type="submit"]:hover{
+    transform: scale(1.1);
+}

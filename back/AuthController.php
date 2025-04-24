@@ -159,12 +159,12 @@ class AuthController
 
 	public function validateAuth(): string
 	{
-		return $_SESSION['user'] ?? null;
+		return json_encode($_SESSION['user'] ?? null);
 	}
 	
-	public function getIdUser(): void
+	public function getSession(): void
 	{
-		echo json_encode($_SESSION['id'] ?? null);
+		echo json_encode($_SESSION ?? null);
 	}
 
 	private function getAllUsers(): array
