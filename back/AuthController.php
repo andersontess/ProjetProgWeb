@@ -9,6 +9,16 @@ class AuthController
 		$this->filePath = $filePath;
 	}
 
+	public function getSession(): void
+	{
+		echo json_encode($_SESSION ?? null);
+	}
+
+	public function getAllUsers(): array
+	{
+		return file_exists($this->filePath) ? json_decode(file_get_contents($this->filePath), true) ?? [] : [];
+	}
+
 	public function generateUuid(): string
 	{
 		//sprintf : retourne une chaîne formatée
@@ -130,6 +140,7 @@ class AuthController
 
 		// 5. Store the user session
 		$_SESSION['id'] = $users[$email]["id"];
+		$_SESSION['mail'] = $email;
 		$_SESSION['username'] = $users[$email]["username"];
 		$_SESSION['role'] = $users[$email]["role"];
 
@@ -157,18 +168,58 @@ class AuthController
 		
 	}
 
-	public function validateAuth(): string
+	public function handleChangePhoto() : void
 	{
-		return json_encode($_SESSION['user'] ?? null);
-	}
-	
-	public function getSession(): void
-	{
-		echo json_encode($_SESSION ?? null);
-	}
+		if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+			http_response_code(405);
+			echo json_encode(['error' => 'Method Not Allowed']);
+			return;
+		}
 
-	private function getAllUsers(): array
-	{
-		return file_exists($this->filePath) ? json_decode(file_get_contents($this->filePath), true) ?? [] : [];
+
+		//Pour insérer l'image dans le dossier
+ 		$imageUrl = null;
+		if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
+			$uploadDir = __DIR__ . '/front/img/users/';
+			if (!file_exists($uploadDir)) {
+				mkdir($uploadDir, 0777, true); // create directory if not exists
+			}
+
+			$fileTmp = $_FILES['image']['tmp_name'];
+			$fileName = uniqid() . "_" . basename($_FILES['image']['name']);
+			$targetPath = $uploadDir . $fileName;
+
+			if (move_uploaded_file($fileTmp, $targetPath)) {
+				// Image uploaded successfully
+				$imageUrl = '/front/img/users/' . $fileName;
+			} else {
+				http_response_code(500);
+				echo json_encode(['error' => 'Failed to upload image']);
+				return;
+			}
+		} 
+
+		$users = $this->getAllUsers();
+		$current_user_id = $_SESSION['id'];
+
+		foreach ($users as &$user) {
+			if (isset($user['id']) && $user['id'] == $current_user_id){
+				//S'il y a déjà une image on la supprime du dossier
+				if (isset($user['img'])) {
+					$oldImagePath = __DIR__ . $user['img'];
+					if (file_exists($oldImagePath)) {
+						unlink($oldImagePath);
+					}
+				}
+
+				$user['img'] = $imageUrl;
+				$_SESSION['img'] = $imageUrl;
+				break;
+			}
+		}
+
+		file_put_contents($this->filePath, json_encode($users, JSON_PRETTY_PRINT));
+		http_response_code(200);
+		echo json_encode(['message' => 'Photo de profil modifié']);
 	}
 }

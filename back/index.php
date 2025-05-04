@@ -21,6 +21,8 @@ $router->register('POST', '/auth/logout', [$authController, 'handleLogout']);
 $router->register('POST', '/auth/register', [$authController, 'handleRegister']);
 $router->register('POST', '/auth/userSession', [$authController, 'getSession']);
 
+$router->register('POST', '/auth/addPhoto', [$authController, 'handleChangePhoto']);
+
 // COMMENT ROUTES
 $router->register('POST', '/comment/{recipe_id}', [$commentController, 'handlePostCommentRequest']);
 $router->register('GET', '/comment/{recipe_id}', [$commentController, 'handleGetCommentsRequest']);
@@ -31,9 +33,14 @@ $router->register('DELETE', '/comment/{recipe_id}', [$commentController, 'handle
 // RECIPE ROUTES
 $router->register('GET', '/recipe', [$recipeController, 'handleSearchRecipe']);
 $router->register('GET', '/recipe/indexRecipes', [$recipeController, 'getRecipesByType']);
+$router->register('GET', '/recipe/RecipesLiked', [$recipeController, 'handleRecipesLiked']);
+$router->register('GET', '/recipe/RecipesCreated', [$recipeController, 'handleRecipesCreated']);
 $router->register('GET', '/recipe/{recipe_id}', [$recipeController, 'handleConsultRecipe']);
-$router->register('POST', '/recipe/translate/{recipe_id}', [$recipeController, 'handleTranslateRecipe']);
 
+$router->register('POST', '/recipe/addRecipe', [$recipeController, 'handlePostRecipe']);
+$router->register('POST', '/recipe/translate/{recipe_id}', [$recipeController, 'handleTranslateRecipe']);
+$router->register('POST', '/recipe/{recipe_id}/like', [$recipeController, 'handleLikeRecipe']);
+$router->register('DELETE', '/recipe/{recipe_id}/like', [$recipeController, 'handleDeleteLikeRecipe']);
 
 // $router->register('POST', '/recipe/photo', [$recipeController, 'handlePostPhotoRecipe']);
 // $router->register('POST', '/recipe/propose', [$recipeController, 'handleProposeRecipe']);

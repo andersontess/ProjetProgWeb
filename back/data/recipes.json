@@ -1,6 +1,7 @@
 [
     {
         "id": "144c33d1-0921-44b0-b7b6-e552c906680d",
+        "idAuthor": "6b001b92-faeb-46a1-91a7-8769bb386cc8",
         "name": "Chicken curry",
         "nameFR": "Poulet au curry",
         "Author": "Unknown",
@@ -10,7 +11,7 @@
             "Omnivore"
         ],
         "description": "A delicious chicken curry, a classic of Indian cuisine.",
-        "descriptionFR": "Un délicieux poulet au curry, un classique de la cuisine indienne.",
+        "descriptionFR": "Un d\u00e9licieux poulet au curry, un classique de la cuisine indienne.",
         "ingredients": [
             {
                 "quantity": "500g",
@@ -45,14 +46,14 @@
                 "imageIng": "img\/ingredients\/poulet.jpg"
             },
             {
-                "quantity": "2 cuillères",
+                "quantity": "2 cuill\u00e8res",
                 "name": "Curry",
                 "type": "Piment",
                 "imageIng": "img\/ingredients\/curry.jpg"
             },
             {
                 "quantity": "20cl",
-                "name": "Crème fraîche",
+                "name": "Cr\u00e8me fra\u00eeche",
                 "type": "Condiments",
                 "imageIng": "img\/ingredients\/creme-fraiche.webp"
             },
@@ -65,13 +66,13 @@
         ],
         "steps": [
             "Brown the chicken in a frying pan.",
-            "Add the curry powder and crème fraîche",
+            "Add the curry powder and cr\u00e8me fra\u00eeche",
             "Simmer for 10 minutes.",
             "Add the chilli pepper."
         ],
         "stepsFR": [
-            "Faire revenir le poulet dans une poêle.",
-            "Ajouter le curry et la crème fraîche.",
+            "Faire revenir le poulet dans une po\u00eale.",
+            "Ajouter le curry et la cr\u00e8me fra\u00eeche.",
             "Laisser mijoter 10 minutes.",
             "Ajouter le piment."
         ],
@@ -82,19 +83,22 @@
             1
         ],
         "imageURL": "img\/recipe\/poulet_curry.png",
-        "originalURL": "#"
+        "originalURL": "#",
+        "likes": [
+            "8a8d833c-21cb-4417-968b-dca92eb056ea"
+        ]
     },
     {
         "id": "1a0337ec-404c-4af0-9f2a-9b1ce2126a5d",
         "name": "Pasta carbonara",
-        "nameFR": "Pâtes carbonara",
+        "nameFR": "P\u00e2tes carbonara",
         "Author": "Paul",
         "AuthorFR": "Paul",
         "Without": [
             "NoGluten"
         ],
         "description": "A pasta carbonara dish, a classic of Italian cuisine.",
-        "descriptionFR": "Un plat de pâtes à la carbonara, un classique de la cuisine italienne.",
+        "descriptionFR": "Un plat de p\u00e2tes \u00e0 la carbonara, un classique de la cuisine italienne.",
         "ingredients": [
             {
                 "quantity": "200g",
@@ -124,7 +128,7 @@
         "ingredientsFR": [
             {
                 "quantity": "200g",
-                "name": "Pâtes",
+                "name": "P\u00e2tes",
                 "type": "Condiments",
                 "imageIng": "img\/ingredients\/spaghetti.webp"
             },
@@ -136,7 +140,7 @@
             },
             {
                 "quantity": "20cl",
-                "name": "Crème fraîche",
+                "name": "Cr\u00e8me fra\u00eeche",
                 "type": "Condiments",
                 "imageIng": "img\/ingredients\/creme-fraiche.webp"
             },
@@ -150,14 +154,14 @@
         "steps": [
             "Cook the pasta",
             "Brown the bacon in a frying pan",
-            "Add the crème fraîche and Parmesan.",
+            "Add the cr\u00e8me fra\u00eeche and Parmesan.",
             "Mix the pasta with the sauce."
         ],
         "stepsFR": [
-            "Faire cuire les pâtes.",
-            "Faire revenir les lardons dans une poêle.",
-            "Ajouter la crème fraîche et le parmesan.",
-            "Mélanger les pâtes avec la sauce."
+            "Faire cuire les p\u00e2tes.",
+            "Faire revenir les lardons dans une po\u00eale.",
+            "Ajouter la cr\u00e8me fra\u00eeche et le parmesan.",
+            "M\u00e9langer les p\u00e2tes avec la sauce."
         ],
         "timers": [
             5,
@@ -165,11 +169,13 @@
             0,
             0
         ],
+        "likes": [],
         "imageURL": "img\/recipe\/pates_cabonara.png",
         "originalURL": "#"
     },
     {
         "id": "114c9dc8-75cd-4a8c-a9ea-ebfdbb765bf3",
+        "idAuthor": "6b001b92-faeb-46a1-91a7-8769bb386cc8",
         "name": "Cantonese rice",
         "nameFR": "Riz cantonais",
         "Author": "Unknown",
@@ -216,12 +222,16 @@
             3,
             0
         ],
-        "imageURL": "img\/recipe\/riz_cantonais.png"
+        "imageURL": "img\/recipe\/riz_cantonais.png",
+        "likes": [
+            "b73d72d2-0cc0-4220-bf5a-3a5024bb1983",
+            "8a8d833c-21cb-4417-968b-dca92eb056ea"
+        ]
     },
     {
         "id": "07ce220c-4afe-41aa-a353-772c5630b9fc",
         "name": "Caesar salad",
-        "nameFR": "Salade César",
+        "nameFR": "Salade C\u00e9sar",
         "Author": "Jean",
         "AuthorFR": "Jean",
         "Without": [
@@ -230,7 +240,7 @@
             "Omnivore"
         ],
         "description": "A delicious Caesar salad, a classic of American cuisine",
-        "descriptionFR": "Une délicieuse salade César, un classique de la cuisine américaine.",
+        "descriptionFR": "Une d\u00e9licieuse salade C\u00e9sar, un classique de la cuisine am\u00e9ricaine.",
         "ingredients": [
             {
                 "quantity": "1",
@@ -269,6 +279,7 @@
             5,
             0
         ],
+        "likes": [],
         "imageURL": "img\/recipe\/salade_cesar.png",
         "originalURL": "#"
     },
@@ -283,7 +294,7 @@
             "Vegetarian"
         ],
         "description": "A delicious apple tart, a classic of French cuisine",
-        "descriptionFR": "Une délicieuse tarte aux pommes, un classique de la cuisine française.",
+        "descriptionFR": "Une d\u00e9licieuse tarte aux pommes, un classique de la cuisine fran\u00e7aise.",
         "ingredients": [
             {
                 "quantity": "1",
@@ -315,7 +326,7 @@
             "Peel and slice the apples",
             "Arrange the apples on the pastry",
             "Sprinkle with sugar and cinnamon",
-            "Bake for 30 minutes at 180°C."
+            "Bake for 30 minutes at 180\u00b0C."
         ],
         "timers": [
             2,
@@ -324,11 +335,13 @@
             2,
             30
         ],
+        "likes": [],
         "imageURL": "img\/recipe\/tarte_pommes.png",
         "originalURL": "#"
     },
     {
         "id": "509c16a6-0472-424d-b779-c7cc66ee35e3",
+        "idAuthor": "6b001b92-faeb-46a1-91a7-8769bb386cc8",
         "name": "Tartiflette",
         "nameFR": "Tartiflette",
         "Author": "Romain",
@@ -369,15 +382,16 @@
             "Arrange the potatoes in a dish.",
             "Add the bacon and onions.",
             "Arrange the reblochon cheese on top",
-            "Bake for 30 minutes at 180°C."
+            "Bake for 30 minutes at 180\u00b0C."
         ],
+        "likes": [],
         "imageURL": "img\/recipe\/tartiflette.png",
         "originalURL": "#"
     },
     {
         "id": "e911fcf4-2fa9-4e5f-b970-9d5be481c095",
         "name": "Crock Pot Roast",
-        "nameFR": "Roti à la cocotte",
+        "nameFR": "Roti \u00e0 la cocotte",
         "Author": "Unknown",
         "AuthorFR": "Inconnu",
         "Without": [
@@ -458,7 +472,7 @@
             "Placer le roti dans la cocotte en fonte",
             "Melanger les sachets de sauces en poudre dans un bol et saupoudrer le roti avec.",
             "Arroser le roti",
-            "Cuire à feu doux entre 7 et 9 heures."
+            "Cuire \u00e0 feu doux entre 7 et 9 heures."
         ],
         "timers": [
             1,
@@ -466,6 +480,7 @@
             1,
             420
         ],
+        "likes": [],
         "imageURL": "http:\/\/img.sndimg.com\/food\/image\/upload\/w_266\/v1\/img\/recipes\/27\/20\/8\/picVfzLZo.jpg",
         "originalURL": "http:\/\/www.food.com\/recipe\/to-die-for-crock-pot-roast-27208"
     },
@@ -501,7 +516,7 @@
             }
         ],
         "steps": [
-            "Preheat oven to 425°F.",
+            "Preheat oven to 425\u00b0F.",
             "Cut off the woody bottom part of the asparagus spears and discard.",
             "With a vegetable peeler, peel off the skin on the bottom 2-3 inches of the spears (this keeps the asparagus from being all.\",string.\", and if you eat asparagus you know what I mean by that).",
             "Place asparagus on foil-lined baking sheet and drizzle with olive oil.",
@@ -524,11 +539,13 @@
             0,
             0
         ],
+        "likes": [],
         "imageURL": "http:\/\/img.sndimg.com\/food\/image\/upload\/w_266\/v1\/img\/recipes\/50\/84\/7\/picMcSyVd.jpg",
         "originalURL": "http:\/\/www.food.com\/recipe\/roasted-asparagus-50847"
     },
     {
         "id": "c1fb3f82-2d2f-4f73-9e96-cd40f915f236",
+        "idAuthor": "6b001b92-faeb-46a1-91a7-8769bb386cc8",
         "name": "Curried Lentils and Rice",
         "nameFR": "Lentilles et Riz au curry",
         "Author": "Unknown",
@@ -582,6 +599,9 @@
             20,
             20,
             0
+        ],
+        "likes": [
+            "8a8d833c-21cb-4417-968b-dca92eb056ea"
         ],
         "imageURL": "img\/recipe\/lentilles_riz_curry.png"
     },
@@ -662,12 +682,13 @@
             15,
             0
         ],
+        "likes": [],
         "imageURL": "http:\/\/upload.wikimedia.org\/wikipedia\/commons\/c\/c7\/Spinach_pizza.jpg"
     },
     {
         "id": "15f2918b-4244-44c1-8973-9c27265ea53c",
         "name": "Cranberry and Apple Stuffed Acorn Squash Recipe",
-        "nameFR": "Courge poivrée farcies aux cranberries et aux pommes",
+        "nameFR": "Courge poivr\u00e9e farcies aux cranberries et aux pommes",
         "Author": "Unknown",
         "AuthorFR": "Inconnu",
         "Without": [
@@ -732,6 +753,7 @@
             30,
             0
         ],
+        "likes": [],
         "imageURL": "http:\/\/elanaspantry.com\/wp-content\/uploads\/2008\/10\/acorn_squash_with_cranberry.jpg",
         "originalURL": ""
     },
@@ -876,7 +898,7 @@
             "Simmer raisins and water over medium heat until raisins are plump, about 15 minutes.",
             "Drain raisins, reserving the liquid.",
             "Add enough water to reserved liquid to measure 1\/2 cup.",
-            "Heat oven to 400°.",
+            "Heat oven to 400\u00b0.",
             "Mix thoroughly shortening, sugar, eggs and vanilla.",
             "Stir in reserved liquid.",
             "Blend in remaining ingredients.",
@@ -969,8 +991,8 @@
             "Whisk cornstarch with 2 tbsp (25 mL) water; whisk into blueberries and boil, stirring, until thickened, about 1 minute.",
             "Place plastic wrap directly on surface; refrigerate until cooled, about 1 hour.",
             "In large bowl, whisk together oats, flour, sugar, orange rind and salt ; with pastry blender, cut in butter until in coarse crumbs.",
-            "Press half into 8-inch (2 L) square parchment paper–lined metal cake pan; spread with blueberry filling.",
-            "Bake in centre of 350°F oven until light golden, about 45 minutes.",
+            "Press half into 8-inch (2 L) square parchment paper\u2013lined metal cake pan; spread with blueberry filling.",
+            "Bake in centre of 350\u00b0F oven until light golden, about 45 minutes.",
             "Let cool on rack before cutting into squares.",
             "(Make-ahead: Cover and refrigerate for up to 2 days or overwrap with heavy-duty foil and freeze for up to 2 weeks.)"
         ],

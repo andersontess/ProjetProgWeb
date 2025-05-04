@@ -113,6 +113,12 @@ class CommentController // manages comments and likes.
 
 	public function handleDeleteCommentRequest(): void
 	{
+		if ($_SERVER['REQUEST_METHOD'] !== 'DELETE') {
+			http_response_code(405);
+			echo json_encode(['error' => 'Method Not Allowed']);
+			return;
+		}
+
 		//On récupère l'ID de la recette 
 		$uri = $_SERVER['REQUEST_URI'];
 		$scinde = explode("/", $uri);
@@ -122,7 +128,6 @@ class CommentController // manages comments and likes.
 		$rawData = file_get_contents("php://input");
 		$data = json_decode($rawData, true);
 		$timestamp = $data['timestamp'] ?? null;
-
 
 		//On récupère tout les commentaires
 		$comments = $this->getAllComments();
@@ -148,9 +153,12 @@ class CommentController // manages comments and likes.
 		echo json_encode(['message' => 'Comment deleted '.$timestamp]);
 	}
 
+	/*Pas utilisé*/
 	public function handleDeleteAllCommentRequest(): void
 	{
-		$email = $this->authController->validateAuth();
+		$session_user = $this->authController->getSession();
+		$email = $session_user["mail"];
+
 		if (!$email) {
 			http_response_code(401);
 			echo json_encode(['error' => 'Unauthorized']);

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page création</title>
+
+    <!-- Feuilles de style CSS et icône -->
+    <link rel="stylesheet" href="css/recipe.css">
+    <link rel="stylesheet" href="css/create.css">
+    <link rel="icon" href="img/Logo-Page.png">
+
+    <!-- Ajout de bootstrap -->
+    <!-- icons et police d'ecriture -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!--########## En-tête ##########-->
+    <header class="header">
+        <a href="index.html">
+            <img src="img/logo.png" alt="logo">
+        </a>
+        
+        <nav id="user-navbar" class="navbar">
+        </nav>
+    </header>
+
+    <section>
+        <form id="form-create">
+            <div class="container">
+                <div class="row">
+                    <!-- Partie Gauche : En Anglais -->
+                    <div class="col-6">
+                        <h1 class="text-center">Recipe in English</h1>
+                        <!-- Nom de la recette -->
+                        <input class="mb-1 w-100" type="text" name="name" placeholder="Insert the name of the recipe" required>
+                        
+                        <!-- Description -->
+                        <textarea class="mb-3 w-100" name="description" placeholder="Insert the recipe description"></textarea>
+                        
+                        <!-- Régimes -->
+                        <h3 class="text-center">Diet</h3>
+                        <div id="dietTags"></div>
+                        <div class="row mb-3">
+                            <div class="col-10">
+                                <input type="text" id="dietInput" class="w-100" placeholder="Insert a diet (Ex : Omnivore)">
+                            </div>
+                            <div class="col-2">
+                                <button class="btn d-block mx-auto w-100" type="button" onclick="addDiet('en')">Ajouter</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Ingrédients -->
+                        <h3 class="text-center">Ingredients</h3>
+                        <div id="ingredientsList"></div>
+                        <button class="mb-3" type="button" onclick="addIngredient('en')">Ajouter un ingrédient</button>
+
+                        <!-- Etapes -->
+                        <h3 class="text-center">Setps</h3>
+                        <div id="stepsList"></div>
+                        <button type="button" onclick="addStep('en')">Ajouter une étape</button>
+                    </div>
+                    
+                    <!-- Partie Droite : En Français -->
+                    <div class="col-6">
+                        <h1 class="text-center">Recette en Français</h1>
+                        <!-- Nom de la recette -->
+                        <input class="mb-1 w-100" type="text" name="nameFR" placeholder="Insérez le nom de la recette">
+                        
+                        <!-- Description -->
+                        <textarea class="mb-3 w-100" name="descriptionFR" placeholder="Insérez la description de la recette"></textarea>
+                        
+                        <!-- Régimes -->
+                        <h3 class="text-center">Régime</h3>
+                        <div id="dietTagsFR"></div>
+                        <div class="row mb-3">
+                            <div class="col-10">
+                                <input type="text" id="dietInputFR" class="w-100"  placeholder="Entrez un régime (ex: Végétarien)">
+                            </div>
+                            <div class="col-2">
+                                <button type="button" onclick="addDiet('fr')">Ajouter</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Ingrédients -->
+                        <h3 class="text-center">Ingrédients</h3>
+                        <div id="ingredientsListFR"></div>
+                        <button class="mb-3" type="button" onclick="addIngredient('fr')">Ajouter un ingrédient</button>
+                        
+                        <!-- Etapes -->
+                        <h3 class="text-center">Etapes</h3>
+                        <div id="stepsListFR"></div>
+                        <button type="button" onclick="addStep('fr')">Ajouter une étape</button>
+                    </div>
+                </div>  
+                <input class="btn-main d-block mx-auto" id="btnCreateRecipe" type="submit" value="Ajouter la recette">
+            </div>
+        </form>
+    </section>
+    <!-- Alerte  -->
+    <div id="customAlert" class="alert-box">
+        <div class="alert-content">
+            <h2>Alerte</h2>
+            <p id="alert-txt"></p>
+        </div>
+    </div>
+
+    <!-- Appel du fichier JS et JQuery-->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="script.js" ></script> 
+</body>
+</html>

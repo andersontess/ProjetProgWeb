@@ -63,7 +63,8 @@ section{
     text-decoration: none;
 }
 
-.navbar a::before{
+.navbar a::before, 
+.navbar input::before{
     content: '';
     position: absolute;
     top: 100%;
@@ -74,18 +75,18 @@ section{
     transition: 0.3s;
 }
 
-.navbar a:hover::before{
+.navbar a:hover::before, 
+.navbar input:hover::before{
     width: 100%;
 }
 
-.navbar form .inputDeconnexion {
+.navbar .input-form {
     background: transparent;
     border: none;
     position: relative;
     font-size: 18px;
     color: #000;
     font-weight: 500;
-    margin-left: 40px;
     cursor: pointer;
 }
 
@@ -135,6 +136,46 @@ section{
 
 .recipe-container .alert-lg button:hover{
     transform: scale(1.1);
+}
+
+/*Button like*/
+.button-like{
+    position: relative;
+	border-radius: 5px;
+	background: none;
+	cursor: pointer;
+	transition: background 0.5s ease;
+}
+
+.active#heart:before,.active#heart:after{
+	background: red !important;
+}
+#heart {
+    width: 50px;
+    height: 45px;
+    margin: 20px;
+    transition: background 0.5s ease;
+}
+
+#heart:before,
+#heart:after {
+    position: absolute;
+    content: "";
+    left: 25px;
+    top: 0;
+    width: 25px;
+    height: 40px;
+    background: dimgrey;
+    border-radius: 25px 25px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+    transition: background 0.5s ease;
+}
+
+#heart:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin :100% 100%;
 }
 
 /*Select*/
@@ -292,3 +333,87 @@ section{
 .recipe-container #commentaires .border.rounded.p-1{
     background: #fff;
 }
+
+/*****************************/
+/***         Alert         ***/
+/*****************************/
+.alert-box{
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    
+    background-color: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.alert-content{
+    display: block;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    margin: auto;
+    transform: translateY(20%);
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.alert-content h2{
+    font-size: 22px;
+    padding: 5px 0;
+    margin-bottom: 10px;
+    background: #006e00;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.alert-content p{
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.alert-content.custom-green::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background: green;
+    animation: countdown 2s linear forwards;
+}
+
+.alert-content.custom-red::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background: red;
+    animation: countdown 2s linear forwards;
+}
+
+.alert-content.custom-pink::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background: pink;
+    animation: countdown 2s linear forwards;
+}
+
+@keyframes countdown {
+    100%{
+        width: 0;
+    }
+}
+

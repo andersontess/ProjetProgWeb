@@ -1,8 +1,21 @@
 {
+    "cuisinier@gmail.com": {
+        "id": "8a8d833c-21cb-4417-968b-dca92eb056ea",
+        "username": "cuisinier",
+        "password": "$2y$10$yrsmwmqWr51YPkLjkAUJKOEPEtX\/aoH.rmL9OlVMtqBVQHslWLWj.",
+        "role": "cuisinier"
+    },
     "trad@gmail.com": {
         "id": "b73d72d2-0cc0-4220-bf5a-3a5024bb1983",
         "username": "traducteur",
         "password": "$2y$10$70sdvW\/MY2lpxWeQ5Mml1OSDO68bao.pY2lzOIOc2Vma3tyvM5L6S",
         "role": "traducteur"
+    },
+    "chef@gmail.com": {
+        "id": "6b001b92-faeb-46a1-91a7-8769bb386cc8",
+        "username": "chefffffffff",
+        "password": "$2y$10$cU0gFwN9wcugIG\/rqwult.luNbAKP8LT4for3m2bh3DHo1csMlgCG",
+        "role": "chef",
+        "img": "\/front\/img\/users\/6815191e27f2d_pp.png"
     }
 }

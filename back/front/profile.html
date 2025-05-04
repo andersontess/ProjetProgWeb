@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Utilisateur</title>
+
+    <!-- Feuilles de style CSS et icône -->
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="icon" href="img/Logo-Page.png">
+    
+    <!-- Icons en boostrap-->
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">-->
+    <!-- Inclure Font Awesome dans le <head> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+    <!--########## En-tête ##########-->
+    <header class="header">
+        <a href="index.html">
+            <img src="img/logo.png" alt="logo">
+        </a>
+        
+        <nav id="user-navbar" class="navbar">
+        </nav>
+    </header>
+
+    <!--########## Affichage de la recette  ##########-->
+    <section class="profile-container" id="profile-user">
+        <div class="row">
+            <div class="left-container">
+                <div class="profile-header box">
+                    <!-- Image de profil -->
+                    <div id="img-user" class="profile-image-container">
+                        
+                        <div class="overlay">
+                            <img src="img/pencil2.png" alt="Modifier">
+                        </div>
+                    </div>
+                    <input type="file" id="fileInput" accept="image/*" style="display: none;">
+
+                    <!-- Les informations (email, role, pseudo) -->
+                    <div id="info-user" class="text-group">
+                    </div>
+
+                    <!-- Button -->
+                    <button id="deleteAccount"><i class="bi bi-trash"></i> Supprimer compte</button>
+                </div>
+            </div>
+            
+            <div class="right-container">
+                <div class="nav-profile box">
+                    <button id="recipes-likes" class="btn-nav">Favoris</button>
+                </div>
+
+                <div id="result" class="result-container"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appel du fichier JS et JQuery-->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="script.js" ></script> 
+</body>
+</html>

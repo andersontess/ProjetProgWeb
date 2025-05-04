@@ -57,6 +57,11 @@ section{
     background: transparent;
 }
 
+.navbar{
+    display: flex;
+    align-items: center;
+}
+
 .navbar a {
     position: relative;
     font-size: 18px;
@@ -81,14 +86,13 @@ section{
     width: 100%;
 }
 
-.navbar form .inputDeconnexion {
+.navbar .input-form {
     background: transparent;
     border: none;
     position: relative;
     font-size: 18px;
     color: #fff;
     font-weight: 500;
-    margin-left: 40px;
     cursor: pointer;
 }
 /**********************************/
@@ -135,6 +139,7 @@ section{
 .header img{
     width: 93px;
 }
+
 /************************************/
 /***      Accueil - Buttons       ***/
 /************************************/
@@ -312,19 +317,20 @@ section{
 }
 
 /*************************************/
-/***     Contact - Principal       ***/
+/***     Après une recherche       ***/
 /*************************************/
-.contact-container{
-    padding: 100px 0;
-    background: #fff;
+#recipes-search .content-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
-.contact-container .container h1{
-    font-family: 'Fredoka One', sans-serif;
-    font-size: 60px;
-    font-weight: 400;
+#recipes-search .content-center h4{
+    margin-bottom: 16px;
 }
 
-.contact-container .container p{
-    width: 550px;
+#recipes-search .content-center .img-not-find-recipe{
+    width: 320px;
+    border-radius: 20px;
 }

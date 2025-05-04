@@ -1,0 +1,291 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Epilogue&family=Fredoka+One&display=swap');
+
+/*********************/
+/***    Général    ***/
+/*********************/
+*{
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+} 
+
+body{
+    min-height: 100vh;
+} 
+
+/***********************************/
+/***    Classes réutilisables    ***/
+/***********************************/
+section{
+    background: #f2f2fc;
+    position: relative;
+    padding-top: 92px;
+    min-height: 100vh;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+}
+
+.box {
+    background: #fff;
+    border: 1px solid #e8dfec;
+    border-radius: 30px;
+}
+
+/*****************************/
+/***    En-tête /NavBar    ***/
+/*****************************/
+.header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border-bottom: 1px solid #e8dfec;
+}
+
+.header img{
+    width: 108px;
+    position: relative;
+    top: -8px;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 18px;
+    color: #000;
+    font-weight: 500;
+    margin-left: 40px;
+    text-decoration: none;
+}
+
+.navbar a::before, 
+.navbar input::before{
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: 0.3s;
+}
+
+.navbar a:hover::before, 
+.navbar input:hover::before{
+    width: 100%;
+}
+
+.navbar .input-form {
+    background: transparent;
+    border: none;
+    position: relative;
+    font-size: 18px;
+    color: #000;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/********************************/
+/***      Profile - MAIN      ***/
+/********************************/
+.profile-container{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+/********************************/
+/***      Profile - Left      ***/
+/********************************/
+.left-container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 25%;
+}
+
+.profile-header{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin: 20px 15px;
+    background: #fff;
+}
+
+/*Image*/
+.profile-image-container {
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+    width: 60%;
+    margin-top: 50px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.profile-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.profile-image-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* fond noir transparent */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .profile-image-container:hover .overlay {
+    opacity: 1;
+  }
+  
+  .profile-image-container .overlay img {
+    width: 24px;
+    height: 24px;
+  }
+
+/*Text*/
+.profile-header .text-group {
+    margin: 0 0 50px 0;
+}
+
+.profile-header .text-group p {
+    margin: 20px 0;
+}
+
+/*Button*/
+.profile-header button .bi-trash{
+    width: 50px;
+    height: 50px;
+}
+
+.profile-header button{
+    border: 1px solid #ff0000;
+    border-radius: 20px;
+    padding: 15px 10px;
+    margin-bottom: 50px;
+    color: #ff0000;
+    cursor: pointer;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.profile-header button:hover{
+    background: #ff0000;
+    color : white;
+    box-shadow: 5px 7px 5px rgba(255, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+/********************************/
+/***      Profile - Right     ***/
+/********************************/
+.right-container{
+    width: 75%;
+    height: 100%;
+    padding: 20px;
+}
+
+.right-container .nav-profile{
+    padding: 10px 20px;
+}
+
+.right-container .nav-profile .btn-nav{
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    background: none;
+}
+
+.right-container .nav-profile .btn-nav:hover{
+    color: #006e00;
+    cursor: pointer;
+}
+
+#result {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    margin-top: 50px;
+}
+
+/*Pour le button "Recettes likes"*/
+#result .recipe {
+    width: 250px;
+    margin: 10px 20px;
+    border: 1px solid #dddcdc;
+    border-radius: 25px;
+    cursor: pointer;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+}
+
+#result .recipe h2{
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+#result .recipe .titre-ajout{
+    margin-top: 16px;
+    margin-bottom: 0;
+}
+
+#result .recipe img{
+    display:flex;
+    margin:10px auto;
+    width: 220px;
+    border-radius: 25px;
+    justify-content: center;
+}
+
+#result .noLike{
+    display: block;
+    margin: auto;
+    height: 500px;
+}
+
+#result .recipe .add-hover{
+    position: relative;
+    height: 268px;
+    cursor: pointer;
+}
+
+.add-hover:hover::after {
+    content: "+";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    color: #00af00; /* vert par exemple */
+    font-weight: bold;
+  }
