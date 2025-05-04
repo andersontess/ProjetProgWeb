@@ -159,7 +159,7 @@ class RecipeController {
 		
 		// Écriture du fichier après la modif
 		file_put_contents($this->filePath, json_encode($recipes, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
-		http_response_code(200);
+		http_response_code(201);
 		echo json_encode(['redirect'=>'index.html']);
 	}
 	
@@ -183,7 +183,6 @@ class RecipeController {
 		}
 
 
- 		//S'il existe pas ingredients on le crée
 		$found = false;
 		foreach ($recipes as &$recipe) {
 			//On vérifie que la clé id existe, puis qu'elle correspond à notre id reçu
@@ -212,7 +211,7 @@ class RecipeController {
 
 		// Sauvegarde des modifications dans le fichier JSON
 		file_put_contents($this->filePath, json_encode($recipes, JSON_PRETTY_PRINT));
-		http_response_code(200);
+		http_response_code(201);
 		echo json_encode(['message' => 'Recette ajouté dans les favoris !']);
 	}
 
@@ -414,7 +413,7 @@ class RecipeController {
 		$recipes[] = $recette;
 
 		file_put_contents($this->filePath, json_encode($recipes, JSON_PRETTY_PRINT));
-		http_response_code(200);
+		http_response_code(201);
 		echo json_encode(['message' => 'Recette ajouté !']);
 	}
 }

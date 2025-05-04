@@ -634,7 +634,7 @@ async function navbarAuthUser(){
         a1.textContent = "Connexion";
     
         const a2 = document.createElement("a");
-        a2.href = "creerCompte.html"; 
+        a2.href = "createAccount.html"; 
         a2.textContent = "Créer un compte"; 
     
         navbar.appendChild(a1);
@@ -923,7 +923,7 @@ function displaySearchResults(recipes) {
     for (let recipe of Object.values(recipes)) {
         const recipeCard = 
         `
-            <div class="recipe" data-id="${recipe.id}" onclick="showRecipeCard(this)">
+            <div class="recipe" data-id="${recipe.id}" onclick="displayContentCard(this)">
                 <img src="${recipe.imageURL}" alt="food" class="food-image">
                 <h2>${recipe.nameFR || recipe.name}</h2>
             </div>
