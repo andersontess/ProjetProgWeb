@@ -32,7 +32,9 @@ class RecipeController {
 
 		if ($search) {
 			$jsonData = array_filter($jsonData, function ($recipe) use ($search) {
-				return strpos(strtolower($recipe['name']), strtolower($search)) !== false;
+				$nameEN = strtolower($recipe["name"] ?? '');
+				$nameFR = strtolower($recipe["nameFR"] ?? '');
+				return str_contains($nameEN, strtolower($search)) || str_contains($nameFR, strtolower($search));
 			});
 		}
 
