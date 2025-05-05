@@ -48,7 +48,15 @@ class AuthController
 		$username = $_POST['username'];
 		$email = $_POST['email'];
 		$password = $_POST['password'];
-		$role = $_POST['role'];
+		$role = ['Cuisinier']; // rôle par défaut
+
+		if (isset($_POST['role'])) {
+			if ($_POST['role'] === 'DemandeChef') {
+				$role[] = 'DemandeChef';
+			} elseif ($_POST['role'] === 'DemandeTraducteur') {
+				$role[] = 'DemandeTraducteur';
+			}
+		}
 
 		// 3. Validate the email and password
 

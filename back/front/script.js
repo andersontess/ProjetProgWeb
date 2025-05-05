@@ -512,8 +512,7 @@ async function searchRecipes(query) {
 
 //L'utilisateur ajoute une traduction
 async function addTranslation(event){
-    const body = new URLSea
-    rchParams(new FormData(event.target));
+    const body = new URLSearchParams(new FormData(event.target));
     
     //On récupère l'id
     const recipeId = JSON.parse(localStorage.getItem("data")).id;
