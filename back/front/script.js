@@ -1121,8 +1121,8 @@ function renderIngredientsPageTranslate(recipe){
 
     // Français
     const hasIngredientsFR = recipe.ingredientsFR && recipe.ingredientsFR.length > 0; // On vérifie que ingredientsFR existe ou pas
-    const baseIngredients = recipe.ingredients || [];                                 // 
-    const frIngredients = hasIngredientsFR ? recipe.ingredientsFR : baseIngredients;  //
+    const baseIngredients = recipe.ingredients || [];                                 // On utilise ingredients sinon tableau vide (au cas où ingredients existe pas)
+    const frIngredients = hasIngredientsFR ? recipe.ingredientsFR : baseIngredients;  // Défini ce qu'on utilise soit ingredientsFR sinon ingredients
     
     frIngredients.forEach((ing, index) => {
         // Si les ingredientsFR existe, on remplit les champs avec values + readonly
