@@ -1120,14 +1120,25 @@ function renderIngredientsPageTranslate(recipe){
     }
 
     // Français
-    const frIngredients = recipe.ingredientsFR || recipe.ingredients;
+    const hasIngredientsFR = recipe.ingredientsFR && recipe.ingredientsFR.length > 0; // On vérifie que ingredientsFR existe ou pas
+    const baseIngredients = recipe.ingredients || [];                                 // 
+    const frIngredients = hasIngredientsFR ? recipe.ingredientsFR : baseIngredients;  //
+    
     frIngredients.forEach((ing, index) => {
+        // Si les ingredientsFR existe, on remplit les champs avec values + readonly
+        // Sinon, on laisse vides
+        const name = hasIngredientsFR ? ing.name : "";
+        const type = hasIngredientsFR ? ing.type : "";
+        const quantity = hasIngredientsFR ? ing.quantity : "";
+    
+        const attribute = hasIngredientsFR ? "readonly" : "required";
+    
         $(".ingredientsFR").append(`
             <div class="px-3">
                 <ul class="list-group my-2">
-                    <li><input type="text" name="ingredientFR-name${index}" placeholder="Insérez le nom" value="${ing.name || ''}" ${ing.name ? "readonly" : "required"}></li>
-                    <li><input type="text" name="ingredientFR-type${index}" placeholder="Insérez le type" value="${ing.type || ''}" ${ing.type ? "readonly" : "required"}></li>
-                    <li><input type="text" name="ingredientFR-quantity${index}" placeholder="Insérez la quantité" value="${ing.quantity || ''}" ${ing.quantity ? "readonly" : "required"}></li>
+                    <li><input type="text" name="ingredientFR-name${index}" placeholder="Insérez le nom" value="${name}" ${attribute}></li>
+                    <li><input type="text" name="ingredientFR-type${index}" placeholder="Insérez le type" value="${type}" ${attribute}></li>
+                    <li><input type="text" name="ingredientFR-quantity${index}" placeholder="Insérez la quantité" value="${quantity}" ${attribute}></li>
                 </ul>
             </div>`);
     });
