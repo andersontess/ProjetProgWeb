@@ -17,5 +17,15 @@
         "password": "$2y$10$cU0gFwN9wcugIG\/rqwult.luNbAKP8LT4for3m2bh3DHo1csMlgCG",
         "role": "chef",
         "img": "\/front\/img\/users\/68179df613074_Cute_chef_girl_smiling_in_uniform_giving_thumbs_up_cartoon_art_illustration_logo.jpg"
+    },
+    "tess@tess.com": {
+        "id": "0933858d-dd91-4279-b2d5-f074392a58e6",
+        "username": "tess",
+        "password": "$2y$12$KEicKKOswOHXHySRzrXxhO.X7xaxfOFT0N5xqLdW0nOiNJv44B62i",
+        "role": [
+            "Cuisinier",
+            "DemandeTraducteur"
+        ],
+        "img": "\/front\/img\/users\/6818acd0804f3_raccoon.jpg"
     }
 }
